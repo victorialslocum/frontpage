@@ -3,3 +3,4 @@ configs/
 data/
 training/
 project.lock
+scripts/__pycache__

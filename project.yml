@@ -15,16 +15,16 @@ assets:
     - dest: "wef"
       description: ""
 
-workflows:
-  all:
-    - start
-
 # Project commands, specified in a style similar to CI config files (e.g. Azure
 # pipelines). The name is the command name that lets you trigger the command
 # via "spacy project run [command] [path]". The help message is optional and
 # shown when executing "spacy project run [optional command] [path] --help".
 commands:
-  - name: "start"
-    help: "Parse the gold-standard annotations from the Prodigy annotations."
+  - name: "data"
+    help: "Create the dataset from arxiv query."
     script:
-      - "echo hello"
+      - "python scripts/data.py"
+  - name: "annotate"
+    help: "Annotate prodigy with custom recipe."
+    script:
+      - "prodigy mark dataset_papers ./data/data.jsonl --label DATASET --view-id classification"
