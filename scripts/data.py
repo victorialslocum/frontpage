@@ -8,11 +8,8 @@ search = arxiv.Search(
 )
 
 dataset = []
-dataset_titles = []
 
 for result in search.results():
-  dataset.append({"title": result.title, "summary": result.summary, "published": result.published, "id": result.entry_id})
-  dataset_titles.append({"text": result.title})
+  dataset.append({"text": result.title, "meta": {"link": result.entry_id}})
 
-srsly.write_json('./data/articles_200.json', dataset)
-srsly.write_jsonl('./data/data.jsonl', dataset_titles)
+srsly.write_jsonl('./data/data.jsonl', dataset)
