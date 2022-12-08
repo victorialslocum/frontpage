@@ -3,4 +3,5 @@ configs/
 data/
 training/
 project.lock
-scripts/__pycache__
+recipes/__pycache__
+.vscode

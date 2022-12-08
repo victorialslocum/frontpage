@@ -3,17 +3,17 @@ description: ""
 
 # Variables can be referenced across the project.yml using ${vars.var_name}
 vars:
-  annotations: "assets/annotations.jsonl"
+  dataset: "dinonuggets"
 
 # These are the directories that the project needs. The project CLI will make
 # sure that they always exist.
-directories: ["scripts", "configs", "assets", "data", "training"]
+directories: ["scripts", "assets", "data"]
 
 # Assets that should be downloaded or available in the directory. You can replace
 # this with your own input data.
 assets:
-    - dest: "wef"
-      description: ""
+  - dest: "data/data.jsonl"
+    description: ""
 
 # Project commands, specified in a style similar to CI config files (e.g. Azure
 # pipelines). The name is the command name that lets you trigger the command
@@ -24,7 +24,22 @@ commands:
     help: "Create the dataset from arxiv query."
     script:
       - "python scripts/data.py"
+    outputs:
+      - "assets/data.jsonl"
+  - name: "preprocess"
+    help: "Create data in Prodigy format."
+    script:
+      - "python scripts/preprocess.py"
+    outputs:
+      - "assets/data.jsonl"
   - name: "annotate"
     help: "Annotate prodigy with custom recipe."
     script:
-      - "prodigy mark dataset_papers ./data/data.jsonl --label DATASET --view-id classification"
+      - "prodigy render_html ${vars.dataset} assets/data.jsonl -F recipes/render_html.py"
+    deps:
+      - "assets/data.jsonl"
+  - name: "db_out"
+    help: "Export Prodigy annotations to a jsonl file."
+    script:
+      - "prodigy db_out ${vars.dataset} data/"
+    
