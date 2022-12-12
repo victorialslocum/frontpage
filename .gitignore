@@ -5,3 +5,4 @@ training/
 project.lock
 recipes/__pycache__
 .vscode
+test.py
