@@ -42,4 +42,8 @@ commands:
     help: "Export Prodigy annotations to a jsonl file."
     script:
       - "prodigy db_out ${vars.dataset} data/"
+  - name: "train"
+    help: "Train a spaCy textcat model with Prodigy annotations."
+    script:
+      - "python -m prodigy train --textcat-multilabel ${vars.dataset} training/"
     

@@ -61,7 +61,7 @@ def textcat_arxiv(dataset, examples):
             ] = f"<h3>{ex['title']}</h3><p><font size='3'>{summary_highlight}</font></p>"
             yield ex
 
-    # delete html key in output data
+    # delete html key in output data and add label key
     def before_db(examples):
         for ex in examples:
             ex["label"] = "dataset"
