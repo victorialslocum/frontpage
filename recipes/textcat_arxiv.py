@@ -64,6 +64,7 @@ def textcat_arxiv(dataset, examples):
     # delete html key in output data
     def before_db(examples):
         for ex in examples:
+            ex["label"] = "dataset"
             del ex["html"]
         return examples
 
