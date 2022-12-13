@@ -1,11 +1,12 @@
 import srsly
 
+# import raw arxiv data
 raw_dataset = srsly.read_jsonl("assets/raw/raw_data.jsonl")
 
-print(raw_dataset)
-
+# initialize dataset
 process_data = []
 
+# iterate through papers and refactor data into correct form
 for paper in raw_dataset:
     process_data.append(
         {
@@ -16,4 +17,5 @@ for paper in raw_dataset:
         }
     )
 
+# write data
 srsly.write_jsonl("assets/data.jsonl", process_data)

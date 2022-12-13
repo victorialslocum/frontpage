@@ -1,5 +1,5 @@
-title: "arxiv papers about datasets"
-description: ""
+title: "Databot: An automatic recommender for papers about new datasets"
+description: "Using Prodigy, spaCy, and arxiv to automatically detect new papers about datasets."
 
 # Variables can be referenced across the project.yml using ${vars.var_name}
 vars:
@@ -7,12 +7,12 @@ vars:
 
 # These are the directories that the project needs. The project CLI will make
 # sure that they always exist.
-directories: ["scripts", "assets", "data"]
+directories: ["scripts", "assets", "data", "training"]
 
 # Assets that should be downloaded or available in the directory. You can replace
 # this with your own input data.
 assets:
-  - dest: "data/data.jsonl"
+  - dest: ""
     description: ""
 
 # Project commands, specified in a style similar to CI config files (e.g. Azure
@@ -27,7 +27,7 @@ commands:
     outputs:
       - "assets/data.jsonl"
   - name: "preprocess"
-    help: "Create data in Prodigy format."
+    help: "Process data into Prodigy format."
     script:
       - "python scripts/preprocess.py"
     outputs:
@@ -35,7 +35,7 @@ commands:
   - name: "annotate"
     help: "Annotate prodigy with custom recipe."
     script:
-      - "prodigy render_html ${vars.dataset} assets/data.jsonl -F recipes/render_html.py"
+      - "prodigy render_html ${vars.dataset} assets/data.jsonl -F recipes/textcat_arxiv.py"
     deps:
       - "assets/data.jsonl"
   - name: "db_out"

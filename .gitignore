@@ -7,3 +7,4 @@ recipes/__pycache__
 .vscode
 test.py
 .ipynb_checkpoints
+test.ipynb
