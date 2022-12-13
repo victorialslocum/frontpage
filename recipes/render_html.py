@@ -29,6 +29,7 @@ def render_html(dataset, examples):
                         "provide",
                         "derive",
                         "construct",
+                        "create",
                     ]
                 }
             },
@@ -47,9 +48,7 @@ def render_html(dataset, examples):
 
             summary_highlight = ex["summary"]
             for match_id, start, end in matches:
-                string_id = nlp.vocab.strings[match_id]  # Get string representation
                 span = doc[start:end]  # The matched span
-                print(match_id, string_id, start, end, span.text)
                 summary_highlight = summary_highlight.replace(
                     span.text, f"<u>{span.text}</u>"
                 )
