@@ -6,13 +6,14 @@ from spacy.matcher import Matcher
 
 
 @prodigy.recipe(
-    "tetxcat_arxiv",
+    "textcat_arxiv",
     dataset=("Dataset to save answers to", "positional", None, str),
     examples=("Examples to load from disk", "positional", None, str),
+    model=("spaCy model to load", "positional", None, str)
 )
-def textcat_arxiv(dataset, examples):
+def textcat_arxiv(dataset, examples, model):
     # import spaCy and initialize matcher
-    nlp = spacy.load("en_core_web_sm")
+    nlp = spacy.load(model)
     matcher = Matcher(nlp.vocab)
 
     # set up stream and set hashes just on text key
