@@ -12,5 +12,5 @@ def process(paper):
     }
 
 # write data
-processed_data = [process(p) for p in process_data]
+processed_data = [process(p) for p in raw_dataset]
 srsly.write_jsonl("assets/data.jsonl", processed_data)

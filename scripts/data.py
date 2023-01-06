@@ -15,7 +15,7 @@ for query, n in queries.items():
         sort_by=arxiv.SortCriterion.SubmittedDate,
     )
     # Add items to dataset
-    for item in items.results():
+    for result in items.results():
         summary = str(result.summary).replace("\n", " ")
         dataset.append(
             {
