@@ -3,6 +3,7 @@ from prodigy.components.loaders import JSONL
 from prodigy import set_hashes
 import spacy
 from spacy.matcher import Matcher
+import srsly
 
 
 @prodigy.recipe(
@@ -21,28 +22,7 @@ def textcat_arxiv(dataset, examples, model):
     stream = (set_hashes(ex, input_keys=("text")) for ex in stream)
 
     # add matcher pattern to underline
-    patterns = [
-        [
-            {
-                "LEMMA": {
-                    "IN": [
-                        "present",
-                        "introduce",
-                        "propose",
-                        "publish",
-                        "provide",
-                        "derive",
-                        "construct",
-                        "create",
-                    ]
-                }
-            },
-            {"OP": "{,6}"},
-            {"POS": "DET"},
-            {"OP": "{,6}"},
-            {"LOWER": {"IN": ["database", "dataset", "corpus"]}},
-        ],
-    ]
+    patterns = srsly.read_json("assets/patterns.json")
     matcher.add("Dataset", patterns)
 
     # Render title and description in HTML format for Prodigy as a generator object

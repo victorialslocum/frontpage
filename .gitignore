@@ -1,4 +1,5 @@
-assets/
+assets/raw
+assets/data.jsonl
 configs/
 data/
 training/
