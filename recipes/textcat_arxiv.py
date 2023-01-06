@@ -10,9 +10,10 @@ import srsly
     "textcat_arxiv",
     dataset=("Dataset to save answers to", "positional", None, str),
     examples=("Examples to load from disk", "positional", None, str),
-    model=("spaCy model to load", "positional", None, str)
+    model=("spaCy model to load", "positional", None, str),
+    patterns=("Patterns to match from json file", "positional", None, str)
 )
-def textcat_arxiv(dataset, examples, model):
+def textcat_arxiv(dataset, examples, model, patterns):
     # import spaCy and initialize matcher
     nlp = spacy.load(model)
     matcher = Matcher(nlp.vocab)
@@ -22,7 +23,7 @@ def textcat_arxiv(dataset, examples, model):
     stream = (set_hashes(ex, input_keys=("text")) for ex in stream)
 
     # add matcher pattern to underline
-    patterns = srsly.read_json("assets/patterns.json")
+    patterns = srsly.read_json(patterns)
     matcher.add("Dataset", patterns)
 
     # Render title and description in HTML format for Prodigy as a generator object

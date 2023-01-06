@@ -42,7 +42,7 @@ commands:
   - name: "annotate"
     help: "Annotate prodigy with custom recipe."
     script:
-      - "prodigy textcat_arxiv ${vars.dataset} assets/data.jsonl ${vars.model} -F recipes/textcat_arxiv.py"
+      - "prodigy textcat_arxiv ${vars.dataset} assets/data.jsonl ${vars.model} assets/patterns.json -F recipes/textcat_arxiv.py"
     deps:
       - "assets/data.jsonl"
   - name: "db_out"
