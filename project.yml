@@ -26,7 +26,13 @@ commands:
     script:
       - "python scripts/data.py"
     outputs:
-      - "assets/data.jsonl"
+      - "assets/raw/raw_data.jsonl"
+  - name: "data_daily"
+    help: "Create the dataset from arxiv query for a date."
+    script:
+      - "python scripts/data_daily.py"
+    outputs:
+      - "assets/raw/raw_data.jsonl"
   - name: "preprocess"
     help: "Process data into Prodigy format."
     script:
@@ -36,7 +42,7 @@ commands:
   - name: "annotate"
     help: "Annotate prodigy with custom recipe."
     script:
-      - "prodigy textcat_arxiv ${vars.dataset} assets/data.jsonl ${vars.model} -F ./recipes/textcat_arxiv.py"
+      - "prodigy textcat_arxiv ${vars.dataset} assets/data.jsonl ${vars.model} -F recipes/textcat_arxiv.py"
     deps:
       - "assets/data.jsonl"
   - name: "db_out"
