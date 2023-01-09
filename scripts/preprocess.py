@@ -1,22 +1,14 @@
 from pathlib import Path
-
+from schemas import Content
 import srsly
 import typer
 
 
-def process(item):
-    return {
-        "text": f"{item['title']}\n{item['description']}",
-        "title": item["title"],
-        "description": item["description"],
-        "meta": item["meta"],
-    }
-
-
 def main(folder: Path, out: Path):
+    """Concat all files and double-check the schema."""
     full_data = []
     for file in folder.glob("*.jsonl"):
-        full_data.extend([process(item) for item in srsly.read_jsonl(file)])
+        full_data.extend([dict(Content(**item)) for item in srsly.read_jsonl(file)])
     srsly.write_jsonl(out, full_data)
 
 

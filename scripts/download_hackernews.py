@@ -7,7 +7,7 @@ import httpx
 import srsly
 import typer
 from rich.console import Console
-
+from schemas import Content
 
 async def fetch_url(url, client):
     r = await client.get(url)
@@ -36,18 +36,17 @@ def main(
         if "url" in result.keys():
             created = dt.datetime.fromtimestamp(result["time"])
             if created > dt.datetime.now() - dt.timedelta(days=2):
-                dataset.append(
-                    {
-                        "title": result["title"],
-                        "description": "",
-                        "meta": {
-                            "link": result["url"],
-                            "score": result["score"],
-                            "tags": ["hackernews"],
-                            "created": str(created)[:10],
-                        },
-                    }
+                content_item = Content(
+                    title=result["title"],
+                    description="",
+                    link=result["url"],
+                    created=created.strftime("%Y-%m-%d"),
+                    tags=["hackernews"],
+                    meta={
+                        "score": result["score"],
+                    },
                 )
+                dataset.append(dict(content_item))
 
     # Write file
     write_path = Path(path_out) / f"hackernews-{date.today()}.jsonl"

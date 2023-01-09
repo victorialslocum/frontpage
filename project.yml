@@ -25,6 +25,9 @@ commands:
     help: "Download data from sources."
     script:
       - python scripts/download_reddit.py --subreddit python --tag python
+      - python scripts/download_reddit.py --subreddit MachineLearning --tag ml
+      - python scripts/download_reddit.py --subreddit deeplearning --tag ml
+      - python scripts/download_reddit.py --subreddit LanguageTechnology --tag ml
       - python scripts/download_arxiv.py --query 'ti:dataset OR ti:corpus OR ti:database OR abs:"a new dataset"' --tag dataset
       - python scripts/download_hackernews.py
     deps:
@@ -53,6 +56,10 @@ commands:
     help: "Train a spaCy textcat model with Prodigy annotations."
     script:
       - "python -m prodigy train --textcat-multilabel arxiv_about_dataset training/"
+  - name: "build"
+    help: "Builds your frontpage."
+    script:
+      - "python scripts/build_frontpage.py raw/content.jsonl > index.html"
     
 workflows:
   fetch:

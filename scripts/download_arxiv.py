@@ -6,6 +6,7 @@ import arxiv
 import srsly
 import typer
 from rich.console import Console
+from schemas import Content
 
 
 def main(
@@ -32,18 +33,15 @@ def main(
         keep = created > (dt.date.today() - dt.timedelta(days=30))
         if keep or save_all:
             summary = str(result.summary).replace("\n", " ")
-            dataset.append(
-                {
-                    "title": result.title,
-                    "description": summary,
-                    "meta": {
-                        "link": result.entry_id,
-                        "tags": ["arxiv", tag],
-                        "query": query,
-                        "created": str(created)[:10],
-                    },
-                }
+            content_item = Content(
+                title=result.title,
+                description=summary,
+                link=result.entry_id,
+                created=str(created)[:10],
+                tags=["arxiv", tag],
+                meta={},
             )
+            dataset.append(dict(content_item))
 
     # Write file
     write_path = Path(path_out) / f"arxiv-{date.today()}.jsonl"

@@ -19,7 +19,7 @@ def textcat_arxiv(dataset, examples, model, patterns):
     matcher = Matcher(nlp.vocab)
 
     # set up stream and set hashes just on text key
-    stream = (item for item in JSONL(examples) if "arxiv" in item["meta"]["tags"])
+    stream = (item for item in JSONL(examples) if "arxiv" in item["tags"])
     stream = (set_hashes(ex, input_keys=("text")) for ex in stream)
 
     # add matcher pattern to underline
