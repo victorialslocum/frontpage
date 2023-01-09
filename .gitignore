@@ -153,8 +153,8 @@ dmypy.json
 cython_debug/
 
 .idea/
-assets/raw
-assets/data.jsonl
+assets/
+raw/
 configs/
 data/
 training/
@@ -164,3 +164,4 @@ recipes/__pycache__
 test.py
 .ipynb_checkpoints
 test.ipynb
+index.html
