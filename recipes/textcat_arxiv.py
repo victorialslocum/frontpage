@@ -1,9 +1,9 @@
 import prodigy
-from prodigy.components.loaders import JSONL
-from prodigy import set_hashes
 import spacy
-from spacy.matcher import Matcher
 import srsly
+from prodigy import set_hashes
+from prodigy.components.loaders import JSONL
+from spacy.matcher import Matcher
 
 
 @prodigy.recipe(
@@ -11,7 +11,7 @@ import srsly
     dataset=("Dataset to save answers to", "positional", None, str),
     examples=("Examples to load from disk", "positional", None, str),
     model=("spaCy model to load", "positional", None, str),
-    patterns=("Patterns to match from json file", "positional", None, str)
+    patterns=("Patterns to match from json file", "positional", None, str),
 )
 def textcat_arxiv(dataset, examples, model, patterns):
     # import spaCy and initialize matcher
@@ -19,7 +19,7 @@ def textcat_arxiv(dataset, examples, model, patterns):
     matcher = Matcher(nlp.vocab)
 
     # set up stream and set hashes just on text key
-    stream = JSONL(examples)
+    stream = (item for item in JSONL(examples) if "arxiv" in item["meta"]["tags"])
     stream = (set_hashes(ex, input_keys=("text")) for ex in stream)
 
     # add matcher pattern to underline
@@ -29,14 +29,14 @@ def textcat_arxiv(dataset, examples, model, patterns):
     # Render title and description in HTML format for Prodigy as a generator object
     def add_html(examples):
         for ex in examples:
-            doc = nlp(ex["summary"])
+            doc = nlp(ex["description"])
             matches = matcher(doc)
 
-            summary_highlight = ex["summary"]
+            summary_highlight = ex["description"]
             for match_id, start, end in matches:
                 span = doc[start:end]  # The matched span
                 summary_highlight = summary_highlight.replace(
-                    span.text, f"<u>{span.text}</u>"
+                    span.text, f"<b style='background-color: yellow;'>{span.text}</b>"
                 )
             ex[
                 "html"

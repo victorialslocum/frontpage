@@ -1,16 +1,24 @@
+from pathlib import Path
+
 import srsly
+import typer
 
-# import raw arxiv data
-raw_dataset = srsly.read_jsonl("assets/raw/raw_data.jsonl")
 
-def process(paper):
+def process(item):
     return {
-        "text": f"{paper['title']}\n{paper['summary']}",
-        "title": paper["title"],
-        "summary": paper["summary"],
-        "meta": {"link": paper["link"]},
+        "text": f"{item['title']}\n{item['description']}",
+        "title": item["title"],
+        "description": item["description"],
+        "meta": item["meta"],
     }
 
-# write data
-processed_data = [process(p) for p in raw_dataset]
-srsly.write_jsonl("assets/data.jsonl", processed_data)
+
+def main(folder: Path, out: Path):
+    full_data = []
+    for file in folder.glob("*.jsonl"):
+        full_data.extend([process(item) for item in srsly.read_jsonl(file)])
+    srsly.write_jsonl(out, full_data)
+
+
+if __name__ == "__main__":
+    typer.run(main)

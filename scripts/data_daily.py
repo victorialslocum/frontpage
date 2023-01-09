@@ -1,14 +1,14 @@
+from datetime import date, timedelta
+
 import arxiv
 import srsly
-from datetime import date
-from datetime import timedelta
 
 today = date.today()
-yesterday = today - timedelta(days = 1)
+yesterday = today - timedelta(days=1)
 
 queries = {
     'ti:dataset OR ti:corpus OR ti:database OR abs:"a new dataset"': 30,
-    "ti:data": 20
+    "ti:data": 20,
 }
 
 dataset = []
