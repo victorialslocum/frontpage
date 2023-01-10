@@ -21,13 +21,13 @@ class Content(BaseModel):
     @validator("tags")
     def tags_may_not_be_empty(cls, v):
         if len(v) == 0:
-            raise ValueError("tags cannot be empty. received: {v}")
+            raise ValueError(f"tags cannot be empty. received: {v}")
         return v
 
     @validator("created")
     def created_string_must_be_date_parseable(cls, v):
         try:
-            datetime.strptime(v, "%Y-%m-%d")
+            datetime.datetime.strptime(v, "%Y-%m-%d")
         except:
-            raise ValueError("tags cannot be empty. received: {v}")
+            raise ValueError(f"created date must be parse-able. received: {v}")
         return v
