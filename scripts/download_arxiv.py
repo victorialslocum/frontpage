@@ -10,15 +10,23 @@ from schemas import Content
 
 
 def main(
-    query: str = typer.Option(...),
-    tag: str = typer.Option(...),
-    n: int = typer.Option(None),
-    path_out: Path = typer.Option("assets"),
+    query: str = typer.Option(..., help="Query to send to arxiv"),
+    tag: str = typer.Option(..., help="Comma seperated tags to add to data."),
+    n: int = typer.Option(
+        None,
+        help="If specified, `max_age` is ignored. Refers to the number of results to save",
+    ),
+    path_out: Path = typer.Option("assets", help="Path to write file to."),
+    max_age: Path = typer.Option(3, help="Max age of a result in days."),
 ):
+    """Fetch data from arxiv."""
     console = Console(no_color=True)
 
+    tags = ["arxiv"]
+    tags.extend(tag.split(","))
     save_all = False if not n else True
     n = 100 if not n else n
+
     # Start the query
     items = arxiv.Search(
         query=query,
@@ -30,7 +38,7 @@ def main(
     dataset = []
     for result in items.results():
         created = result.published.date()
-        keep = created > (dt.date.today() - dt.timedelta(days=30))
+        keep = created > (dt.date.today() - dt.timedelta(days=max_age))
         if keep or save_all:
             summary = str(result.summary).replace("\n", " ")
             content_item = Content(
@@ -38,8 +46,8 @@ def main(
                 description=summary,
                 link=result.entry_id,
                 created=str(created)[:10],
-                tags=["arxiv", tag],
-                meta={},
+                tags=tags,
+                meta={"query": query},
             )
             dataset.append(dict(content_item))
 

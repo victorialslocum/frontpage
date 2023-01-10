@@ -9,6 +9,7 @@ import typer
 from rich.console import Console
 from schemas import Content
 
+
 async def fetch_url(url, client):
     r = await client.get(url)
     return r
@@ -21,8 +22,10 @@ async def fetch_urls(urls):
 
 
 def main(
-    path_out: Path = typer.Argument("assets"),
+    path_out: Path = typer.Argument("assets", help="Path to write file into."),
+    n: int = typer.Option(100, help="Only looks at the top `n` stories."),
 ):
+    """Fetch data from hackernews."""
     console = Console(no_color=True)
 
     # Start the query
@@ -32,7 +35,7 @@ def main(
 
     # Add items to dataset
     dataset = []
-    for result in responses:
+    for result in responses[:n]:
         if "url" in result.keys():
             created = dt.datetime.fromtimestamp(result["time"])
             if created > dt.datetime.now() - dt.timedelta(days=2):

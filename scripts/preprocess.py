@@ -1,7 +1,8 @@
 from pathlib import Path
-from schemas import Content
+
 import srsly
 import typer
+from schemas import Content
 
 
 def main(folder: Path, out: Path):
