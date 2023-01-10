@@ -14,6 +14,7 @@ def build_html(candidate):
     return {
         **candidate,
         "html": f"{result}<p style='max-width: 90%;'>{candidate['title']}</p>",
+        "label": "clickable",
         "meta": {**candidate["meta"], "link": candidate["link"]},
     }
 
@@ -39,7 +40,6 @@ def textcat_clickable(dataset, examples):
     # delete html key in output data and add label key
     def before_db(examples):
         for ex in examples:
-            ex["label"] = "clickable"
             del ex["html"]
         return examples
 
@@ -47,5 +47,5 @@ def textcat_clickable(dataset, examples):
         "before_db": before_db,
         "dataset": dataset,
         "stream": stream,
-        "view_id": "html",
+        "view_id": "classification",
     }

@@ -1,6 +1,6 @@
 import srsly
 import typer
-from jinja2 import BaseLoader, Environment, select_autoescape
+from jinja2 import Environment
 
 env = Environment()
 
