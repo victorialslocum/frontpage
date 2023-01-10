@@ -1,8 +1,8 @@
 <!-- SPACY PROJECT: AUTO-GENERATED DOCS START (do not remove) -->
 
-# 🪐 spaCy Project: Databot: An automatic recommender for papers about new datasets
+# 🪐 spaCy Project: FrontPage: An Prodigy project to make a personal front-page.
 
-Using Prodigy, spaCy, and arxiv to automatically detect new papers about datasets.
+Using Prodigy, spaCy, and friends ... this project allows you to make your own frontpage of the internet.
 
 ## 📋 project.yml
 
@@ -18,11 +18,23 @@ Commands are only re-run if their inputs have changed.
 
 | Command | Description |
 | --- | --- |
-| `data` | Create the dataset from arxiv query. |
+| `download` | Download data from sources. |
 | `preprocess` | Process data into Prodigy format. |
 | `annotate` | Annotate prodigy with custom recipe. |
 | `db_out` | Export Prodigy annotations to a jsonl file. |
 | `train` | Train a spaCy textcat model with Prodigy annotations. |
+| `build` | Builds your frontpage. |
+
+### ⏭ Workflows
+
+The following workflows are defined by the project. They
+can be executed using [`spacy project run [name]`](https://spacy.io/api/cli#project-run)
+and will run the specified commands in order. Commands are only re-run if their
+inputs have changed.
+
+| Workflow | Steps |
+| --- | --- |
+| `fetch` | `download` &rarr; `preprocess` |
 
 ### 🗂 Assets
 

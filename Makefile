@@ -8,3 +8,6 @@ clean:
 	python -m isort */*.py
 	python -m black */*.py
 	rm -rf **/__pycache__
+
+docs:
+	python -m spacy project document > README.md
