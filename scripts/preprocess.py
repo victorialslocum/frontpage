@@ -1,16 +1,17 @@
+from pathlib import Path
+
 import srsly
+import typer
+from schemas import Content
 
-# import raw arxiv data
-raw_dataset = srsly.read_jsonl("assets/raw/raw_data.jsonl")
 
-def process(paper):
-    return {
-        "text": f"{paper['title']}\n{paper['summary']}",
-        "title": paper["title"],
-        "summary": paper["summary"],
-        "meta": {"link": paper["link"]},
-    }
+def main(folder: Path, out: Path):
+    """Concat all files and double-check the schema."""
+    full_data = []
+    for file in folder.glob("*.jsonl"):
+        full_data.extend([dict(Content(**item)) for item in srsly.read_jsonl(file)])
+    srsly.write_jsonl(out, full_data)
 
-# write data
-processed_data = [process(p) for p in raw_dataset]
-srsly.write_jsonl("assets/data.jsonl", processed_data)
+
+if __name__ == "__main__":
+    typer.run(main)

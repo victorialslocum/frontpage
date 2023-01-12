@@ -1,9 +1,9 @@
-title: "Databot: An automatic recommender for papers about new datasets"
-description: "Using Prodigy, spaCy, and arxiv to automatically detect new papers about datasets."
+title: "FrontPage: An Prodigy project to make a personal front-page."
+description: "Using Prodigy, spaCy, and friends ... this project allows you to make your own frontpage of the internet."
 
 # Variables can be referenced across the project.yml using ${vars.var_name}
 vars:
-  dataset: "dataset_papers"
+  annot_stream: "raw/content.jsonl"
   model: "en_core_web_sm"
 
 # These are the directories that the project needs. The project CLI will make
@@ -21,36 +21,47 @@ assets:
 # via "spacy project run [command] [path]". The help message is optional and
 # shown when executing "spacy project run [optional command] [path] --help".
 commands:
-  - name: "data"
-    help: "Create the dataset from arxiv query."
+  - name: "download"
+    help: "Download data from sources."
     script:
-      - "python scripts/data.py"
-    outputs:
-      - "assets/raw/raw_data.jsonl"
-  - name: "data_daily"
-    help: "Create the dataset from arxiv query for a date."
-    script:
-      - "python scripts/data_daily.py"
-    outputs:
-      - "assets/raw/raw_data.jsonl"
+      - python scripts/download_reddit.py --subreddit python --tag python
+      - python scripts/download_reddit.py --subreddit MachineLearning --tag ml
+      - python scripts/download_reddit.py --subreddit deeplearning --tag ml
+      - python scripts/download_reddit.py --subreddit LanguageTechnology --tag ml
+      - python scripts/download_arxiv.py --query 'ti:dataset OR ti:corpus OR ti:database OR abs:"a new dataset"' --tag dataset
+      - python scripts/download_hackernews.py
+    deps:
+      - scripts/download_reddit.py
+      - scripts/download_arxiv.py
+      - scripts/download_hackernews.py
   - name: "preprocess"
     help: "Process data into Prodigy format."
     script:
-      - "python scripts/preprocess.py"
+      - python scripts/preprocess.py assets ${vars.annot_stream}
+    deps:
+      - assets
     outputs:
-      - "assets/data.jsonl"
+      - ${vars.annot_stream}
   - name: "annotate"
     help: "Annotate prodigy with custom recipe."
     script:
-      - "prodigy textcat_arxiv ${vars.dataset} assets/data.jsonl ${vars.model} assets/patterns.json -F recipes/textcat_arxiv.py"
+      - "prodigy textcat_arxiv arxiv_about_dataset ${vars.annot_stream} ${vars.model} patterns/dataset.json -F recipes/textcat_arxiv.py"
     deps:
-      - "assets/data.jsonl"
+      - ${vars.annot_stream}
   - name: "db_out"
     help: "Export Prodigy annotations to a jsonl file."
     script:
-      - "prodigy db_out ${vars.dataset} data/"
+      - "prodigy db_out arxiv_about_dataset data/"
   - name: "train"
     help: "Train a spaCy textcat model with Prodigy annotations."
     script:
-      - "python -m prodigy train --textcat-multilabel ${vars.dataset} training/"
+      - "python -m prodigy train --textcat-multilabel arxiv_about_dataset training/"
+  - name: "build"
+    help: "Builds your frontpage."
+    script:
+      - "python scripts/build_frontpage.py raw/content.jsonl > index.html"
     
+workflows:
+  fetch:
+    - download
+    - preprocess
