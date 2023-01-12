@@ -8,7 +8,7 @@ vars:
 
 # These are the directories that the project needs. The project CLI will make
 # sure that they always exist.
-directories: ["scripts", "assets", "data", "training"]
+directories: ["scripts", "assets", "data", "training", "raw"]
 
 # Assets that should be downloaded or available in the directory. You can replace
 # this with your own input data.

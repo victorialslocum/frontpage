@@ -14,6 +14,7 @@ def main(
     keep_reddit: bool = typer.Option(
         False, is_flag=True, help="Keep links that are hosted by reddit."
     ),
+    path_out: Path = typer.Option("assets", help="Path to write file to.")
 ):
     """Fetch data from reddit."""
     subreddit = subreddit.lower()
@@ -43,9 +44,9 @@ def main(
                 )
                 dataset.append(dict(content_item))
 
-    out_path = Path("assets") / f"reddit-{subreddit}-{dt.date.today()}.jsonl"
-    srsly.write_jsonl(out_path, dataset)
-    console.log(f"Written {len(dataset)} results in [bold]{out_path}.")
+    write_path = Path(path_out) / f"reddit-{subreddit}-{dt.date.today()}.jsonl"
+    srsly.write_jsonlw(write_path, dataset)
+    console.log(f"Written {len(dataset)} results in [bold]{write_path}.")
 
 
 if __name__ == "__main__":
