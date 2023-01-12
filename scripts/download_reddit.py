@@ -14,7 +14,7 @@ def main(
     keep_reddit: bool = typer.Option(
         False, is_flag=True, help="Keep links that are hosted by reddit."
     ),
-    path_out: Path = typer.Option("assets", help="Path to write file to.")
+    path_out: Path = typer.Option("assets", help="Path to write file to."),
 ):
     """Fetch data from reddit."""
     subreddit = subreddit.lower()
