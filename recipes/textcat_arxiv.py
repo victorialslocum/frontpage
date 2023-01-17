@@ -46,7 +46,7 @@ def textcat_arxiv(dataset, examples, model, patterns):
     # delete html key in output data and add label key
     def before_db(examples):
         for ex in examples:
-            ex["label"] = "python_package"
+            ex["label"] = "dataset"
             ex["text"] = ex["title"] + "\n" + ex["description"]
             del ex["html"]
             del ex["title"]
