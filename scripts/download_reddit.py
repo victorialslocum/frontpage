@@ -15,6 +15,7 @@ def main(
         False, is_flag=True, help="Keep links that are hosted by reddit."
     ),
     path_out: Path = typer.Option("assets", help="Path to write file to."),
+    max_age: int = typer.Option(3, help="Max age of a result in days."),
 ):
     """Fetch data from reddit."""
     subreddit = subreddit.lower()
@@ -31,7 +32,7 @@ def main(
         if not url.startswith("http"):
             keep = False
         if keep:
-            if created > dt.datetime.now() - dt.timedelta(days=2):
+            if created > dt.datetime.now() - dt.timedelta(days=max_age):
                 content_item = Content(
                     title=child["data"]["title"],
                     description=child["data"]["selftext"],
@@ -45,7 +46,7 @@ def main(
                 dataset.append(dict(content_item))
 
     write_path = Path(path_out) / f"reddit-{subreddit}-{dt.date.today()}.jsonl"
-    srsly.write_jsonlw(write_path, dataset)
+    srsly.write_jsonl(write_path, dataset)
     console.log(f"Written {len(dataset)} results in [bold]{write_path}.")
 
 

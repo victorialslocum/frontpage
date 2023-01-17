@@ -3,8 +3,12 @@ description: "Using Prodigy, spaCy, and friends ... this project allows you to m
 
 # Variables can be referenced across the project.yml using ${vars.var_name}
 vars:
-  annot_stream: "raw/content.jsonl"
+  annot_stream: "raw/python_package.jsonl"
   model: "en_core_web_sm"
+  database: "python_package"
+  patterns: "patterns/python_package.json"
+  textcat_model: "training/package"
+  recipe: "recipes/textcat_package.py"
 
 # These are the directories that the project needs. The project CLI will make
 # sure that they always exist.
@@ -37,7 +41,7 @@ commands:
   - name: "preprocess"
     help: "Process data into Prodigy format."
     script:
-      - python scripts/preprocess.py assets ${vars.annot_stream}
+      - python scripts/preprocess.py assets/ ${vars.annot_stream}
     deps:
       - assets
     outputs:
@@ -45,21 +49,25 @@ commands:
   - name: "annotate"
     help: "Annotate prodigy with custom recipe."
     script:
-      - "prodigy textcat_arxiv arxiv_about_dataset ${vars.annot_stream} ${vars.model} patterns/dataset.json -F recipes/textcat_arxiv.py"
+      - "prodigy textcat_arxiv ${vars.database} ${vars.annot_stream} ${vars.model} ${vars.patterns} -F ${vars.recipe}"
     deps:
       - ${vars.annot_stream}
   - name: "db_out"
     help: "Export Prodigy annotations to a jsonl file."
     script:
-      - "prodigy db_out arxiv_about_dataset data/"
+      - "prodigy db_out ${vars.database} data/"
   - name: "train"
     help: "Train a spaCy textcat model with Prodigy annotations."
     script:
-      - "python -m prodigy train --textcat-multilabel arxiv_about_dataset training/"
+      - "python -m prodigy train --textcat-multilabel ${vars.database} ${vars.textcat_model}"
   - name: "build"
     help: "Builds your frontpage."
     script:
       - "python scripts/build_frontpage.py raw/content.jsonl > index.html"
+  - name: "evaluate"
+    help: "evaluate a spaCy model and/or a matcher"
+    script:
+      - "python scripts/evaluate.py ${vars.database} ${vars.patterns} ${vars.textcat_model}"
     
 workflows:
   fetch:

@@ -7,19 +7,19 @@ from spacy.matcher import Matcher
 
 
 @prodigy.recipe(
-    "textcat_arxiv",
+    "textcat_package",
     dataset=("Dataset to save answers to", "positional", None, str),
     examples=("Examples to load from disk", "positional", None, str),
     model=("spaCy model to load", "positional", None, str),
     patterns=("Patterns to match from json file", "positional", None, str),
 )
-def textcat_arxiv(dataset, examples, model, patterns):
+def textcat_package(dataset, examples, model, patterns):
     # import spaCy and initialize matcher
     nlp = spacy.load(model)
     matcher = Matcher(nlp.vocab)
 
     # set up stream and set hashes just on text key
-    stream = (item for item in JSONL(examples) if "arxiv" in item["tags"])
+    stream = (item for item in JSONL(examples))
     stream = (set_hashes(ex, input_keys=("text")) for ex in stream)
 
     # add matcher pattern to underline
