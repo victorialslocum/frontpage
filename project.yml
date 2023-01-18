@@ -3,12 +3,8 @@ description: "Using Prodigy, spaCy, and friends ... this project allows you to m
 
 # Variables can be referenced across the project.yml using ${vars.var_name}
 vars:
-  annot_stream: "raw/python_package.jsonl"
+  annot_stream: "raw/content.jsonl"
   model: "en_core_web_sm"
-  database: "python_package"
-  patterns: "patterns/python_package.json"
-  textcat_model: "training/package"
-  recipe: "recipes/textcat_package.py"
 
 # These are the directories that the project needs. The project CLI will make
 # sure that they always exist.
@@ -49,17 +45,17 @@ commands:
   - name: "annotate"
     help: "Annotate prodigy with custom recipe."
     script:
-      - "prodigy textcat_arxiv ${vars.database} ${vars.annot_stream} ${vars.model} ${vars.patterns} -F ${vars.recipe}"
+      - "prodigy textcat_topic dataset_papers ${vars.annot_stream} en_core_web_sm patterns/dataset.json dataset -F recipes/textcat_topic.py"
     deps:
       - ${vars.annot_stream}
   - name: "db_out"
     help: "Export Prodigy annotations to a jsonl file."
     script:
-      - "prodigy db_out ${vars.database} data/"
+      - "prodigy db_out dataset_papers data/"
   - name: "train"
     help: "Train a spaCy textcat model with Prodigy annotations."
     script:
-      - "python -m prodigy train --textcat-multilabel ${vars.database} ${vars.textcat_model}"
+      - "python -m prodigy train --textcat-multilabel dataset_papers textcat_topic"
   - name: "build"
     help: "Builds your frontpage."
     script:
@@ -67,7 +63,7 @@ commands:
   - name: "evaluate"
     help: "evaluate a spaCy model and/or a matcher"
     script:
-      - "python scripts/evaluate.py ${vars.database} ${vars.patterns} ${vars.textcat_model}"
+      - "python scripts/evaluate.py dataset_papers patterns/dataset.json training/"
     
 workflows:
   fetch:

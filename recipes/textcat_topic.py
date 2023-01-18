@@ -7,24 +7,25 @@ from spacy.matcher import Matcher
 
 
 @prodigy.recipe(
-    "textcat_package",
+    "textcat_topic",
     dataset=("Dataset to save answers to", "positional", None, str),
     examples=("Examples to load from disk", "positional", None, str),
     model=("spaCy model to load", "positional", None, str),
     patterns=("Patterns to match from json file", "positional", None, str),
+    tag=("Tag to filter", "positional", None, str)
 )
-def textcat_package(dataset, examples, model, patterns):
+def textcat_topic(dataset, examples, model, patterns, tag):
     # import spaCy and initialize matcher
     nlp = spacy.load(model)
     matcher = Matcher(nlp.vocab)
 
     # set up stream and set hashes just on text key
-    stream = (item for item in JSONL(examples))
-    stream = (set_hashes(ex, input_keys=("text")) for ex in stream)
+    stream = (item for item in JSONL(examples) if tag in item["tags"])
+    stream = (set_hashes(ex, input_keys=("title")) for ex in stream)
 
     # add matcher pattern to underline
     patterns = srsly.read_json(patterns)
-    matcher.add("Dataset", patterns)
+    matcher.add(tag, patterns)
 
     # Render title and description in HTML format for Prodigy as a generator object
     def add_html(examples):
@@ -40,13 +41,13 @@ def textcat_package(dataset, examples, model, patterns):
                 )
             ex[
                 "html"
-            ] = f"<h3>{ex['title']}</h3><p><font size='3'>{summary_highlight}</font></p>"
+            ] = f"<h3>{ex['title']}</h3><p><font size='3'>{summary_highlight}</font></p><a href='{ex['link']}'>LINK</a>"
             yield ex
 
     # delete html key in output data and add label key
     def before_db(examples):
         for ex in examples:
-            ex["label"] = "python_package"
+            ex["label"] = tag
             ex["text"] = ex["title"] + "\n" + ex["description"]
             del ex["html"]
             del ex["title"]
