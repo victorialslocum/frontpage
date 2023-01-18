@@ -45,7 +45,7 @@ commands:
   - name: "annotate"
     help: "Annotate prodigy with custom recipe."
     script:
-      - "prodigy textcat_topic dataset_papers ${vars.annot_stream} en_core_web_sm patterns/dataset.json dataset -F recipes/textcat_topic.py"
+      - "prodigy textcat_topic dataset_papers ${vars.annot_stream} en_core_web_sm patterns/dataset.jsonl dataset,arxiv dataset -F recipes/textcat_topic.py"
     deps:
       - ${vars.annot_stream}
   - name: "db_out"
@@ -63,7 +63,7 @@ commands:
   - name: "evaluate"
     help: "evaluate a spaCy model and/or a matcher"
     script:
-      - "python scripts/evaluate.py dataset_papers patterns/dataset.json training/"
+      - "python scripts/evaluate.py dataset_papers patterns/dataset.jsonl training/"
     
 workflows:
   fetch:
