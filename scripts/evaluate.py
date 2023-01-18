@@ -9,7 +9,7 @@ from rich.console import Console
 from rich.table import Table
 
 def main(
-    database: str = typer.Argument(..., help="Name of the Prodigy database"),
+    dataset: str = typer.Argument(..., help="Name of the Prodigy dataset"),
     patterns: Path = typer.Argument(..., help="Path to patterns file"),
     model: Path = typer.Argument(..., help="Path to spaCy model")
 ):
@@ -18,13 +18,14 @@ def main(
     nlp = spacy.load("en_core_web_sm")
     db = connect()
 
-    dataset = db.get_dataset_examples(database)
+    dataset = db.get_dataset_examples(dataset)
 
-    name = str(database)
+    label = dataset[0]['label']
+    results = {}
 
     matcher = Matcher(nlp.vocab)
     patterns = srsly.read_json(patterns)
-    matcher.add(name, patterns)
+    matcher.add(label, patterns)
 
     def matcher_evaluate(text):
         doc = nlp(text)
@@ -33,7 +34,8 @@ def main(
             return True
         return False
 
-    matcher_eval = Counter([(matcher_evaluate(d["text"]), d["answer"]) for d in dataset]).items()
+    matcher_results = Counter([(matcher_evaluate(d["text"]), d["answer"]) for d in dataset]).items()
+    results["matcher"] = matcher_results
 
     model_path = Path(model) / "model-best"
     textcat_model = spacy.load(model_path)
@@ -41,13 +43,14 @@ def main(
     def model_evaluate(text):
         doc = textcat_model(nlp(text))
         prediction = doc.cats
-        if prediction[name] > 0.5:
+        if prediction[label] > 0.5:
             return True
         return False
 
-    model_eval = Counter([(model_evaluate(d["text"]), d["answer"]) for d in dataset]).items()
+    model_results = Counter([(model_evaluate(d["text"]), d["answer"]) for d in dataset]).items()
+    results["model"] = model_results
 
-    table = Table("Type", "False, reject","True, accept", "False, accept", "True, reject", "Accuracy (%)", title="Values")
+    table = Table("Name", "False, negative","True, positive", "False, positive", "True, negative", "Accuracy (%)", title="Values")
 
     def get_values(counter):
         columns = [(False, 'reject'), (True, 'accept'), (False, 'accept'), (True, 'reject')]
@@ -57,12 +60,9 @@ def main(
         acc = round(((rows[1] + rows[2]) / sum(rows)) * 100, 2)
         return rows, acc
 
-    matcher_rows, matcher_acc = get_values(matcher_eval)
-    model_rows, model_acc = get_values(model_eval)
-
-
-    table.add_row("Matcher", str(matcher_rows[1]),  str(matcher_rows[2]),  str(matcher_rows[0]),  str(matcher_rows[3]), str(matcher_acc))
-    table.add_row("Model", str(model_rows[1]),  str(model_rows[2]),  str(model_rows[0]),  str(model_rows[3]), str(model_acc))
+    for key in results:
+        rows, acc = get_values(results[key])
+        table.add_row(key, str(rows[1]), str(rows[2]), str(rows[0]), str(rows[3]), str(acc))
 
     console = Console()
     console.print(table)
