@@ -52,8 +52,20 @@ commands:
     help: "Export Prodigy annotations to a jsonl file."
     script:
       - "prodigy db_out dataset_papers data/"
-  - name: "train"
+  - name: "data_to_spacy"
+    help: "Export Prodigy annotations to spacy format."
+    script:
+      - "prodigy data-to-spacy data/dataset/ --textcat-multilabel dataset_papers --eval-split 0.2"
+  - name: "spacy_train"
     help: "Train a spaCy textcat model with Prodigy annotations."
+    script:
+      - "python -m spacy train data/dataset/config.cfg --output training/dataset/ --paths.train data/dataset/train.spacy --paths.dev data/dataset/dev.spacy"
+    deps:
+      - "data/dataset/train.spacy"
+      - "data/dataset/dev.spacy"
+      - "data/dataset/config.cfg"
+  - name: "prodigy_train"
+    help: "Train a textcat model with Prodigy annotations."
     script:
       - "python -m prodigy train --textcat-multilabel dataset_papers textcat_topic"
   - name: "build"
@@ -63,9 +75,12 @@ commands:
   - name: "evaluate"
     help: "evaluate a spaCy model and/or a matcher"
     script:
-      - "python scripts/evaluate.py dataset_papers patterns/dataset.jsonl training/"
+      - "python scripts/evaluate.py dataset_papers patterns/dataset.jsonl training/dataset/"
     
 workflows:
   fetch:
     - download
     - preprocess
+  train:
+    - data_to_spacy
+    - spacy_train
