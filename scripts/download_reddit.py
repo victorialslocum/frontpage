@@ -15,7 +15,7 @@ def main(
         False, is_flag=True, help="Keep links that are hosted by reddit."
     ),
     path_out: Path = typer.Option("assets", help="Path to write file to."),
-    max_age: int = typer.Option(3, help="Max age of a result in days."),
+    max_age: int = typer.Option(3, help="Max age of a result in days. "),
 ):
     """Fetch data from reddit."""
     subreddit = subreddit.lower()
