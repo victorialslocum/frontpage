@@ -11,15 +11,17 @@ from prodigy.components.loaders import JSONL
     examples=("Examples to load from disk", "positional", None, str),
     model=("spaCy model to load", "positional", None, str),
     patterns=("Patterns to match from json file", "positional", None, str),
-    tags=("Tags to filter items from the dataset", "positional", None, str),
+    tags=(
+        "Comma-separated list of tags to filter items from the dataset",
+        "positional",
+        None,
+        lambda d: d.split(","),
+    ),
     label=("Label for annotated data", "positional", None, str),
 )
 def textcat_topic(dataset, examples, model, patterns, tags, label):
     # import spaCy and initialize matcher
     nlp = spacy.load(model)
-
-    # create list of tags
-    tags = [tag for tag in tags.split(",")]
 
     # set up stream and set hashes just on text key
     stream = (
