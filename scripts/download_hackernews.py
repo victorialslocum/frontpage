@@ -22,8 +22,9 @@ async def fetch_urls(urls):
 
 
 def main(
-    path_out: Path = typer.Argument("assets", help="Path to write file into."),
+    path_out: Path = typer.Option("assets", help="Path to write file into."),
     n: int = typer.Option(100, help="Only looks at the top `n` stories."),
+    max_age: int = typer.Option(3, help="Max age of a result in days."),
 ):
     """Fetch data from hackernews."""
     console = Console(no_color=True)
@@ -38,10 +39,10 @@ def main(
     for result in responses[:n]:
         if "url" in result.keys():
             created = dt.datetime.fromtimestamp(result["time"])
-            if created > dt.datetime.now() - dt.timedelta(days=2):
+            if created > dt.datetime.now() - dt.timedelta(days=max_age):
                 content_item = Content(
                     title=result["title"],
-                    description="",
+                    description=result["url"],
                     link=result["url"],
                     created=created.strftime("%Y-%m-%d"),
                     tags=["hackernews"],
