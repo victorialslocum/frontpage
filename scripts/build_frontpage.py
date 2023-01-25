@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import srsly
 import typer
 from jinja2 import Environment
@@ -25,7 +27,12 @@ template = env.from_string(
 )
 
 
-def main(content):
+def main(
+    # fmt: off
+    content: Path = typer.Argument(..., help="A content jsonl file"), 
+    file_out: Path = typer.Argument(..., "Output html file that contains the html frontpage.")
+    # fmt: on
+):
     content_stream = srsly.read_jsonl(content)
 
     def make_elem(item):
@@ -35,7 +42,8 @@ def main(content):
         return f"{result}</a>"
 
     elems = "<br>".join([make_elem(e) for e in content_stream])
-    print(template.render(links=elems))
+    rendered = template.render(links=elems)
+    Path(file_out).write_text(rendered)
 
 
 if __name__ == "__main__":
