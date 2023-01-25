@@ -27,7 +27,12 @@ template = env.from_string(
 )
 
 
-def main(content, file_out):
+def main(
+    # fmt: off
+    content: Path = typer.Argument(..., help="A content jsonl file"), 
+    file_out: Path = typer.Argument(..., "Output html file that contains the html frontpage.")
+    # fmt: on
+):
     content_stream = srsly.read_jsonl(content)
 
     def make_elem(item):
