@@ -48,12 +48,12 @@ def textcat_topic(dataset, examples, model, patterns, tags, label):
             ex[
                 "html"
             ] = f"<h3>{ex['title']}</h3><p><font size='3'>{summary_highlight}</font></p><a href='{ex['link']}'>LINK</a>"
+            ex["label"] = label
             yield ex
 
     # delete html key in output data and add label key
     def before_db(examples):
         for ex in examples:
-            ex["label"] = label
             ex["text"] = ex["title"] + "\n" + ex["description"]
             del ex["html"]
             del ex["title"]
@@ -64,5 +64,5 @@ def textcat_topic(dataset, examples, model, patterns, tags, label):
         "before_db": before_db,
         "dataset": dataset,
         "stream": add_html(stream),
-        "view_id": "html",
+        "view_id": "classification",
     }
