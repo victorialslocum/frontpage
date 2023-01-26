@@ -28,14 +28,18 @@ commands:
       - python scripts/download_reddit.py --subreddit MachineLearning --tag ml
       - python scripts/download_reddit.py --subreddit deeplearning --tag ml
       - python scripts/download_reddit.py --subreddit LanguageTechnology --tag ml
+      - python scripts/download_reddit.py --subreddit PromptDesign --tag prompteng
       - python scripts/download_arxiv.py --query 'ti:dataset OR ti:corpus OR ti:database OR abs:"a new dataset"' --tag dataset
-      - python scripts/download_arxiv.py --query 'abs:"machine learning trust" OR abs:"machine learning security"' --tag ml,security
-      - python scripts/download_arxiv.py --query 'abs:"machine learning video games"' --tag ml,gaming
+      - python scripts/download_arxiv.py --query 'machine AND learning AND security OR machine AND learning AND secure' --tag ml,security --n 100
+      - python scripts/download_arxiv.py --query 'machine AND learning AND video AND games OR machine AND learning AND gaming' --tag ml,gaming --n 100
+      - python scripts/download_arxiv.py --query 'abs:"chatgpt"' --tag ml,prompteng --n 100
+      - python scripts/download_arxiv.py --query 'prompt AND engineering' --tag ml,prompteng --n 100
       - python scripts/download_hackernews.py
     deps:
       - scripts/download_reddit.py
       - scripts/download_arxiv.py
       - scripts/download_hackernews.py
+      - scripts/util.py
   - name: "preprocess"
     help: "Process data into Prodigy format."
     script:
