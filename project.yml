@@ -48,13 +48,25 @@ commands:
       - assets
     outputs:
       - ${vars.annot_stream}
-  - name: "annotate"
-    help: "Annotate prodigy with custom recipe."
+  - name: "annotate-dataset"
+    help: "Annotate if content is about a new dataset."
     script:
       - "prodigy textcat_topic dataset_papers ${vars.annot_stream} en_core_web_sm patterns/dataset.jsonl dataset,arxiv dataset -F recipes/textcat_topic.py"
     deps:
       - ${vars.annot_stream}
-  - name: "db_out"
+  - name: "annotate-security-breach"
+    help: "Annotate if content is about a security breach."
+    script:
+      - "prodigy textcat_topic security_breach ${vars.annot_stream} en_core_web_sm patterns/security-breach.jsonl 'hackernews' breach -F recipes/textcat_topic.py"
+    deps:
+      - ${vars.annot_stream}
+  - name: "annotate-click"
+    help: "Annotate if content is click worth."
+    script:
+      - "prodigy textcat_topic click_worthy ${vars.annot_stream} en_core_web_sm patterns/python-package.jsonl 'reddit' clickable -F recipes/textcat_topic.py"
+    deps:
+      - ${vars.annot_stream}
+  - name: "db-out"
     help: "Export Prodigy annotations to a jsonl file."
     script:
       - "prodigy db_out dataset_papers data/"
@@ -79,7 +91,7 @@ commands:
   - name: "prodigy-train"
     help: "Train a textcat model with Prodigy annotations."
     script:
-      - "python -m prodigy train --textcat-multilabel dataset_papers data/dataset"
+      - "python -m prodigy train-curve --textcat-multilabel dataset_papers,security_breach,click_worthy --show-plot --n-samples 5"
   - name: "content"
     help: "Generates the content stream for the frontpage"
     script:

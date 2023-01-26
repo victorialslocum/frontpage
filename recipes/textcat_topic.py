@@ -7,17 +7,14 @@ from prodigy.components.loaders import JSONL
 
 @prodigy.recipe(
     "textcat_topic",
+    # fmt: off
     dataset=("Dataset to save answers to", "positional", None, str),
     examples=("Examples to load from disk", "positional", None, str),
     model=("spaCy model to load", "positional", None, str),
     patterns=("Patterns to match from json file", "positional", None, str),
-    tags=(
-        "Comma-separated list of tags to filter items from the dataset",
-        "positional",
-        None,
-        lambda d: d.split(","),
-    ),
+    tags=("Comma-separated list of tags to filter items from the dataset", "positional", None, lambda d: d.split(",")),
     label=("Label for annotated data", "positional", None, str),
+    # fmt: on
 )
 def textcat_topic(dataset, examples, model, patterns, tags, label):
     # import spaCy and initialize matcher

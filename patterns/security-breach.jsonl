@@ -1,0 +1,2 @@
+{"label": "dataset", "pattern": [{"LOWER": "breach"}]}
+{"label": "dataset", "pattern": [{"LOWER": "passwords"}]}
