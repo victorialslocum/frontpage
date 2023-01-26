@@ -1,48 +1,37 @@
 from pathlib import Path
+from typing import Dict, Any
 
 import srsly
 import typer
-from jinja2 import Environment
+import jinja2
 
-env = Environment()
-
-template = env.from_string(
-    """
-<!doctype html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-    <div class="relative mx-auto h-full max-w-prose text-md">
-    <h1 class="text-6xl pt-4 font-bold"><span class="underline">Your</span> FrontPage</h1>
-    <br>
-    {{links}}
-    </div>
-</body>
-</html>
-"""
-)
+def content_in_section(content: Dict[str, Any], section: Dict[str, Any]) -> bool:
+    if all([content_tag in content['tags'] for content_tag in section['tags']]):
+        if all([content_cls in content['classes'] for content_cls in section['classes']]):
+            return True
+    return False
 
 
 def main(
     # fmt: off
-    content: Path = typer.Argument(..., help="A content jsonl file"), 
-    file_out: Path = typer.Argument(..., "Output html file that contains the html frontpage.")
+    content_path: Path = typer.Argument(..., help="A content jsonl file"), 
+    config_path: Path = typer.Argument(..., help="A config file"),
+    template_path: Path = typer.Argument(..., help="A jinja2 tempalte"),
+    file_out: Path = typer.Argument(..., help="Output html file that contains the html frontpage.")
     # fmt: on
 ):
-    content_stream = srsly.read_jsonl(content)
-
-    def make_elem(item):
-        result = f"""<a class="hover:underline decoration-2 decoration-green-600" href='{item['link']}'>{item['title']}"""
-        for tag in item["tags"]:
-            result += f"<span class='px-2 mx-2 bg-gray-200'>{tag}</span>"
-        return f"{result}</a>"
-
-    elems = "<br>".join([make_elem(e) for e in content_stream])
-    rendered = template.render(links=elems)
+    content_stream = srsly.read_jsonl(content_path)
+    config = srsly.read_yaml(config_path)
+    template = jinja2.Template(template_path.read_text())
+    sections = config['sections']
+    for content in content_stream:
+        for section in sections:
+            if "content" not in section:
+                section["content"] = []
+            if content_in_section(content=content, section=section):
+                section["content"].append(content)
+    
+    rendered = template.render(name=config['name'], description=config['description'], sections=sections)
     Path(file_out).write_text(rendered)
 
 

@@ -1,0 +1,9 @@
+name: "Vincent"
+description: "Just a simple frontpage of your internet."
+sections:
+  - name: "Datasets on Arxiv"
+    tags: ["arxiv", "dataset"]
+    classes: ["dataset"]
+  - name: "Datasets on Hackernews"
+    tags: ["hackernews"]
+    classes: ["dataset"]

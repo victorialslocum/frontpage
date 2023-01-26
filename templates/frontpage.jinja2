@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="relative mx-auto h-full max-w-prose text-md">
+    <h1 class="text-6xl pt-4 font-bold"><span class="underline">Your</span> FrontPage</h1>
+    <br>
+    <p>This frontpage is constructed especially for {{name}}.</p>
+    <br>
+    {%- for section in sections -%}
+    <h2 class="text-2xl pt-4 font-bold">{{section['name']}}
+      {%- for tag in section['tags'] -%}
+        <span class='px-2 mx-1 bg-yellow-200 text-xs'>tag:{{tag}}</span>
+      {%- endfor -%}
+      {%- for cls in section['classes'] -%}
+        <span class='px-2 mx-1 bg-blue-200 text-xs'>cls:{{cls}}</span>
+      {%- endfor -%}
+    </h2>
+    {%- for content in section['content'] -%}
+      <a class="hover:underline decoration-2 decoration-green-600 text-gray-800 text-sm" href='{{content['link']}}'>{{content['title']}}</a>
+      <br>
+    {%- endfor -%}  
+    {%- endfor -%}
+    {{links}}
+    </div>
+</body>
+</html>
