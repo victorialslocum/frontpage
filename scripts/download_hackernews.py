@@ -8,6 +8,7 @@ import srsly
 import typer
 from rich.console import Console
 from schemas import Content
+from util import download_path
 
 
 async def fetch_url(url, client):
@@ -53,7 +54,7 @@ def main(
                 dataset.append(dict(content_item))
 
     # Write file
-    write_path = Path(path_out) / f"hackernews-{date.today()}.jsonl"
+    write_path = download_path(path_out, "hackernews")
     srsly.write_jsonl(write_path, dataset, append=True, append_new_line=False)
     console.log(f"Written {len(dataset)} results into [bold]{write_path}.")
 

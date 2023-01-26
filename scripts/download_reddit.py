@@ -6,6 +6,7 @@ import srsly
 import typer
 from rich.console import Console
 from schemas import Content
+from util import download_path
 
 
 def main(
@@ -45,7 +46,7 @@ def main(
                 )
                 dataset.append(dict(content_item))
 
-    write_path = Path(path_out) / f"reddit-{subreddit}-{dt.date.today()}.jsonl"
+    write_path = download_path(path_out, "reddit", subreddit)
     srsly.write_jsonl(write_path, dataset)
     console.log(f"Written {len(dataset)} results in [bold]{write_path}.")
 
