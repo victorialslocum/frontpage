@@ -23,9 +23,11 @@ async def fetch_urls(urls):
 
 
 def main(
+    # fmt: off
     path_out: Path = typer.Option("assets", help="Path to write file into."),
     n: int = typer.Option(100, help="Only looks at the top `n` stories."),
     max_age: int = typer.Option(3, help="Max age of a result in days."),
+    # fmt: on
 ):
     """Fetch data from hackernews."""
     console = Console(no_color=True)

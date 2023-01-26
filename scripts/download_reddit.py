@@ -10,13 +10,13 @@ from util import download_path
 
 
 def main(
+    # fmt: off
     subreddit: str = typer.Option(..., help="Name of the subreddit to scrape."),
     tag: str = typer.Option(..., help="Comma seperated tags to add to data."),
-    keep_reddit: bool = typer.Option(
-        False, is_flag=True, help="Keep links that are hosted by reddit."
-    ),
+    keep_reddit: bool = typer.Option(False, is_flag=True, help="Keep links that are hosted by reddit."),
     path_out: Path = typer.Option("assets", help="Path to write file to."),
     max_age: int = typer.Option(3, help="Max age of a result in days. "),
+    # fmt: on
 ):
     """Fetch data from reddit."""
     subreddit = subreddit.lower()

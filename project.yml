@@ -29,6 +29,8 @@ commands:
       - python scripts/download_reddit.py --subreddit deeplearning --tag ml
       - python scripts/download_reddit.py --subreddit LanguageTechnology --tag ml
       - python scripts/download_arxiv.py --query 'ti:dataset OR ti:corpus OR ti:database OR abs:"a new dataset"' --tag dataset
+      - python scripts/download_arxiv.py --query 'abs:"machine learning trust" OR abs:"machine learning security"' --tag ml,security
+      - python scripts/download_arxiv.py --query 'abs:"machine learning video games"' --tag ml,gaming
       - python scripts/download_hackernews.py
     deps:
       - scripts/download_reddit.py
