@@ -5,6 +5,7 @@ from prodigy import set_hashes
 from prodigy.components.loaders import JSONL
 from prodigy.components.sorters import prefer_high_scores
 
+
 @prodigy.recipe(
     "textcat_topic",
     # fmt: off
@@ -17,7 +18,9 @@ from prodigy.components.sorters import prefer_high_scores
     more_positives=("Label for annotated data", "flag", None, bool),
     # fmt: on
 )
-def textcat_topic(dataset, examples, model, patterns, tags, label, more_positives=False):
+def textcat_topic(
+    dataset, examples, model, patterns, tags, label, more_positives=False
+):
     # import spaCy and initialize matcher
     nlp = spacy.load(model)
 
@@ -31,7 +34,6 @@ def textcat_topic(dataset, examples, model, patterns, tags, label, more_positive
     patterns = srsly.read_jsonl(patterns)
     ruler = nlp.add_pipe("span_ruler")
     ruler.add_patterns(patterns)
-
 
     # Render title and description in HTML format for Prodigy as a generator object
     def prep_examples(examples):
@@ -48,7 +50,7 @@ def textcat_topic(dataset, examples, model, patterns, tags, label, more_positive
                 "html"
             ] = f"<h3>{ex['title']}</h3><p><font size='3'>{summary_highlight}</font></p><a href='{ex['link']}'>LINK</a>"
             ex["label"] = label
-            
+
             if more_positives:
                 yield float(len(doc.spans["ruler"])), ex
             else:
