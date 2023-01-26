@@ -3,7 +3,7 @@ import spacy
 import srsly
 from prodigy import set_hashes
 from prodigy.components.loaders import JSONL
-
+from prodigy.components.sorters import prefer_high_scores
 
 @prodigy.recipe(
     "textcat_topic",
@@ -14,9 +14,10 @@ from prodigy.components.loaders import JSONL
     patterns=("Patterns to match from json file", "positional", None, str),
     tags=("Comma-separated list of tags to filter items from the dataset", "positional", None, lambda d: d.split(",")),
     label=("Label for annotated data", "positional", None, str),
+    more_positives=("Label for annotated data", "flag", None, bool),
     # fmt: on
 )
-def textcat_topic(dataset, examples, model, patterns, tags, label):
+def textcat_topic(dataset, examples, model, patterns, tags, label, more_positives=False):
     # import spaCy and initialize matcher
     nlp = spacy.load(model)
 
@@ -31,8 +32,9 @@ def textcat_topic(dataset, examples, model, patterns, tags, label):
     ruler = nlp.add_pipe("span_ruler")
     ruler.add_patterns(patterns)
 
+
     # Render title and description in HTML format for Prodigy as a generator object
-    def add_html(examples):
+    def prep_examples(examples):
         for ex in examples:
             doc = nlp(ex["description"])
 
@@ -46,7 +48,11 @@ def textcat_topic(dataset, examples, model, patterns, tags, label):
                 "html"
             ] = f"<h3>{ex['title']}</h3><p><font size='3'>{summary_highlight}</font></p><a href='{ex['link']}'>LINK</a>"
             ex["label"] = label
-            yield ex
+            
+            if more_positives:
+                yield float(len(doc.spans["ruler"])), ex
+            else:
+                yield ex
 
     # delete html key in output data and add label key
     def before_db(examples):
@@ -57,9 +63,13 @@ def textcat_topic(dataset, examples, model, patterns, tags, label):
             del ex["description"]
         return examples
 
+    stream = prep_examples(stream)
+    if more_positives:
+        stream = prefer_high_scores(stream)
+
     return {
         "before_db": before_db,
         "dataset": dataset,
-        "stream": add_html(stream),
+        "stream": stream,
         "view_id": "classification",
     }
