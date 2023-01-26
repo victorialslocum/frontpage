@@ -9,7 +9,7 @@
     <div class="relative mx-auto h-full max-w-prose text-md">
     <h1 class="text-6xl pt-4 font-bold"><span class="underline">Your</span> FrontPage</h1>
     <br>
-    <p>This frontpage is constructed especially for {{name}}.</p>
+    <p>This frontpage is constructed especially for {{name}} on {{today}}.</p>
     <br>
     {%- for section in sections -%}
     <h2 class="text-2xl pt-4 font-bold">{{section['name']}}
@@ -21,7 +21,9 @@
       {%- endfor -%}
     </h2>
     {%- for content in section['content'] -%}
-      <a class="hover:underline decoration-2 decoration-green-600 text-gray-800 text-sm" href='{{content['link']}}'>{{content['title']}}</a>
+      <a class="hover:underline decoration-2 decoration-green-600 text-gray-800 text-sm" href='{{content['link']}}'>
+        {{content['title']}}
+      </a>
       <br>
     {%- endfor -%}  
     {%- endfor -%}

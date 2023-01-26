@@ -1,3 +1,4 @@
+import datetime as dt 
 from pathlib import Path
 from typing import Dict, Any
 
@@ -31,7 +32,7 @@ def main(
             if content_in_section(content=content, section=section):
                 section["content"].append(content)
     
-    rendered = template.render(name=config['name'], description=config['description'], sections=sections)
+    rendered = template.render(name=config['name'], description=config['description'], sections=sections, today=dt.date.today())
     Path(file_out).write_text(rendered)
 
 
