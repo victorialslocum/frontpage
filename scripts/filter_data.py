@@ -12,7 +12,7 @@ def filter_data(
     tag: str = typer.Argument(..., help="A tag to indicate which tag to only consider"), 
     expected_class: str = typer.Argument(..., help="The expected class to come out of the spaCy model"), 
     file_out: Path = typer.Argument(..., help="A file to write the filtered content into"), 
-    threshold: float = typer.Option(0.5, "The classification threshold")
+    threshold: float = typer.Option(0.5, help="The classification threshold")
     # fmt: on
 ):
     nlp = spacy.load(spacy_model)
