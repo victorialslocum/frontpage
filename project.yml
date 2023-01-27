@@ -78,16 +78,18 @@ commands:
     help: "Generates the content stream for the frontpage"
     script:
       - "rm -f frontpage.jsonl"
-      - "python scripts/filter_data.py raw/content.jsonl training/dataset/model-best arxiv dataset frontpage.jsonl"
+      - "python scripts/attach_classes.py raw/content.jsonl training/dataset/model-best frontpage.jsonl"
     deps:
-      - "scripts/filter_data.py"
+      - "scripts/attach_classes.py"
       - "raw/content.jsonl"
       - "training/dataset/model-best"
   - name: "build"
     help: "Builds your frontpage."
     script:
-      - "python scripts/build_frontpage.py frontpage.jsonl index.html"
+      - "python scripts/build_frontpage.py frontpage.jsonl config/frontpage.yaml templates/frontpage.jinja2 index.html"
     deps:
+      - "config/frontpage.yaml"
+      - "templates/frontpage.jinja2"
       - "scripts/build_frontpage.py"
       - "frontpage.jsonl"
   - name: "evaluate"
