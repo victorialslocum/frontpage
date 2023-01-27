@@ -1,1 +1,1 @@
-{"label": "python-library", "pattern": [{"LOWER": {"IN": ["python"]}}, {"LOWER": {"IN": ["package", "library"]}}]}
+{"label": "python-package", "pattern": [{"LOWER": {"IN": ["python"]}}, {"LOWER": {"IN": ["package", "library"]}}]}
