@@ -1,3 +1,4 @@
 arxiv==1.4.2
 rich==13.0.1
 httpx==0.23.3
+plotext==4.2.0

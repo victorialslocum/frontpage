@@ -10,9 +10,11 @@ from rich.table import Table
 
 
 def main(
+    # fmt: off
     dataset: str = typer.Argument(..., help="Name of the Prodigy dataset"),
     patterns: Path = typer.Argument(..., help="Path to patterns file"),
     model: Path = typer.Argument(..., help="Path to spaCy model"),
+    # fmt: on
 ):
     """Evaluate matcher and spaCy model."""
 

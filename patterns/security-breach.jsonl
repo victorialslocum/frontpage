@@ -1,0 +1,2 @@
+{"label": "security-breach", "pattern": [{"LOWER": "breach"}]}
+{"label": "security-breach", "pattern": [{"LOWER": "passwords"}]}

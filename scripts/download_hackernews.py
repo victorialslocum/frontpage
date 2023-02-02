@@ -8,6 +8,7 @@ import srsly
 import typer
 from rich.console import Console
 from schemas import Content
+from util import download_path
 
 
 async def fetch_url(url, client):
@@ -22,9 +23,11 @@ async def fetch_urls(urls):
 
 
 def main(
+    # fmt: off
     path_out: Path = typer.Option("assets", help="Path to write file into."),
     n: int = typer.Option(100, help="Only looks at the top `n` stories."),
     max_age: int = typer.Option(3, help="Max age of a result in days."),
+    # fmt: on
 ):
     """Fetch data from hackernews."""
     console = Console(no_color=True)
@@ -53,7 +56,7 @@ def main(
                 dataset.append(dict(content_item))
 
     # Write file
-    write_path = Path(path_out) / f"hackernews-{date.today()}.jsonl"
+    write_path = download_path(path_out, "hackernews")
     srsly.write_jsonl(write_path, dataset, append=True, append_new_line=False)
     console.log(f"Written {len(dataset)} results into [bold]{write_path}.")
 

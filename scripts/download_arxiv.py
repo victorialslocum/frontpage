@@ -7,17 +7,17 @@ import srsly
 import typer
 from rich.console import Console
 from schemas import Content
+from util import download_path
 
 
 def main(
+    # fmt: off
     query: str = typer.Option(..., help="Query to send to arxiv"),
     tag: str = typer.Option(..., help="Comma seperated tags to add to data."),
-    n: int = typer.Option(
-        None,
-        help="If specified, `max_age` is ignored. Refers to the number of results to save",
-    ),
+    n: int = typer.Option(None, help="If specified, `max_age` is ignored. Refers to the number of results to save",),
     path_out: Path = typer.Option("assets", help="Path to write file to."),
     max_age: int = typer.Option(3, help="Max age of a result in days."),
+    # fmt: on
 ):
     """Fetch data from arxiv."""
     console = Console(no_color=True)
@@ -52,7 +52,7 @@ def main(
             dataset.append(dict(content_item))
 
     # Write file
-    write_path = Path(path_out) / f"arxiv-{date.today()}.jsonl"
+    write_path = download_path(path_out, "arxiv")
     srsly.write_jsonl(write_path, dataset, append=True, append_new_line=False)
     console.log(f"Written {len(dataset)} results into [bold]{write_path}.")
 
