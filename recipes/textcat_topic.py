@@ -15,7 +15,7 @@ from prodigy.components.sorters import prefer_high_scores
     patterns=("Patterns to match from json file", "positional", None, str),
     tags=("Comma-separated list of tags to filter items from the dataset", "positional", None, lambda d: d.split(",")),
     label=("Label for annotated data", "positional", None, str),
-    more_positives=("Label for annotated data", "flag", None, bool),
+    more_positives=("Adapt the feed to show more pattern matched examples", "flag", None, bool),
     # fmt: on
 )
 def textcat_topic(
