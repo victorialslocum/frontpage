@@ -16,7 +16,7 @@ def main(
     tag: str = typer.Option(..., help="Comma seperated tags to add to data."),
     n: int = typer.Option(None, help="If specified, `max_age` is ignored. Refers to the number of results to save",),
     path_out: Path = typer.Option("assets", help="Path to write file to."),
-    max_age: int = typer.Option(3, help="Max age of a result in days."),
+    max_age: int = typer.Option(2, help="Max age of a result in days."),
     # fmt: on
 ):
     """Fetch data from arxiv."""
