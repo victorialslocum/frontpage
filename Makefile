@@ -1,4 +1,5 @@
 install:
+	python -m pip install --upgrade pip
 	python -m pip install -r requirements.txt
 	python -m pip install -r dev-requirements.txt
 	python -m pip install isort black
