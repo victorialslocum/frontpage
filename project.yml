@@ -84,6 +84,8 @@ commands:
     help: "Export Prodigy annotations to spacy format."
     script:
       - "prodigy data-to-spacy data/dataset/ --textcat-multilabel dataset_papers --eval-split 0.2"
+    deps:
+      - data
     outputs:
       - "data/dataset/train.spacy"
       - "data/dataset/dev.spacy"
@@ -130,9 +132,11 @@ workflows:
     - download
     - preprocess
   train:
+    - db-out
     - data-to-spacy
     - spacy-train
   new-frontpage:
+    - db-out
     - data-to-spacy
     - spacy-train
     - content

@@ -1,9 +1,14 @@
 import prodigy
 import spacy
 import srsly
+import random 
+
 from prodigy import set_hashes
 from prodigy.components.loaders import JSONL
 from prodigy.components.sorters import prefer_high_scores
+from prodigy.components.filters import filter_duplicates, filter_tasks
+from prodigy.components.db import connect
+
 
 
 @prodigy.recipe(
@@ -29,6 +34,11 @@ def textcat_topic(
         item for item in JSONL(examples) if any(tag in tags for tag in item["tags"])
     )
     stream = (set_hashes(ex, input_keys=("title")) for ex in stream)
+    stream = filter_duplicates(stream)
+    db = connect()
+    stream = filter_tasks(stream, db.get_task_hashes(dataset))
+    stream = list(stream)
+    random.shuffle(stream)
 
     # add matcher pattern to underline
     patterns = srsly.read_jsonl(patterns)
