@@ -7,10 +7,23 @@ import typer
 import jinja2
 
 def content_in_section(content: Dict[str, Any], section: Dict[str, Any]) -> bool:
-    if all([content_tag in content['tags'] for content_tag in section['tags']]):
-        if all([content_cls in content['classes'] for content_cls in section['classes']]):
-            return True
-    return False
+    # Check for matching tags, otherwise it's another section
+    if any([content_tag not in content['tags'] for content_tag in section['tags']]):
+        return False
+    section_req_class_names = [_['name'] for _ in section['classes']]
+    section_req_class_conf = {_['name']:_['threshold'] for _ in section['classes']}
+
+    # Is a relevant class missing? If so, skip.
+    for cls_name in section_req_class_names:
+        if cls_name not in content['classes']:
+            return False
+    
+    # Is a relevant class predicted with low confidence? If so, skip.
+    for pred_cls, pred_conf in content['classes'].items():
+        if pred_cls in section_req_class_names:
+            if pred_conf < section_req_class_conf[pred_cls]:
+                return False
+    return True
 
 
 def main(
@@ -31,7 +44,6 @@ def main(
                 section["content"] = []
             if content_in_section(content=content, section=section):
                 section["content"].append(content)
-    
     rendered = template.render(name=config['name'], description=config['description'], sections=sections, today=dt.date.today())
     Path(file_out).write_text(rendered)
 

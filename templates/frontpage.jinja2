@@ -4,30 +4,68 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body>
     <div class="relative mx-auto h-full max-w-prose text-md">
     <h1 class="text-6xl pt-4 font-bold"><span class="underline">Your</span> FrontPage</h1>
     <br>
     <p>This frontpage is constructed especially for {{name}} on {{today}}.</p>
+    <p class="text-sm text-gray-500 pt-2">{{description}}</p>
     <br>
     {%- for section in sections -%}
-    <h2 class="text-2xl pt-4 font-bold">{{section['name']}}
+    <h2 class="text-4xl pt-4 font-bold">{{section['name']}}
       {%- for tag in section['tags'] -%}
         <span class='px-2 mx-1 bg-yellow-200 text-xs'>tag:{{tag}}</span>
       {%- endfor -%}
       {%- for cls in section['classes'] -%}
-        <span class='px-2 mx-1 bg-blue-200 text-xs'>cls:{{cls}}</span>
+        <span class='px-2 mx-1 bg-blue-200 text-xs'>cls:{{cls['name']}}</span>
       {%- endfor -%}
     </h2>
     {%- for content in section['content'] -%}
-      <a class="hover:underline decoration-2 decoration-green-600 text-gray-800 text-sm" href='{{content['link']}}'>
-        {{content['title']}}
-      </a>
-      <br>
+    <div x-data="{open: false}">
+          <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+            {{content['title']}}
+          </span>
+          <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+            <p class="pt-2">
+            {{content['description']}}
+            </p>
+            <div class="text-center pt-2">
+              {%- for key in content['classes'] -%}
+                <span class='font-bold text-black px-2 mx-1 bg-blue-200 text-xs'>cls:{{key}}: 0.{{(content['classes'][key] * 1000) | int | round}}</span>
+              {%- endfor -%}
+            </div>
+            <p class="pb-2 pt-2 text-center">
+              <a class="underline decoration-2 text-blue-600 text-md pt-2" href='{{content["link"]}}' target="_blank">
+                link
+              </a>
+            </p>
+          </div>
+    </div>
     {%- endfor -%}  
     {%- endfor -%}
     {{links}}
     </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          renderMathInElement(document.body, {
+            // customised options
+            // • auto-render specific keys, e.g.:
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            // • rendering keys, e.g.:
+            throwOnError : false
+          });
+      });
+  </script>
 </body>
 </html>

@@ -1,9 +1,12 @@
-name: "Vincent"
-description: "Just a simple frontpage of your internet."
+name: "dataset enthousiasts"
+description: |
+  This frontpage is made by scraping arxiv and by runnig a spaCy model that detects 
+  if the abstract describes a paper about a new dataset. Many datasets will be about 
+  NLP, but typically this also has some computer vision, humanities and physics 
+  datasets in the mix too."
 sections:
-  - name: "Datasets on Hackernews"
-    tags: ["hackernews"]
-    classes: ["dataset"]
   - name: "Datasets on Arxiv"
     tags: ["arxiv", "dataset"]
-    classes: ["dataset"]
+    classes:
+      - name: dataset
+        threshold: 0.5
