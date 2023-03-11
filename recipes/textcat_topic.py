@@ -37,8 +37,6 @@ def textcat_topic(
     stream = filter_duplicates(stream)
     db = connect()
     stream = filter_tasks(stream, db.get_task_hashes(dataset))
-    stream = list(stream)
-    random.shuffle(stream)
 
     # add matcher pattern to underline
     patterns = srsly.read_jsonl(patterns)
