@@ -44,6 +44,8 @@ def main(
                 section["content"] = []
             if content_in_section(content=content, section=section):
                 section["content"].append(content)
+    for section in sections:
+        section["content"] = sorted(section["content"], key=lambda d: -sum(d['classes'].values()))
     rendered = template.render(name=config['name'], description=config['description'], sections=sections, today=dt.date.today())
     Path(file_out).write_text(rendered)
 
