@@ -46,7 +46,6 @@ def main(
                 section["content"].append(content)
     for section in sections:
         section["content"] = sorted(section["content"], key=lambda d: -sum(d['classes'].values()))
-        # print([_["classes"] for _ in section["content"]])
     rendered = template.render(name=config['name'], description=config['description'], sections=sections, today=dt.date.today())
     Path(file_out).write_text(rendered)
 
