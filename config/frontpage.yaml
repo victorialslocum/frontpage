@@ -7,7 +7,13 @@ description: |
 sections:
   - name: "Datasets on Arxiv"
     tags: ["arxiv", "dataset"]
-    n: 20
+    n: 8
     classes:
       - name: dataset
+        threshold: 0.5
+  - name: "Prompt Engineering on Arxiv"
+    tags: ["arxiv", "prompteng"]
+    n: 8
+    classes:
+      - name: prompteng
         threshold: 0.5

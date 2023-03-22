@@ -35,28 +35,27 @@
             {%- for cls in section['classes'] -%}
             <span class='px-2 mx-1 bg-blue-200 text-xs'>cls:{{cls['name']}}</span>
             {%- endfor -%}
-          </div>
-        </td>
-      </tr>
-      {%- for content in section['content'] -%}
-      <tr>
-        <td class="inline-block align-text-top">
-          <span class='font-bold text-black px-2 mx-1 text-xs'>{{content['created']}}</span>
-        </td>
-        <td>
-          <div x-data="{open: false}">
-            <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-              {{content['title']}}
-            </span>
-            <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-              <div class="text-center pt-2">
-                {%- for key in content['classes'] -%}
-                <span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:{{key}}: 0.{{(content['classes'][key] * 1000) | int | round}}</span>
-                {%- endfor -%}
-              </div>
-              <p class="pt-2">
-                {{content['description']}}
-              </p>
+          </td>
+        </tr>
+        {%- for content in section['content'] -%}
+        <tr>
+          <td class="inline-block align-text-top">
+            <span class='font-bold text-black px-2 mx-1 text-xs'>{{content['created']}}</span>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                {{content['title']}}
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2">
+                  {%- for key in content['classes'] -%}
+                  <span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:{{key}}: 0.{{(content['classes'][key] * 1000) | int | round}}</span>
+                  {%- endfor -%}
+                </div>
+                <p class="pt-2">
+                  {{content['description']}}
+                </p>
               <p class="pb-2 pt-2 text-center">
                 <a class="underline decoration-2 text-green-600 text-md pt-2" href='{{content["link"]}}' target="_blank">
                   link
@@ -67,10 +66,11 @@
         </td>
       </tr>
       {%- endfor -%}  
+      {%- endfor -%}
     </tbody>
   </table>
-  {%- endfor -%}
-  {{links}}
+  <br><br>
+</div>
 </div>
 <script>
   document.addEventListener("DOMContentLoaded", function() {

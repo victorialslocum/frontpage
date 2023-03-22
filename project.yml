@@ -70,18 +70,6 @@ commands:
       - "prodigy textcat_topic prompt_papers ${vars.annot_stream} en_core_web_sm patterns/prompt.jsonl prompteng,arxiv prompteng -F recipes/textcat_topic.py"
     deps:
       - ${vars.annot_stream}
-  - name: "annotate-data-quality"
-    help: "Annotate if content is about data quality."
-    script:
-      - "prodigy textcat_topic security_breach ${vars.annot_stream} en_core_web_sm patterns/data-quality.jsonl 'data-quality' data-quality -F recipes/textcat_topic.py"
-    deps:
-      - ${vars.annot_stream}
-  - name: "annotate-click"
-    help: "Annotate if content is click worth."
-    script:
-      - "prodigy textcat_topic click_worthy ${vars.annot_stream} en_core_web_sm patterns/python-package.jsonl 'dataset,' clickable -F recipes/textcat_topic.py"
-    deps:
-      - ${vars.annot_stream}
   - name: "db-out"
     help: "Export Prodigy annotations to a jsonl file."
     script:
@@ -89,7 +77,7 @@ commands:
   - name: "data-to-spacy"
     help: "Export Prodigy annotations to spacy format."
     script:
-      - "prodigy data-to-spacy data/dataset/ --textcat-multilabel dataset_papers --eval-split 0.2"
+      - "prodigy data-to-spacy data/dataset/ --textcat-multilabel dataset_papers,prompt_papers --eval-split 0.2"
     deps:
       - data
     outputs:
@@ -99,17 +87,21 @@ commands:
   - name: "spacy-train"
     help: "Train a spaCy textcat model with Prodigy annotations."
     script:
-      - "python -m spacy train data/dataset/config.cfg --output training/dataset/ --paths.train data/dataset/train.spacy --paths.dev data/dataset/dev.spacy"
+      - "python -m spacy train data/dataset/config.cfg --output training/dataset/ --paths.train data/dataset/train.spacy --paths.dev data/dataset/dev.spacy --verbose"
     deps:
       - "data/dataset/train.spacy"
       - "data/dataset/dev.spacy"
       - "data/dataset/config.cfg"
     outputs:
       - "training/dataset/model-best"
+  - name: "prodigy-train-curve"
+    help: "Train a textcat model with Prodigy annotations."
+    script:
+      - "python -m prodigy train-curve --textcat-multilabel dataset_papers,prompt_papers --show-plot --n-samples 5"
   - name: "prodigy-train"
     help: "Train a textcat model with Prodigy annotations."
     script:
-      - "python -m prodigy train-curve --textcat-multilabel dataset_papers,security_breach,click_worthy --show-plot --n-samples 5"
+      - "python -m prodigy train --textcat-multilabel dataset_papers,prompt_papers --label-stats"
   - name: "content"
     help: "Generates the content stream for the frontpage"
     script:
