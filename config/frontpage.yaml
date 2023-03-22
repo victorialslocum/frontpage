@@ -1,4 +1,3 @@
-name: "dataset enthousiasts"
 description: |
   This frontpage is made by scraping arxiv and by runnig a spaCy model that detects 
   if the abstract describes a paper about a new dataset. Many datasets will be about 
