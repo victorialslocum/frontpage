@@ -29,12 +29,15 @@ def textcat_topic(
     # import spaCy and initialize matcher
     nlp = spacy.load(model)
 
-    # set up stream and set hashes just on text key
+    # set up stream and set hashes
     stream = (
-        item for item in JSONL(examples) if any(tag in tags for tag in item["tags"])
+        item for item in JSONL(examples) if all(tag in item["tags"] for tag in tags)
     )
-    stream = (set_hashes(ex, input_keys=("title")) for ex in stream)
+    stream = ({**d, "label": label} for d in stream)
+    stream = (set_hashes(ex, input_keys=("title"), task_keys=("label")) for ex in stream)
     stream = filter_duplicates(stream)
+
+    # remove duplicates, if any
     db = connect()
     stream = filter_tasks(stream, db.get_task_hashes(dataset))
 

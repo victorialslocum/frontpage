@@ -7,6 +7,7 @@ description: |
 sections:
   - name: "Datasets on Arxiv"
     tags: ["arxiv", "dataset"]
+    n: 20
     classes:
       - name: dataset
         threshold: 0.5

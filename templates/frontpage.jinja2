@@ -11,61 +11,82 @@
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body>
-    <div class="relative mx-auto h-full max-w-prose text-md">
-    <h1 class="text-6xl pt-4 font-bold"><span class="underline">Your</span> FrontPage</h1>
-    <br>
-    <p>This frontpage is constructed especially for {{name}} on {{today}}.</p>
-    <p class="text-sm text-gray-500 pt-2">{{description}}</p>
-    <br>
-    {%- for section in sections -%}
-    <h2 class="text-4xl pt-4 font-bold">{{section['name']}}
-      {%- for tag in section['tags'] -%}
-        <span class='px-2 mx-1 bg-yellow-200 text-xs'>tag:{{tag}}</span>
-      {%- endfor -%}
-      {%- for cls in section['classes'] -%}
-        <span class='px-2 mx-1 bg-blue-200 text-xs'>cls:{{cls['name']}}</span>
-      {%- endfor -%}
-    </h2>
-    {%- for content in section['content'] -%}
-    <div x-data="{open: false}">
-          <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-            {{content['title']}}
-          </span>
-          <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-            <p class="pt-2">
-            {{content['description']}}
-            </p>
-            <div class="text-center pt-2">
-              {%- for key in content['classes'] -%}
-                <span class='font-bold text-black px-2 mx-1 bg-blue-200 text-xs'>cls:{{key}}: 0.{{(content['classes'][key] * 1000) | int | round}}</span>
-              {%- endfor -%}
-            </div>
-            <p class="pb-2 pt-2 text-center">
-              <a class="underline decoration-2 text-blue-600 text-md pt-2" href='{{content["link"]}}' target="_blank">
-                link
-              </a>
-            </p>
+  <div class="relative mx-auto h-full max-w-2xl text-md">
+    <table class="table-auto">
+      <tbody>
+        <tr>
+          <td></td>
+          <td>
+            <h1 class="text-6xl pt-4 font-bold"><span class="underline">Your</span> FrontPage</h1>
+            <br>
+            <p>Generated on {{today}}.</p>
+            <p class="text-sm text-gray-500 pt-2">{{description}}</p>
+            <br>
+          </td>
+        </tr>
+        {%- for section in sections -%}
+        <tr>
+          <td></td>
+          <td>
+            <h2 class="text-4xl pt-4 font-bold">{{section['name']}}</h2>
+            {%- for tag in section['tags'] -%}
+            <span class='px-2 mx-1 bg-yellow-200 text-xs'>tag:{{tag}}</span>
+            {%- endfor -%}
+            {%- for cls in section['classes'] -%}
+            <span class='px-2 mx-1 bg-blue-200 text-xs'>cls:{{cls['name']}}</span>
+            {%- endfor -%}
           </div>
-    </div>
-    {%- endfor -%}  
-    {%- endfor -%}
-    {{links}}
-    </div>
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-          renderMathInElement(document.body, {
-            // customised options
-            // • auto-render specific keys, e.g.:
-            delimiters: [
-                {left: '$$', right: '$$', display: true},
-                {left: '$', right: '$', display: false},
-                {left: '\\(', right: '\\)', display: false},
-                {left: '\\[', right: '\\]', display: true}
-            ],
-            // • rendering keys, e.g.:
-            throwOnError : false
-          });
-      });
-  </script>
+        </td>
+      </tr>
+      {%- for content in section['content'] -%}
+      <tr>
+        <td class="inline-block align-text-top">
+          <span class='font-bold text-black px-2 mx-1 text-xs'>{{content['created']}}</span>
+        </td>
+        <td>
+          <div x-data="{open: false}">
+            <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+              {{content['title']}}
+            </span>
+            <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+              <div class="text-center pt-2">
+                {%- for key in content['classes'] -%}
+                <span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:{{key}}: 0.{{(content['classes'][key] * 1000) | int | round}}</span>
+                {%- endfor -%}
+              </div>
+              <p class="pt-2">
+                {{content['description']}}
+              </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='{{content["link"]}}' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr>
+      {%- endfor -%}  
+    </tbody>
+  </table>
+  {%- endfor -%}
+  {{links}}
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      // customised options
+      // • auto-render specific keys, e.g.:
+      delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '$', right: '$', display: false},
+      {left: '\\(', right: '\\)', display: false},
+      {left: '\\[', right: '\\]', display: true}
+      ],
+      // • rendering keys, e.g.:
+      throwOnError : false
+    });
+  });
+</script>
 </body>
 </html>

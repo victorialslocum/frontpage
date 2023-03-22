@@ -61,7 +61,13 @@ commands:
   - name: "annotate-dataset"
     help: "Annotate if content is about a new dataset."
     script:
-      - "prodigy textcat_topic dataset_papers ${vars.annot_stream} en_core_web_sm patterns/dataset.jsonl dataset dataset -F recipes/textcat_topic.py"
+      - "prodigy textcat_topic dataset_papers ${vars.annot_stream} en_core_web_sm patterns/dataset.jsonl dataset,arxiv dataset -F recipes/textcat_topic.py"
+    deps:
+      - ${vars.annot_stream}
+  - name: "annotate-prompt-eng"
+    help: "Annotate if content is about prompt engineering."
+    script:
+      - "prodigy textcat_topic prompt_papers ${vars.annot_stream} en_core_web_sm patterns/prompt.jsonl prompteng,arxiv prompteng -F recipes/textcat_topic.py"
     deps:
       - ${vars.annot_stream}
   - name: "annotate-data-quality"
@@ -136,6 +142,7 @@ workflows:
     - data-to-spacy
     - spacy-train
   new-frontpage:
+    - preprocess
     - db-out
     - data-to-spacy
     - spacy-train
