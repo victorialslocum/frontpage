@@ -37,6 +37,9 @@ def main(
     # Add items to dataset
     dataset = []
     for result in items.results():
+        found_cs = any(["cs" in cat for cat in result.categories])
+        if not found_cs:
+            continue
         created = result.published.date()
         keep = created > (dt.date.today() - dt.timedelta(days=max_age))
         if keep or save_all:

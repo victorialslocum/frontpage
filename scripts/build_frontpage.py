@@ -47,7 +47,7 @@ def main(
     for section in sections:
         section["content"] = sorted(section["content"], key=lambda d: d['created'], reverse=True)
         section["content"] = section["content"][:section.get("n", 20)]
-    rendered = template.render(name=config['name'], description=config['description'], sections=sections, today=dt.date.today())
+    rendered = template.render(description=config['description'], sections=sections, today=dt.date.today())
     Path(file_out).write_text(rendered)
 
 
