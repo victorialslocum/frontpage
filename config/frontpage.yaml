@@ -2,11 +2,11 @@ description: |
   This frontpage is made by scraping arxiv and by runnig a spaCy model that detects 
   if the abstract describes a paper about a new dataset. Many datasets will be about 
   NLP, but typically this also has some computer vision, humanities and physics 
-  datasets in the mix too."
+  datasets in the mix too.
 sections:
   - name: "Datasets on Arxiv"
     tags: ["arxiv", "dataset"]
-    n: 8
+    n: 12
     classes:
       - name: dataset
         threshold: 0.5
