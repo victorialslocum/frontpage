@@ -21,34 +21,17 @@ assets:
 # via "spacy project run [command] [path]". The help message is optional and
 # shown when executing "spacy project run [optional command] [path] --help".
 commands:
-  - name: "download-arxiv"
-    help: "Download data just from Arxiv"
-    script:
-      - python scripts/download_arxiv.py --query 'ti:dataset OR ti:corpus OR ti:database OR abs:"a new dataset"' --tag dataset
-      - python scripts/download_arxiv.py --query 'machine AND learning AND security OR machine AND learning AND secure' --tag ml,security
-      - python scripts/download_arxiv.py --query 'machine AND learning AND video AND games OR machine AND learning AND gaming' --tag ml,gaming
-      - python scripts/download_arxiv.py --query 'abs:"chatgpt"' --tag ml,prompteng
-      - python scripts/download_arxiv.py --query 'prompt AND engineering' --tag ml,prompteng
-      - python scripts/download_arxiv.py --query 'data AND quality' --tag data-quality
   - name: "download"
     help: "Download data from sources."
     script:
-      - python scripts/download_reddit.py --subreddit python --tag python
-      - python scripts/download_reddit.py --subreddit MachineLearning --tag ml
-      - python scripts/download_reddit.py --subreddit deeplearning --tag ml
-      - python scripts/download_reddit.py --subreddit LanguageTechnology --tag ml
-      - python scripts/download_reddit.py --subreddit PromptDesign --tag prompteng
       - python scripts/download_arxiv.py --query 'ti:dataset OR ti:corpus OR ti:database OR abs:"a new dataset"' --tag dataset
       - python scripts/download_arxiv.py --query 'machine AND learning AND security OR machine AND learning AND secure' --tag ml,security
       - python scripts/download_arxiv.py --query 'machine AND learning AND video AND games OR machine AND learning AND gaming' --tag ml,gaming
       - python scripts/download_arxiv.py --query 'abs:"chatgpt"' --tag ml,prompteng
       - python scripts/download_arxiv.py --query 'prompt AND engineering' --tag ml,prompteng
       - python scripts/download_arxiv.py --query 'data AND quality' --tag data-quality
-      - python scripts/download_hackernews.py
     deps:
-      - scripts/download_reddit.py
       - scripts/download_arxiv.py
-      - scripts/download_hackernews.py
       - scripts/util.py
   - name: "preprocess"
     help: "Process data into Prodigy format."
