@@ -6,6 +6,8 @@ vars:
   annot_stream: "raw/content.jsonl"
   model: "en_core_web_sm"
   spacy_folder: "./spacy-data"
+  site_folder: "./site"
+  model_folder: "./training"
 
 # These are the directories that the project needs. The project CLI will make
 # sure that they always exist.
@@ -77,8 +79,8 @@ commands:
       - "${vars.spacy_folder}/dev.spacy"
       - "${vars.spacy_folder}/config.cfg"
     outputs:
-      - "training/model-best"
-      - "training/model-last"
+      - "${vars.model_folder}/model-best"
+      - "${vars.model_folder}/model-last"
   - name: "prodigy-train-curve"
     help: "Train a textcat model with Prodigy annotations."
     script:
@@ -90,21 +92,21 @@ commands:
   - name: "content"
     help: "Generates the content stream for the frontpage"
     script:
-      - "rm -f frontpage.jsonl"
-      - "python scripts/attach_classes.py raw/content.jsonl training/dataset/model-best frontpage.jsonl"
+      - "rm -f ${vars.site_folder}/frontpage.jsonl"
+      - "python scripts/attach_classes.py raw/content.jsonl ${vars.model_folder}/model-best ${vars.site_folder}/frontpage.jsonl"
     deps:
       - "scripts/attach_classes.py"
       - "raw/content.jsonl"
-      - "training/dataset/model-best"
+      - "${vars.model_folder}/model-best"
   - name: "build"
     help: "Builds your frontpage."
     script:
-      - "python scripts/build_frontpage.py frontpage.jsonl config/frontpage.yaml templates/frontpage.jinja2 index.html"
+      - "python scripts/build_frontpage.py ${vars.site_folder}/frontpage.jsonl config/frontpage.yaml templates/frontpage.jinja2 ${vars.site_folder}/index.html"
     deps:
       - "config/frontpage.yaml"
       - "templates/frontpage.jinja2"
       - "scripts/build_frontpage.py"
-      - "frontpage.jsonl"
+      - "${vars.site_folder}/frontpage.jsonl"
   - name: "evaluate"
     help: "evaluate a spaCy model and/or a matcher"
     script:
