@@ -21,34 +21,17 @@ assets:
 # via "spacy project run [command] [path]". The help message is optional and
 # shown when executing "spacy project run [optional command] [path] --help".
 commands:
-  - name: "download-arxiv"
-    help: "Download data just from Arxiv"
-    script:
-      - python scripts/download_arxiv.py --query 'ti:dataset OR ti:corpus OR ti:database OR abs:"a new dataset"' --tag dataset
-      - python scripts/download_arxiv.py --query 'machine AND learning AND security OR machine AND learning AND secure' --tag ml,security
-      - python scripts/download_arxiv.py --query 'machine AND learning AND video AND games OR machine AND learning AND gaming' --tag ml,gaming
-      - python scripts/download_arxiv.py --query 'abs:"chatgpt"' --tag ml,prompteng
-      - python scripts/download_arxiv.py --query 'prompt AND engineering' --tag ml,prompteng
-      - python scripts/download_arxiv.py --query 'data AND quality' --tag data-quality
   - name: "download"
     help: "Download data from sources."
     script:
-      - python scripts/download_reddit.py --subreddit python --tag python
-      - python scripts/download_reddit.py --subreddit MachineLearning --tag ml
-      - python scripts/download_reddit.py --subreddit deeplearning --tag ml
-      - python scripts/download_reddit.py --subreddit LanguageTechnology --tag ml
-      - python scripts/download_reddit.py --subreddit PromptDesign --tag prompteng
       - python scripts/download_arxiv.py --query 'ti:dataset OR ti:corpus OR ti:database OR abs:"a new dataset"' --tag dataset
       - python scripts/download_arxiv.py --query 'machine AND learning AND security OR machine AND learning AND secure' --tag ml,security
       - python scripts/download_arxiv.py --query 'machine AND learning AND video AND games OR machine AND learning AND gaming' --tag ml,gaming
       - python scripts/download_arxiv.py --query 'abs:"chatgpt"' --tag ml,prompteng
       - python scripts/download_arxiv.py --query 'prompt AND engineering' --tag ml,prompteng
       - python scripts/download_arxiv.py --query 'data AND quality' --tag data-quality
-      - python scripts/download_hackernews.py
     deps:
-      - scripts/download_reddit.py
       - scripts/download_arxiv.py
-      - scripts/download_hackernews.py
       - scripts/util.py
   - name: "preprocess"
     help: "Process data into Prodigy format."
@@ -61,19 +44,13 @@ commands:
   - name: "annotate-dataset"
     help: "Annotate if content is about a new dataset."
     script:
-      - "prodigy textcat_topic dataset_papers ${vars.annot_stream} en_core_web_sm patterns/dataset.jsonl dataset dataset -F recipes/textcat_topic.py"
+      - "prodigy textcat_topic dataset_papers ${vars.annot_stream} en_core_web_sm patterns/dataset.jsonl dataset,arxiv dataset -F recipes/textcat_topic.py"
     deps:
       - ${vars.annot_stream}
-  - name: "annotate-data-quality"
-    help: "Annotate if content is about data quality."
+  - name: "annotate-prompt-eng"
+    help: "Annotate if content is about prompt engineering."
     script:
-      - "prodigy textcat_topic security_breach ${vars.annot_stream} en_core_web_sm patterns/data-quality.jsonl 'data-quality' data-quality -F recipes/textcat_topic.py"
-    deps:
-      - ${vars.annot_stream}
-  - name: "annotate-click"
-    help: "Annotate if content is click worth."
-    script:
-      - "prodigy textcat_topic click_worthy ${vars.annot_stream} en_core_web_sm patterns/python-package.jsonl 'dataset,' clickable -F recipes/textcat_topic.py"
+      - "prodigy textcat_topic prompt_papers ${vars.annot_stream} en_core_web_sm patterns/prompt.jsonl prompteng,arxiv prompteng -F recipes/textcat_topic.py"
     deps:
       - ${vars.annot_stream}
   - name: "db-out"
@@ -83,7 +60,7 @@ commands:
   - name: "data-to-spacy"
     help: "Export Prodigy annotations to spacy format."
     script:
-      - "prodigy data-to-spacy data/dataset/ --textcat-multilabel dataset_papers --eval-split 0.2"
+      - "prodigy data-to-spacy data/dataset/ --textcat-multilabel dataset_papers,prompt_papers --eval-split 0.2"
     deps:
       - data
     outputs:
@@ -93,17 +70,21 @@ commands:
   - name: "spacy-train"
     help: "Train a spaCy textcat model with Prodigy annotations."
     script:
-      - "python -m spacy train data/dataset/config.cfg --output training/dataset/ --paths.train data/dataset/train.spacy --paths.dev data/dataset/dev.spacy"
+      - "python -m spacy train data/dataset/config.cfg --output training/dataset/ --paths.train data/dataset/train.spacy --paths.dev data/dataset/dev.spacy --verbose"
     deps:
       - "data/dataset/train.spacy"
       - "data/dataset/dev.spacy"
       - "data/dataset/config.cfg"
     outputs:
       - "training/dataset/model-best"
+  - name: "prodigy-train-curve"
+    help: "Train a textcat model with Prodigy annotations."
+    script:
+      - "python -m prodigy train-curve --textcat-multilabel dataset_papers,prompt_papers --show-plot --n-samples 5"
   - name: "prodigy-train"
     help: "Train a textcat model with Prodigy annotations."
     script:
-      - "python -m prodigy train-curve --textcat-multilabel dataset_papers,security_breach,click_worthy --show-plot --n-samples 5"
+      - "python -m prodigy train --textcat-multilabel dataset_papers,prompt_papers --label-stats"
   - name: "content"
     help: "Generates the content stream for the frontpage"
     script:
@@ -136,6 +117,7 @@ workflows:
     - data-to-spacy
     - spacy-train
   new-frontpage:
+    - preprocess
     - db-out
     - data-to-spacy
     - spacy-train
