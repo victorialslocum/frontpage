@@ -123,6 +123,7 @@ workflows:
     - content
     - build
   new-frontpage-github:
+    - preprocess
     - spacy-train
     - content
     - build
