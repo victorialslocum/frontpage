@@ -12,7 +12,7 @@ sections:
         threshold: 0.5
   - name: "Prompt Engineering on Arxiv"
     tags: ["arxiv", "prompteng"]
-    n: 8
+    n: 12
     classes:
       - name: prompteng
         threshold: 0.5

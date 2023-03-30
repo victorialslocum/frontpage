@@ -112,14 +112,17 @@ workflows:
   fetch:
     - download
     - preprocess
-  train:
+  prodigy-out:
     - db-out
     - data-to-spacy
-    - spacy-train
   new-frontpage:
     - preprocess
-    - db-out
     - data-to-spacy
+    - spacy-train
+    - content
+    - build
+  new-frontpage-github:
+    - preprocess
     - spacy-train
     - content
     - build
