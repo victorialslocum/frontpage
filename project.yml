@@ -6,7 +6,7 @@ vars:
   annot_stream: "raw/content.jsonl"
   model: "en_core_web_sm"
   spacy_folder: "./spacy-data"
-  site_folder: "./site"
+  site_folder: "./docs"
   model_folder: "./training"
 
 # These are the directories that the project needs. The project CLI will make
