@@ -71,13 +71,14 @@ commands:
   - name: "spacy-train"
     help: "Train a spaCy textcat model with Prodigy annotations."
     script:
-      - "python -m spacy train ${vars.spacy_folder}/config.cfg --output training/dataset/ --paths.train ${vars.spacy_folder}/train.spacy --paths.dev ${vars.spacy_folder}/dev.spacy --verbose"
+      - "python -m spacy train ${vars.spacy_folder}/config.cfg --output training/ --paths.train ${vars.spacy_folder}/train.spacy --paths.dev ${vars.spacy_folder}/dev.spacy --verbose"
     deps:
       - "${vars.spacy_folder}/train.spacy"
       - "${vars.spacy_folder}/dev.spacy"
       - "${vars.spacy_folder}/config.cfg"
     outputs:
-      - "training/dataset/model-best"
+      - "training/model-best"
+      - "training/model-last"
   - name: "prodigy-train-curve"
     help: "Train a textcat model with Prodigy annotations."
     script:
@@ -113,9 +114,6 @@ workflows:
   fetch:
     - download
     - preprocess
-  prodigy-out:
-    - db-out
-    - data-to-spacy
   new-frontpage:
     - preprocess
     - data-to-spacy
@@ -123,7 +121,6 @@ workflows:
     - content
     - build
   new-frontpage-github:
-    - preprocess
     - spacy-train
     - content
     - build
