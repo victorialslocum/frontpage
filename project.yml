@@ -32,6 +32,9 @@ commands:
       - python scripts/download_arxiv.py --query 'machine AND learning AND video AND games OR machine AND learning AND gaming' --tag ml,gaming
       - python scripts/download_arxiv.py --query 'abs:"chatgpt"' --tag ml,prompteng
       - python scripts/download_arxiv.py --query 'prompt AND engineering' --tag ml,prompteng
+      - python scripts/download_arxiv.py --query 'spacy' --tag ml,pydata-tools
+      - python scripts/download_arxiv.py --query 'scikit OR sklearn' --tag ml,pydata-tools
+      - python scripts/download_arxiv.py --query 'pandas' --tag ml,pydata-tools
       - python scripts/download_arxiv.py --query 'data AND quality' --tag data-quality
     deps:
       - scripts/download_arxiv.py

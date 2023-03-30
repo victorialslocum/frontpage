@@ -10,6 +10,11 @@ def content_in_section(content: Dict[str, Any], section: Dict[str, Any]) -> bool
     # Check for matching tags, otherwise it's another section
     if any([content_tag not in content['tags'] for content_tag in section['tags']]):
         return False
+    
+    # Auto accept if classes are not defined
+    if "classes" not in section.keys():
+        return True
+
     section_req_class_names = [_['name'] for _ in section['classes']]
     section_req_class_conf = {_['name']:_['threshold'] for _ in section['classes']}
 
