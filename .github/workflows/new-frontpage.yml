@@ -1,4 +1,4 @@
-name: Download New Data
+name: Build New Frontpage
 
 on:
   workflow_dispatch:
