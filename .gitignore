@@ -155,7 +155,6 @@ cython_debug/
 .idea/
 raw/
 configs/
-data/
 training/
 project.lock
 recipes/__pycache__
