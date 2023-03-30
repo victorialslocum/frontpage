@@ -1,4 +1,4 @@
-name: Collect Data
+name: Download New Data
 
 on:
   workflow_dispatch:

@@ -5,6 +5,9 @@ description: "Using Prodigy, spaCy, and friends ... this project allows you to m
 vars:
   annot_stream: "raw/content.jsonl"
   model: "en_core_web_sm"
+  spacy_folder: "./spacy-data"
+  site_folder: "./site"
+  model_folder: "./training"
 
 # These are the directories that the project needs. The project CLI will make
 # sure that they always exist.
@@ -56,27 +59,28 @@ commands:
   - name: "db-out"
     help: "Export Prodigy annotations to a jsonl file."
     script:
-      - "prodigy db_out dataset_papers data/"
+      - "prodigy db_out dataset_papers ${vars.spacy_folder}"
   - name: "data-to-spacy"
     help: "Export Prodigy annotations to spacy format."
     script:
-      - "prodigy data-to-spacy data/dataset/ --textcat-multilabel dataset_papers,prompt_papers --eval-split 0.2"
+      - "prodigy data-to-spacy ${vars.spacy_folder} --textcat-multilabel dataset_papers,prompt_papers --eval-split 0.2"
     deps:
       - data
     outputs:
-      - "data/dataset/train.spacy"
-      - "data/dataset/dev.spacy"
-      - "data/dataset/config.cfg"
+      - "${vars.spacy_folder}/train.spacy"
+      - "${vars.spacy_folder}/dev.spacy"
+      - "${vars.spacy_folder}/config.cfg"
   - name: "spacy-train"
     help: "Train a spaCy textcat model with Prodigy annotations."
     script:
-      - "python -m spacy train data/dataset/config.cfg --output training/dataset/ --paths.train data/dataset/train.spacy --paths.dev data/dataset/dev.spacy --verbose"
+      - "python -m spacy train ${vars.spacy_folder}/config.cfg --output training/ --paths.train ${vars.spacy_folder}/train.spacy --paths.dev ${vars.spacy_folder}/dev.spacy --verbose"
     deps:
-      - "data/dataset/train.spacy"
-      - "data/dataset/dev.spacy"
-      - "data/dataset/config.cfg"
+      - "${vars.spacy_folder}/train.spacy"
+      - "${vars.spacy_folder}/dev.spacy"
+      - "${vars.spacy_folder}/config.cfg"
     outputs:
-      - "training/dataset/model-best"
+      - "${vars.model_folder}/model-best"
+      - "${vars.model_folder}/model-last"
   - name: "prodigy-train-curve"
     help: "Train a textcat model with Prodigy annotations."
     script:
@@ -88,21 +92,21 @@ commands:
   - name: "content"
     help: "Generates the content stream for the frontpage"
     script:
-      - "rm -f frontpage.jsonl"
-      - "python scripts/attach_classes.py raw/content.jsonl training/dataset/model-best frontpage.jsonl"
+      - "rm -f ${vars.site_folder}/frontpage.jsonl"
+      - "python scripts/attach_classes.py raw/content.jsonl ${vars.model_folder}/model-best ${vars.site_folder}/frontpage.jsonl"
     deps:
       - "scripts/attach_classes.py"
       - "raw/content.jsonl"
-      - "training/dataset/model-best"
+      - "${vars.model_folder}/model-best"
   - name: "build"
     help: "Builds your frontpage."
     script:
-      - "python scripts/build_frontpage.py frontpage.jsonl config/frontpage.yaml templates/frontpage.jinja2 index.html"
+      - "python scripts/build_frontpage.py ${vars.site_folder}/frontpage.jsonl config/frontpage.yaml templates/frontpage.jinja2 ${vars.site_folder}/index.html"
     deps:
       - "config/frontpage.yaml"
       - "templates/frontpage.jinja2"
       - "scripts/build_frontpage.py"
-      - "frontpage.jsonl"
+      - "${vars.site_folder}/frontpage.jsonl"
   - name: "evaluate"
     help: "evaluate a spaCy model and/or a matcher"
     script:
@@ -112,14 +116,13 @@ workflows:
   fetch:
     - download
     - preprocess
-  train:
-    - db-out
-    - data-to-spacy
-    - spacy-train
   new-frontpage:
     - preprocess
-    - db-out
     - data-to-spacy
+    - spacy-train
+    - content
+    - build
+  new-frontpage-github:
     - spacy-train
     - content
     - build
