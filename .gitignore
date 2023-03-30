@@ -68,9 +68,6 @@ instance/
 # Scrapy stuff:
 .scrapy
 
-# Sphinx documentation
-docs/_build/
-
 # PyBuilder
 .pybuilder/
 target/
@@ -158,7 +155,5 @@ recipes/__pycache__
 test.py
 .ipynb_checkpoints
 test.ipynb
-index.html
-frontpage.jsonl
 *.ipynb
 training/
