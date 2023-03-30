@@ -39,8 +39,8 @@
         </tr>
         {%- for content in section['content'] -%}
         <tr>
-          <td class="inline-block align-text-top">
-            <span class='font-bold text-black px-2 mx-1 text-xs'>{{content['created']}}</span>
+          <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>{{content['created']}}</p>
           </td>
           <td>
             <div x-data="{open: false}">
