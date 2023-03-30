@@ -42,6 +42,7 @@ commands:
       - python scripts/preprocess.py assets/ ${vars.annot_stream}
     deps:
       - assets
+      - scripts/preprocess.py
     outputs:
       - ${vars.annot_stream}
   - name: "annotate-dataset"

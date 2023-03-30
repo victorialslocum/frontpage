@@ -3,8 +3,6 @@ from pathlib import Path
 
 import srsly
 import typer
-from prodigy import set_hashes
-from prodigy.components.filters import filter_duplicates
 from schemas import Content
 
 def remove_meta(d):
@@ -12,15 +10,19 @@ def remove_meta(d):
         del d['meta']
     return d
 
+def dedup(stream):
+    uniq = {}
+    for ex in stream:
+        uniq[hash(ex['title'])] = ex
+    for ex in uniq.values():
+        yield ex
+
 def main(folder: Path, out: Path):
     """Concat all files and double-check the schema."""
     glob = folder.glob("**/*.jsonl")
     full_data = it.chain(*list(srsly.read_jsonl(file) for file in glob))
-
-    stream = (set_hashes(remove_meta(eg)) for eg in full_data)
-    stream = filter_duplicates(stream, by_input=True, by_task=True)
-    stream = (dict(Content(**item)) for item in stream)
-    srsly.write_jsonl(out, full_data)
+    stream = (dict(Content(**item)) for item in dedup(full_data))
+    srsly.write_jsonl(out, stream)
 
 
 if __name__ == "__main__":
