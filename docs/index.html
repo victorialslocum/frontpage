@@ -19,7 +19,7 @@
           <td>
             <h1 class="text-6xl pt-4 font-bold"><span class="underline">Your</span> FrontPage</h1>
             <br>
-            <p>Generated on 2023-04-03.</p>
+            <p>Generated on 2023-04-04.</p>
             <p class="text-sm text-gray-500 pt-2">This frontpage is made by scraping arxiv and by runnig a spaCy model that detects 
 if the abstract describes a paper about a new specific topic. Right now we try to
 find interesting articles about new dataset or about prompt engineering. Many datasets 
@@ -33,6 +33,28 @@ datasets in the mix too.
           <td>
             <h2 class="text-4xl pt-4 font-bold">Datasets on Arxiv</h2><span class='px-2 mx-1 bg-yellow-200 text-xs'>tag:arxiv</span><span class='px-2 mx-1 bg-yellow-200 text-xs'>tag:dataset</span><span class='px-2 mx-1 bg-blue-200 text-xs'>cls:dataset</span></td>
         </tr><tr>
+          <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-04-03</p>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                FinnWoodlands Dataset
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.795</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.5</span></div>
+                <p class="pt-2">
+                  While the availability of large and diverse datasets has contributed to significant breakthroughs in autonomous driving and indoor applications, forestry applications are still lagging behind and new forest datasets would most certainly contribute to achieving significant progress in the development of data-driven methods for forest-like scenarios. This paper introduces a forest dataset called \textit{FinnWoodlands}, which consists of RGB stereo images, point clouds, and sparse depth maps, as well as ground truth manual annotations for semantic, instance, and panoptic segmentation. \textit{FinnWoodlands} comprises a total of 4226 objects manually annotated, out of which 2562 objects (60.6\%) correspond to tree trunks classified into three different instance categories, namely "Spruce Tree", "Birch Tree", and "Pine Tree". Besides tree trunks, we also annotated "Obstacles" objects as instances as well as the semantic stuff classes "Lake", "Ground", and "Track". Our dataset can be used in forestry applications where a holistic representation of the environment is relevant. We provide an initial benchmark using three models for instance segmentation, panoptic segmentation, and depth completion, and illustrate the challenges that such unstructured scenarios introduce.
+                </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2304.00793v1' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr><tr>
           <td class="inline-block">
             <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-03-30</p>
           </td>
@@ -268,28 +290,6 @@ datasets in the mix too.
                 </p>
               <p class="pb-2 pt-2 text-center">
                 <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2303.07257v1' target="_blank">
-                  link
-                </a>
-              </p>
-            </div>
-          </div>
-        </td>
-      </tr><tr>
-          <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-03-13</p>
-          </td>
-          <td>
-            <div x-data="{open: false}">
-              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Semantically Secure Private Set Intersection over Outsourced Multi-Owner Secret-Shared Databases
-              </span>
-              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.776</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.0</span></div>
-                <p class="pt-2">
-                  Private set intersection (PSI) aims to allow users to find out the commonly shared items among the users without revealing other membership information. The most recently proposed approach to PSI in the database community was Prism, which is built upon secret sharing and the assumption that multiple non-colluding servers are available. One limitation of Prism lies in its semantic security: the encoding on the servers is deterministic, implying that the scheme cannot be indistinguishable under a chosen-plaintext attack (IND-CPA). This paper extends the original PSI scheme of Prism by two orthogonal primitives, namely Kaleido-RND and Kaleido-AES: the former exhibits highly efficient performance with randomized encoding and the latter is provably secure under CPA attacks with more computational overhead. A system prototype is implemented and deployed on a 34-node cluster of SQLite instances. Extensive experiments on the TPC-H benchmark and three real-world applications confirm the effectiveness of the proposed Kaleido primitives.
-                </p>
-              <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2303.06863v1' target="_blank">
                   link
                 </a>
               </p>
