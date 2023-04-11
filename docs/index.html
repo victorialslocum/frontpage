@@ -19,7 +19,7 @@
           <td>
             <h1 class="text-6xl pt-4 font-bold"><span class="underline">Your</span> FrontPage</h1>
             <br>
-            <p>Generated on 2023-04-10.</p>
+            <p>Generated on 2023-04-11.</p>
             <p class="text-sm text-gray-500 pt-2">This frontpage is made by scraping arxiv and by runnig a spaCy model that detects 
 if the abstract describes a paper about a new specific topic. Right now we try to
 find interesting articles about new dataset or about prompt engineering. Many datasets 
@@ -105,15 +105,15 @@ datasets in the mix too.
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                LAHM : Large Annotated Dataset for Multi-Domain and Multilingual Hate Speech Identification
+                FinnWoodlands Dataset
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.655</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.1</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.795</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.5</span></div>
                 <p class="pt-2">
-                  Current research on hate speech analysis is typically oriented towards monolingual and single classification tasks. In this paper, we present a new multilingual hate speech analysis dataset for English, Hindi, Arabic, French, German and Spanish languages for multiple domains across hate speech - Abuse, Racism, Sexism, Religious Hate and Extremism. To the best of our knowledge, this paper is the first to address the problem of identifying various types of hate speech in these five wide domains in these six languages. In this work, we describe how we created the dataset, created annotations at high level and low level for different domains and how we use it to test the current state-of-the-art multilingual and multitask learning approaches. We evaluate our dataset in various monolingual, cross-lingual and machine translation classification settings and compare it against open source English datasets that we aggregated and merged for this task. Then we discuss how this approach can be used to create large scale hate-speech datasets and how to leverage our annotations in order to improve hate speech detection and classification in general.
+                  While the availability of large and diverse datasets has contributed to significant breakthroughs in autonomous driving and indoor applications, forestry applications are still lagging behind and new forest datasets would most certainly contribute to achieving significant progress in the development of data-driven methods for forest-like scenarios. This paper introduces a forest dataset called \textit{FinnWoodlands}, which consists of RGB stereo images, point clouds, and sparse depth maps, as well as ground truth manual annotations for semantic, instance, and panoptic segmentation. \textit{FinnWoodlands} comprises a total of 4226 objects manually annotated, out of which 2562 objects (60.6\%) correspond to tree trunks classified into three different instance categories, namely "Spruce Tree", "Birch Tree", and "Pine Tree". Besides tree trunks, we also annotated "Obstacles" objects as instances as well as the semantic stuff classes "Lake", "Ground", and "Track". Our dataset can be used in forestry applications where a holistic representation of the environment is relevant. We provide an initial benchmark using three models for instance segmentation, panoptic segmentation, and depth completion, and illustrate the challenges that such unstructured scenarios introduce.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2304.00913v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2304.00793v1' target="_blank">
                   link
                 </a>
               </p>
@@ -122,20 +122,42 @@ datasets in the mix too.
         </td>
       </tr><tr>
           <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-04-03</p>
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-03-30</p>
           </td>
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                BOLLWM: A real-world dataset for bollworm pest monitoring from cotton fields in India
+                The impact of training dataset size and ensemble inference strategies on head and neck auto-segmentation
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.581</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.10</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.731</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.17</span></div>
                 <p class="pt-2">
-                  This paper presents a dataset of agricultural pest images captured over five years by thousands of small holder farmers and farming extension workers across India. The dataset has been used to support a mobile application that relies on artificial intelligence to assist farmers with pest management decisions. Creation came from a mix of organized data collection, and from mobile application usage that was less controlled. This makes the dataset unique within the pest detection community, exhibiting a number of characteristics that place it closer to other non-agricultural objected detection datasets. This not only makes the dataset applicable to future pest management applications, it opens the door for a wide variety of other research agendas.
+                  Convolutional neural networks (CNNs) are increasingly being used to automate segmentation of organs-at-risk in radiotherapy. Since large sets of highly curated data are scarce, we investigated how much data is required to train accurate and robust head and neck auto-segmentation models. For this, an established 3D CNN was trained from scratch with different sized datasets (25-1000 scans) to segment the brainstem, parotid glands and spinal cord in CTs. Additionally, we evaluated multiple ensemble techniques to improve the performance of these models. The segmentations improved with training set size up to 250 scans and the ensemble methods significantly improved performance for all organs. The impact of the ensemble methods was most notable in the smallest datasets, demonstrating their potential for use in cases where large training datasets are difficult to obtain.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2304.00763v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2303.17318v1' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr><tr>
+          <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-03-29</p>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                Larger Probes Tell a Different Story: Extending Psycholinguistic Datasets Via In-Context Learning
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.734</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.92</span></div>
+                <p class="pt-2">
+                  Language model probing is often used to test specific capabilities of these models. However, conclusions from such studies may be limited when the probing benchmarks are small and lack statistical power. In this work, we introduce new, larger datasets for negation (NEG-1500-SIMP) and role reversal (ROLE-1500) inspired by psycholinguistic studies. We dramatically extend existing NEG-136 and ROLE-88 benchmarks using GPT3, increasing their size from 18 and 44 sentence pairs to 750 each. We also create another version of extended negation dataset (NEG-1500-SIMP-TEMP), created using template-based generation. It consists of 770 sentence pairs. We evaluate 22 models on the extended datasets, seeing model performance dip 20-57% compared to the original smaller benchmarks. We observe high levels of negation sensitivity in models like BERT and ALBERT demonstrating that previous findings might have been skewed due to smaller test sets. Finally, we observe that while GPT3 has generated all the examples in ROLE-1500 is only able to solve 24.6% of them during probing.
+                </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2303.16445v1' target="_blank">
                   link
                 </a>
               </p>
@@ -171,15 +193,15 @@ datasets in the mix too.
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Frame-Level Multi-Label Playing Technique Detection Using Multi-Scale Network and Self-Attention Mechanism
+                A Bag-of-Prototypes Representation for Dataset-Level Applications
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.679</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.64</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.520</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.28</span></div>
                 <p class="pt-2">
-                  Instrument playing technique (IPT) is a key element of musical presentation. However, most of the existing works for IPT detection only concern monophonic music signals, yet little has been done to detect IPTs in polyphonic instrumental solo pieces with overlapping IPTs or mixed IPTs. In this paper, we formulate it as a frame-level multi-label classification problem and apply it to Guzheng, a Chinese plucked string instrument. We create a new dataset, Guzheng\_Tech99, containing Guzheng recordings and onset, offset, pitch, IPT annotations of each note. Because different IPTs vary a lot in their lengths, we propose a new method to solve this problem using multi-scale network and self-attention. The multi-scale network extracts features from different scales, and the self-attention mechanism applied to the feature maps at the coarsest scale further enhances the long-range feature extraction. Our approach outperforms existing works by a large margin, indicating its effectiveness in IPT detection.
+                  This work investigates dataset vectorization for two dataset-level tasks: assessing training set suitability and test set difficulty. The former measures how suitable a training set is for a target domain, while the latter studies how challenging a test set is for a learned model. Central to the two tasks is measuring the underlying relationship between datasets. This needs a desirable dataset vectorization scheme, which should preserve as much discriminative dataset information as possible so that the distance between the resulting dataset vectors can reflect dataset-to-dataset similarity. To this end, we propose a bag-of-prototypes (BoP) dataset representation that extends the image-level bag consisting of patch descriptors to dataset-level bag consisting of semantic prototypes. Specifically, we develop a codebook consisting of K prototypes clustered from a reference dataset. Given a dataset to be encoded, we quantize each of its image features to a certain prototype in the codebook and obtain a K-dimensional histogram. Without assuming access to dataset labels, the BoP representation provides a rich characterization of the dataset semantic distribution. Furthermore, BoP representations cooperate well with Jensen-Shannon divergence for measuring dataset-to-dataset similarity. Although very simple, BoP consistently shows its advantage over existing representations on a series of benchmarks for two dataset-level tasks.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2303.13272v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2303.13251v1' target="_blank">
                   link
                 </a>
               </p>
@@ -193,15 +215,15 @@ datasets in the mix too.
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Enriching Neural Network Training Dataset to Improve Worst-Case Performance Guarantees
+                OCELOT: Overlapped Cell on Tissue Dataset for Histopathology
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.876</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.0</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.681</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.1</span></div>
                 <p class="pt-2">
-                  Machine learning algorithms, especially Neural Networks (NNs), are a valuable tool used to approximate non-linear relationships, like the AC-Optimal Power Flow (AC-OPF), with considerable accuracy -- and achieving a speedup of several orders of magnitude when deployed for use. Often in power systems literature, the NNs are trained with a fixed dataset generated prior to the training process. In this paper, we show that adapting the NN training dataset during training can improve the NN performance and substantially reduce its worst-case violations. This paper proposes an algorithm that identifies and enriches the training dataset with critical datapoints that reduce the worst-case violations and deliver a neural network with improved worst-case performance guarantees. We demonstrate the performance of our algorithm in four test power systems, ranging from 39-buses to 162-buses.
+                  Cell detection is a fundamental task in computational pathology that can be used for extracting high-level medical information from whole-slide images. For accurate cell detection, pathologists often zoom out to understand the tissue-level structures and zoom in to classify cells based on their morphology and the surrounding context. However, there is a lack of efforts to reflect such behaviors by pathologists in the cell detection models, mainly due to the lack of datasets containing both cell and tissue annotations with overlapping regions. To overcome this limitation, we propose and publicly release OCELOT, a dataset purposely dedicated to the study of cell-tissue relationships for cell detection in histopathology. OCELOT provides overlapping cell and tissue annotations on images acquired from multiple organs. Within this setting, we also propose multi-task learning approaches that benefit from learning both cell and tissue tasks simultaneously. When compared against a model trained only for the cell detection task, our proposed approaches improve cell detection performance on 3 datasets: proposed OCELOT, public TIGER, and internal CARP datasets. On the OCELOT test set in particular, we show up to 6.79 improvement in F1-score. We believe the contributions of this paper, including the release of the OCELOT dataset at https://lunit-io.github.io/research/publications/ocelot are a crucial starting point toward the important research direction of incorporating cell-tissue relationships in computation pathology.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2303.13228v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2303.13110v1' target="_blank">
                   link
                 </a>
               </p>
@@ -232,64 +254,42 @@ datasets in the mix too.
         </td>
       </tr><tr>
           <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-03-20</p>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                Architecture, Dataset and Model-Scale Agnostic Data-free Meta-Learning
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.719</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.4</span></div>
+                <p class="pt-2">
+                  The goal of data-free meta-learning is to learn useful prior knowledge from a collection of pre-trained models without accessing their training data. However, existing works only solve the problem in parameter space, which (i) ignore the fruitful data knowledge contained in the pre-trained models; (ii) can not scale to large-scale pre-trained models; (iii) can only meta-learn pre-trained models with the same network architecture. To address those issues, we propose a unified framework, dubbed PURER, which contains: (1) ePisode cUrriculum inveRsion (ECI) during data-free meta training; and (2) invErsion calibRation following inner loop (ICFIL) during meta testing. During meta training, we propose ECI to perform pseudo episode training for learning to adapt fast to new unseen tasks. Specifically, we progressively synthesize a sequence of pseudo episodes by distilling the training data from each pre-trained model. The ECI adaptively increases the difficulty level of pseudo episodes according to the real-time feedback of the meta model. We formulate the optimization process of meta training with ECI as an adversarial form in an end-to-end manner. During meta testing, we further propose a simple plug-and-play supplement-ICFIL-only used during meta testing to narrow the gap between meta training and meta testing task distribution. Extensive experiments in various real-world scenarios show the superior performance of ours.
+                </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2303.11183v1' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr><tr>
+          <td class="inline-block">
             <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-03-16</p>
           </td>
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                SLOPER4D: A Scene-Aware Dataset for Global 4D Human Pose Estimation in Urban Environments
+                VDPVE: VQA Dataset for Perceptual Video Enhancement
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.880</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.0</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.785</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.1</span></div>
                 <p class="pt-2">
-                  We present SLOPER4D, a novel scene-aware dataset collected in large urban environments to facilitate the research of global human pose estimation (GHPE) with human-scene interaction in the wild. Employing a head-mounted device integrated with a LiDAR and camera, we record 12 human subjects' activities over 10 diverse urban scenes from an egocentric view. Frame-wise annotations for 2D key points, 3D pose parameters, and global translations are provided, together with reconstructed scene point clouds. To obtain accurate 3D ground truth in such large dynamic scenes, we propose a joint optimization method to fit local SMPL meshes to the scene and fine-tune the camera calibration during dynamic motions frame by frame, resulting in plausible and scene-natural 3D human poses. Eventually, SLOPER4D consists of 15 sequences of human motions, each of which has a trajectory length of more than 200 meters (up to 1,300 meters) and covers an area of more than 2,000 $m^2$ (up to 13,000 $m^2$), including more than 100K LiDAR frames, 300k video frames, and 500K IMU-based motion frames. With SLOPER4D, we provide a detailed and thorough analysis of two critical tasks, including camera-based 3D HPE and LiDAR-based 3D HPE in urban environments, and benchmark a new task, GHPE. The in-depth analysis demonstrates SLOPER4D poses significant challenges to existing methods and produces great research opportunities. The dataset and code are released at \url{http://www.lidarhumanmotion.net/sloper4d/}
+                  Recently, many video enhancement methods have been proposed to improve video quality from different aspects such as color, brightness, contrast, and stability. Therefore, how to evaluate the quality of the enhanced video in a way consistent with human visual perception is an important research topic. However, most video quality assessment methods mainly calculate video quality by estimating the distortion degrees of videos from an overall perspective. Few researchers have specifically proposed a video quality assessment method for video enhancement, and there is also no comprehensive video quality assessment dataset available in public. Therefore, we construct a Video quality assessment dataset for Perceptual Video Enhancement (VDPVE) in this paper. The VDPVE has 1211 videos with different enhancements, which can be divided into three sub-datasets: the first sub-dataset has 600 videos with color, brightness, and contrast enhancements; the second sub-dataset has 310 videos with deblurring; and the third sub-dataset has 301 deshaked videos. We invited 21 subjects (20 valid subjects) to rate all enhanced videos in the VDPVE. After normalizing and averaging the subjective opinion scores, the mean opinion score of each video can be obtained. Furthermore, we split the VDPVE into a training set, a validation set, and a test set, and verify the performance of several state-of-the-art video quality assessment methods on the test set of the VDPVE.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2303.09095v1' target="_blank">
-                  link
-                </a>
-              </p>
-            </div>
-          </div>
-        </td>
-      </tr><tr>
-          <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-03-15</p>
-          </td>
-          <td>
-            <div x-data="{open: false}">
-              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Accurate GW frontier orbital energies of 134 kilo molecules
-              </span>
-              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.776</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.2</span></div>
-                <p class="pt-2">
-                  The QM9 dataset [Scientific Data, Vol. 1, 140022 (2014)] became a standard dataset to benchmark machine learning methods, especially on molecular graphs. It contains geometries as well as multiple computed molecular properties of 133,885 compounds at B3LYP/6-31G(2df,p) level of theory, including frontier orbitals (HOMO and LUMO) energies. However, the accuracy of HOMO/LUMO predictions from density functional theory, including hybrid methods such as B3LYP, is limited for many applications. In contrast, the GW method significantly improves HOMO/LUMO prediction accuracy, with mean unsigned errors in the GW100 benchmark dataset of 100 meV. In this work, we present a new dataset of HOMO/LUMO energies for the QM9 compounds, computed using the GW method. This database may serve as a benchmark of HOMO/LUMO prediction, delta-learning, and transfer learning, particularly for larger molecules where GW is the most accurate but still numerically feasible method. We expect this dataset to enable the development of more accurate machine learning models for predicting molecular properties
-                </p>
-              <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2303.08708v1' target="_blank">
-                  link
-                </a>
-              </p>
-            </div>
-          </div>
-        </td>
-      </tr><tr>
-          <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-03-15</p>
-          </td>
-          <td>
-            <div x-data="{open: false}">
-              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                TURB-Lagr. A database of 3d Lagrangian trajectories in homogeneous and isotropic turbulence
-              </span>
-              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.522</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.1</span></div>
-                <p class="pt-2">
-                  We present TURB-Lagr, a new open database of 3d turbulent Lagrangian trajectories, obtained by Direct Numerical Simulations (DNS) of the original Navier-Stokes equations in the presence of a homogeneous and isotropic forcing. The aim is to provide the community interested in data-assimilation and/or Lagrangian-properties of turbulence a new testing-ground made of roughly 300K different Lagrangian trajectories. TURB-Lagr data are influenced by the strong non-Gaussian fluctuations characteristic of turbulence and by the rough and non differentiable fields. In addition, coming from fully resolved numerical simulations of the original partial differential equations, they offer the possibility to apply a wide range of approaches, from equation-free to physics-based models. TURB-Lagr data are reachable at http://smart-turb.roma2.infn.it
-                </p>
-              <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2303.08662v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2303.09290v1' target="_blank">
                   link
                 </a>
               </p>
@@ -301,6 +301,28 @@ datasets in the mix too.
           <td>
             <h2 class="text-4xl pt-4 font-bold">Prompt Engineering on Arxiv</h2><span class='px-2 mx-1 bg-yellow-200 text-xs'>tag:arxiv</span><span class='px-2 mx-1 bg-yellow-200 text-xs'>tag:prompteng</span><span class='px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng</span></td>
         </tr><tr>
+          <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-03-29</p>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                ProtFIM: Fill-in-Middle Protein Sequence Design via Protein Language Models
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.11</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.668</span></div>
+                <p class="pt-2">
+                  Protein language models (pLMs), pre-trained via causal language modeling on protein sequences, have been a promising tool for protein sequence design. In real-world protein engineering, there are many cases where the amino acids in the middle of a protein sequence are optimized while maintaining other residues. Unfortunately, because of the left-to-right nature of pLMs, existing pLMs modify suffix residues by prompting prefix residues, which are insufficient for the infilling task that considers the whole surrounding context. To find the more effective pLMs for protein engineering, we design a new benchmark, Secondary structureE InFilling rEcoveRy, SEIFER, which approximates infilling sequence design scenarios. With the evaluation of existing models on the benchmark, we reveal the weakness of existing language models and show that language models trained via fill-in-middle transformation, called ProtFIM, are more appropriate for protein engineering. Also, we prove that ProtFIM generates protein sequences with decent protein representations through exhaustive experiments and visualizations.
+                </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2303.16452v1' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr><tr>
           <td class="inline-block">
             <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-03-21</p>
           </td>
@@ -324,20 +346,20 @@ datasets in the mix too.
         </td>
       </tr><tr>
           <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-03-16</p>
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-01-10</p>
           </td>
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Patch-Token Aligned Bayesian Prompt Learning for Vision-Language Models
+                API Entity and Relation Joint Extraction from Text via Dynamic Prompt-tuned Language Model
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.1</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.979</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.43</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.949</span></div>
                 <p class="pt-2">
-                  For downstream applications of vision-language pre-trained models, there has been significant interest in constructing effective prompts. Existing works on prompt engineering, which either require laborious manual designs or optimize the prompt tuning as a point estimation problem, may fail to describe diverse characteristics of categories and limit their applications. We introduce a Bayesian probabilistic resolution to prompt learning, where the label-specific stochastic prompts are generated hierarchically by first sampling a latent vector from an underlying distribution and then employing a lightweight generative model. Importantly, we semantically regularize prompt learning with the visual knowledge and view images and the corresponding prompts as patch and token sets under optimal transport, which pushes the prompt tokens to faithfully capture the label-specific visual concepts, instead of overfitting the training categories. Moreover, the proposed model can also be straightforwardly extended to the conditional case where the instance-conditional prompts are generated to improve the generalizability. Extensive experiments on 15 datasets show promising transferability and generalization performance of our proposed model.
+                  Extraction of Application Programming Interfaces (APIs) and their semantic relations from unstructured text (e.g., Stack Overflow) is a fundamental work for software engineering tasks (e.g., API recommendation). However, existing approaches are rule-based and sequence-labeling based. They must manually enumerate the rules or label data for a wide range of sentence patterns, which involves a significant amount of labor overhead and is exacerbated by morphological and common-word ambiguity. In contrast to matching or labeling API entities and relations, this paper formulates heterogeneous API extraction and API relation extraction task as a sequence-to-sequence generation task, and proposes AERJE, an API entity-relation joint extraction model based on the large pre-trained language model. After training on a small number of ambiguous but correctly labeled data, AERJE builds a multi-task architecture that extracts API entities and relations from unstructured text using dynamic prompts. We systematically evaluate AERJE on a set of long and ambiguous sentences from Stack Overflow. The experimental results show that AERJE achieves high accuracy and discrimination ability in API entity-relation joint extraction, even with zero or few-shot fine-tuning.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2303.09100v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2301.03987v1' target="_blank">
                   link
                 </a>
               </p>
@@ -346,20 +368,20 @@ datasets in the mix too.
         </td>
       </tr><tr>
           <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-02-15</p>
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-01-01</p>
           </td>
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Conversational AI-Powered Design: ChatGPT as Designer, User, and Product
+                Modeling Label Semantics Improves Activity Recognition
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.22</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.967</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.7</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.987</span></div>
                 <p class="pt-2">
-                  The recent advancements in Large Language Models (LLMs), particularly conversational LLMs like ChatGPT, have prompted changes in a range of fields, including design. This study aims to examine the capabilities of ChatGPT in a human-centered design process. To this end, a hypothetical design project was conducted, where ChatGPT was utilized to generate personas, simulate interviews with fictional users, create new design ideas, simulate usage scenarios and conversations between an imaginary prototype and fictional users, and lastly evaluate user experience. The results show that ChatGPT effectively performed the tasks assigned to it as a designer, user, or product, providing mostly appropriate responses. The study does, however, highlight some drawbacks such as forgotten information, partial responses, and a lack of output diversity. The paper explains the potential benefits and limitations of using conversational LLMs in design, discusses its implications, and suggests directions for future research in this rapidly evolving area.
+                  Human activity recognition (HAR) aims to classify sensory time series into different activities, with wide applications in activity tracking, healthcare, human computer interaction, etc. Existing HAR works improve recognition performance by designing more complicated feature extraction methods, but they neglect the label semantics by simply treating labels as integer IDs. We find that many activities in the current HAR datasets have shared label names, e.g., "open door" and "open fridge", "walk upstairs" and "walk downstairs". Through some exploratory analysis, we find that such shared structure in activity names also maps to similarity in the input features. To this end, we design a sequence-to-sequence framework to decode the label name semantics rather than classifying labels as integer IDs. Our proposed method decomposes learning activities into learning shared tokens ("open", "walk"), which is easier than learning the joint distribution ("open fridge", "walk upstairs") and helps transfer learning to activities with insufficient data samples. For datasets originally without shared tokens in label names, we also offer an automated method, using OpenAI's ChatGPT, to generate shared actions and objects. Extensive experiments on seven HAR benchmark datasets demonstrate the state-of-the-art performance of our method. We also show better performance in the long-tail activity distribution settings and few-shot settings.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2302.07406v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2301.03462v1' target="_blank">
                   link
                 </a>
               </p>
@@ -368,20 +390,20 @@ datasets in the mix too.
         </td>
       </tr><tr>
           <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-02-15</p>
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2022-12-29</p>
           </td>
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Log Parsing with Prompt-based Few-shot Learning
+                GPT Takes the Bar Exam
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.2</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.983</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.1</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.991</span></div>
                 <p class="pt-2">
-                  Logs generated by large-scale software systems provide crucial information for engineers to understand the system status and diagnose problems of the systems. Log parsing, which converts raw log messages into structured data, is the first step to enabling automated log analytics. Existing log parsers extract the common part as log templates using statistical features. However, these log parsers often fail to identify the correct templates and parameters because: 1) they often overlook the semantic meaning of log messages, and 2) they require domain-specific knowledge for different log datasets. To address the limitations of existing methods, in this paper, we propose LogPPT to capture the patterns of templates using prompt-based few-shot learning. LogPPT utilises a novel prompt tuning method to recognise keywords and parameters based on a few labelled log data. In addition, an adaptive random sampling algorithm is designed to select a small yet diverse training set. We have conducted extensive experiments on 16 public log datasets. The experimental results show that LogPPT is effective and efficient for log parsing.
+                  Nearly all jurisdictions in the United States require a professional license exam, commonly referred to as "the Bar Exam," as a precondition for law practice. To even sit for the exam, most jurisdictions require that an applicant completes at least seven years of post-secondary education, including three years at an accredited law school. In addition, most test-takers also undergo weeks to months of further, exam-specific preparation. Despite this significant investment of time and capital, approximately one in five test-takers still score under the rate required to pass the exam on their first try. In the face of a complex task that requires such depth of knowledge, what, then, should we expect of the state of the art in "AI?" In this research, we document our experimental evaluation of the performance of OpenAI's `text-davinci-003` model, often-referred to as GPT-3.5, on the multistate multiple choice (MBE) section of the exam. While we find no benefit in fine-tuning over GPT-3.5's zero-shot performance at the scale of our training data, we do find that hyperparameter optimization and prompt engineering positively impacted GPT-3.5's zero-shot performance. For best prompt and parameters, GPT-3.5 achieves a headline correct rate of 50.3% on a complete NCBE MBE practice exam, significantly in excess of the 25% baseline guessing rate, and performs at a passing rate for both Evidence and Torts. GPT-3.5's ranking of responses is also highly-correlated with correctness; its top two and top three choices are correct 71% and 88% of the time, respectively, indicating very strong non-entailment performance. While our ability to interpret these results is limited by nascent scientific understanding of LLMs and the proprietary nature of GPT, we believe that these results strongly suggest that an LLM will pass the MBE component of the Bar Exam in the near future.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2302.07435v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2212.14402v1' target="_blank">
                   link
                 </a>
               </p>
@@ -390,20 +412,64 @@ datasets in the mix too.
         </td>
       </tr><tr>
           <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2022-12-19</p>
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2022-12-21</p>
           </td>
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Explanation Regeneration via Information Bottleneck
+                Connecting the early afterglow to the prompt GRB and the central engine in the striped jet model
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.26</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.799</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.28</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.959</span></div>
                 <p class="pt-2">
-                  Explaining the black-box predictions of NLP models naturally and accurately is an important open problem in natural language generation. These free-text explanations are expected to contain sufficient and carefully-selected evidence to form supportive arguments for predictions. Due to the superior generative capacity of large pretrained language models, recent work built on prompt engineering enables explanation generation without specific training. However, explanation generated through single-pass prompting often lacks sufficiency and conciseness. To address this problem, we develop an information bottleneck method EIB to produce refined explanations that are sufficient and concise. Our approach regenerates the free-text explanation by polishing the single-pass output from the pretrained language model but retaining the information that supports the contents being explained. Experiments on two out-of-domain tasks verify the effectiveness of EIB through automatic evaluation and thoroughly-conducted human evaluation.
+                  Despite a generally accepted framework for describing the Gamma-Ray Burst (GRB) afterglows, the nature of the compact object at the central engine and the mechanism behind the prompt emission remain debated. The striped jet model is a promising venue to connect the various GRB stages since it gives a robust prediction for the relation of jet bulk acceleration, magnetization and dissipation profile as a function of distance. Here, we use the constraints of the magnetization and bulk Lorentz of the jet flow at the large scales where the jet starts interacting with the ambient gas in a large sample of bursts to (i) test the striped jet model for the GRB flow and (ii) study its predictions for the prompt emission and the constraints on the nature of the central engine. We find that the peak of the photospheric component of the emission predicted by the model is in agreement with the observed prompt emission spectra in the majority of the bursts in our sample, with a radiative efficiency of about 10 per cent. Furthermore, we adopt two different approaches to correlate the peak energies of the bursts with the type of central engine to find that more bursts are compatible with a neutron star central engine compared to a black hole one. Lastly, we conclude that the model favors broader distribution of stripe length-scales which results in a more gradual dissipation profile in comparison to the case where the jet stripes are characterized by a single length-scale.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2212.09603v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2212.11406v1' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr><tr>
+          <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2022-12-20</p>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                DISCO: Distilling Phrasal Counterfactuals with Large Language Models
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.13</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.581</span></div>
+                <p class="pt-2">
+                  Recent methods demonstrate that data augmentation using counterfactual knowledge can teach models the causal structure of a task, leading to robust and generalizable models. However, such counterfactual data often has a limited scale and diversity if crowdsourced and is computationally expensive to extend to new perturbation types if generated using supervised methods. To address this, we introduce a new framework called DISCO for automatically generating high-quality counterfactual data at scale. DISCO engineers prompts to generate phrasal perturbations with a large general language model. Then, a task-specific teacher model filters the generation to distill high-quality counterfactual data. We show that learning with this counterfactual data yields a comparatively small student model that is 6% (absolute) more robust and generalizes 5% better across distributions than baselines on various challenging evaluations. This model is also 15% more sensitive in differentiating original and counterfactual examples, on three evaluation sets written by human workers and via human-AI collaboration.
+                </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2212.10534v1' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr><tr>
+          <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2022-12-14</p>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                Evidence of high latitude emission in the prompt phase of GRBs: How far from the central engine are the GRBs produced?
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.47</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.533</span></div>
+                <p class="pt-2">
+                  The physical mechanism of gamma-ray bursts (GRBs) remains elusive. One of the difficulties in nailing down their physical mechanism comes from the fact that there has been no clear observational evidence on how far from the central engine the prompt gamma-rays of GRBs are emitted while the competing physical mechanisms predict different characteristic distances. Here we present a simple study addressing this question by making use of the "high-latitude emission" (HLE). We show that our detailed numerical modeling exhibits a clear signature of HLE in the decaying phase of "broad pulses" of GRBs. We show that the HLE can emerge as a prominent spectral break in $F_{\nu}$ spectra and dominate the peak of $\nu F_{\nu}$ spectra even while the "line-of-sight emission" (LoSE) is still ongoing, hence providing a new view of HLE emergence. We remark that this "HLE break" could be hidden in some broad pulses, depending on the proximity between the peak energies of the LoSE and the HLE. Also, we present three examples of Fermi-GBM GRBs with broad pulses that exhibit the HLE signature. We show that their gamma-ray emitting region should be located at $\sim 10^{16}$ cm from the central engine, which disfavors the photosphere models and small-radii internal shock models but favors magnetic dissipation models with a large emission radius.
+                </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2212.07094v2' target="_blank">
                   link
                 </a>
               </p>
@@ -417,15 +483,15 @@ datasets in the mix too.
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Fill in the Blank: Context-aware Automated Text Input Generation for Mobile GUI Testing
+                Automatically Generating CS Learning Materials with Large Language Models
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.61</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.511</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.225</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.562</span></div>
                 <p class="pt-2">
-                  Automated GUI testing is widely used to help ensure the quality of mobile apps. However, many GUIs require appropriate text inputs to proceed to the next page which remains a prominent obstacle for testing coverage. Considering the diversity and semantic requirement of valid inputs (e.g., flight departure, movie name), it is challenging to automate the text input generation. Inspired by the fact that the pre-trained Large Language Model (LLM) has made outstanding progress in text generation, we propose an approach named QTypist based on LLM for intelligently generating semantic input text according to the GUI context. To boost the performance of LLM in the mobile testing scenario, we develop a prompt-based data construction and tuning method which automatically extracts the prompts and answers for model tuning. We evaluate QTypist on 106 apps from Google Play and the result shows that the passing rate of QTypist is 87%, which is 93% higher than the best baseline. We also integrate QTypist with the automated GUI testing tools and it can cover 42% more app activities, 52% more pages, and subsequently help reveal 122% more bugs compared with the raw tool.
+                  Recent breakthroughs in Large Language Models (LLMs), such as GPT-3 and Codex, now enable software developers to generate code based on a natural language prompt. Within computer science education, researchers are exploring the potential for LLMs to generate code explanations and programming assignments using carefully crafted prompts. These advances may enable students to interact with code in new ways while helping instructors scale their learning materials. However, LLMs also introduce new implications for academic integrity, curriculum design, and software engineering careers. This workshop will demonstrate the capabilities of LLMs to help attendees evaluate whether and how LLMs might be integrated into their pedagogy and research. We will also engage attendees in brainstorming to consider how LLMs will impact our field.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2212.04732v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2212.05113v1' target="_blank">
                   link
                 </a>
               </p>
@@ -434,20 +500,64 @@ datasets in the mix too.
         </td>
       </tr><tr>
           <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2022-12-01</p>
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2022-09-14</p>
           </td>
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Multi-messenger model for the prompt emission from GRB 221009A
+                Griffith-based analysis of crack initiation location in a Brazilian test
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.23</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.855</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.5</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.511</span></div>
                 <p class="pt-2">
-                  We present a multi-messenger model for the prompt emission from GRB 221009A within the internal shock scenario. We consider the time-dependent evolution of the outflow with its impact on the observed light curve from multiple collisions, and the self-consistent generation of the electromagnetic spectrum in synchrotron and inverse Compton-dominated scenarios. Our leptohadronic model includes UHE protons potentially accelerated in the outflow, and their feedback on spectral energy distribution and on the neutrino emission. We find that we can roughly reproduce the observed light curves with an engine with varying ejection velocity of ultra-relativistic material, which has an intermediate quiescent period of about 200 seconds and a variability timescale of $\sim1$~s. We consider baryonic loadings of 3 and 30 that are compatible with the hypothesis that the highest-energetic LHAASO photons might come from UHECR interactions with the extragalactic background light, and the paradigm that energetic GRBs may power the UHECR flux. For these values and the high dissipation radii considered we find consistency with the non-observation of neutrinos and no significant signatures on the electromagnetic spectrum. Inverse Compton-dominated scenarios from the prompt emission are demonstrated to lead to about an order of magnitude higher fluxes in the HE-range; this enhancement is testable by its spectral impact in the Fermi-GBM and LAT ranges.
+                  The Brazilian test has been extremely popular while prompting significant debate. The main source of controversy is rooted in its indirect nature; the material tensile strength is inferred upon assuming that cracking initiates at the centre of the sample. Here, we use the Griffith criterion and finite element analysis to map the conditions (jaws geometry and material properties) that result in the nucleation of a centre crack. Unlike previous studies, we do not restrict ourselves to evaluating the stress state at the disk centre; the failure envelope of the generalised Griffith criterion is used to establish the crack nucleation location. We find that the range of conditions where the Brazilian test is valid is much narrower than previously assumed, with current practices and standards being inappropriate for a wide range of rock-like materials. The results obtained are used to develop a protocol that experimentalists can follow to obtain a valid estimate of the material tensile strength. This is showcased with specific case studies and examples of valid and invalid tests from the literature. Furthermore, the uptake of this protocol is facilitated by providing a MATLAB App that determines the validity of the experiment for arbitrary test conditions.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2212.00766v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2209.06456v1' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr><tr>
+          <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2022-08-10</p>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                Erasure qubits: Overcoming the $T_1$ limit in superconducting circuits
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.11</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.614</span></div>
+                <p class="pt-2">
+                  The amplitude damping time, $T_1$, has long stood as the major factor limiting quantum fidelity in superconducting circuits, prompting concerted efforts in the material science and design of qubits aimed at increasing $T_1$. In contrast, the dephasing time, $T_{\phi}$, can usually be extended above $T_1$ (via, e.g., dynamical decoupling), to the point where it does not limit fidelity. In this article we propose a scheme for overcoming the conventional $T_1$ limit on fidelity by designing qubits in a way that amplitude damping errors can be detected and converted into erasure errors. Compared to standard qubit implementations our scheme improves the performance of fault-tolerant protocols, as numerically demonstrated by the circuit-noise simulations of the surface code. We describe two simple qubit implementations with superconducting circuits and discuss procedures for detecting amplitude damping errors, performing entangling gates, and extending $T_\phi$. Our results suggest that engineering efforts should focus on improving $T_\phi$ and the quality of quantum coherent control, as they effectively become the limiting factor on the performance of fault-tolerant protocols.
+                </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2208.05461v1' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr><tr>
+          <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2022-05-14</p>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                On LGRB progenitors: an approach from thermally-produced neutrinos
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.141</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.567</span></div>
+                <p class="pt-2">
+                  Gamma-ray bursts (GRB) are the most intense electromagnetic (EM) sources in the Universe. Long GRB (LGRB) correspond to those events with a typical prompt emission of more than a few seconds. It is generally assumed that they are originated after an implosion of a very massive star within a central compact object engine that can be either a black hole (BH) or a rapidly-spinning highly-magnetized neutron star (NS). Nevertheless, one of the most challenging aspects of defining a unique model is that the progenitor remains initially hidden for direct EM observation. In this work, we investigate the evolution of thermally-produced neutrino properties in both GRB progenitors to provide an alternative solution. We consider the characteristics of both progenitors and the fireball scenario to calculate the oscillation probabilities within a three-flavor admixture regime. Then we obtain the expected neutrino ratio and we also estimate the number of events from these sources that could be detected in the future Hyper-Kamiokande (Hyper-K) detector, considering a sample of previously observed GRB with remarkably signs of being magnetar-produced. Our findings indicate that examining the predicted neutrino rates result in an additional mechanism to determine the type of progenitor associated with these events. This is especially useful when, for instance, we cannot directly observe an electromagnetic counterpart, such as so-called "failed" GRB with hidden jets, or when light curve analysis is inconclusive.
+                </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2205.06967v1' target="_blank">
                   link
                 </a>
               </p>
