@@ -1,4 +1,4 @@
-title: "FrontPage: An Prodigy project to make a personal front-page."
+title: "FrontPage: A Prodigy project to make a personal front-page."
 description: "Using Prodigy, spaCy, and friends ... this project allows you to make your own frontpage of the internet."
 
 # Variables can be referenced across the project.yml using ${vars.var_name}
