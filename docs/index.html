@@ -19,7 +19,7 @@
           <td>
             <h1 class="text-6xl pt-4 font-bold"><span class="underline">Your</span> FrontPage</h1>
             <br>
-            <p>Generated on 2023-05-11.</p>
+            <p>Generated on 2023-05-12.</p>
             <p class="text-sm text-gray-500 pt-2">This frontpage is made by scraping arxiv and by runnig a spaCy model that detects 
 if the abstract describes a paper about a new specific topic. Right now we try to
 find interesting articles about new dataset or about prompt engineering. Many datasets 
@@ -33,6 +33,50 @@ datasets in the mix too.
           <td>
             <h2 class="text-4xl pt-4 font-bold">Datasets on Arxiv</h2><span class='px-2 mx-1 bg-yellow-200 text-xs'>tag:arxiv</span><span class='px-2 mx-1 bg-yellow-200 text-xs'>tag:dataset</span><span class='px-2 mx-1 bg-blue-200 text-xs'>cls:dataset</span></td>
         </tr><tr>
+          <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-05-11</p>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                Filtering higher-order datasets
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.852</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.8</span></div>
+                <p class="pt-2">
+                  Many complex systems often contain interactions between more than two nodes, known as higher-order interactions, which can change the structure of these systems in significant ways. Researchers often assume that all interactions paint a consistent picture of a higher-order dataset's structure. In contrast, the connection patterns of individuals or entities in empirical systems are often stratified by interaction size. Ignoring this fact can aggregate connection patterns that exist only at certain scales of interaction. To isolate these scale-dependent patterns, we present an approach for analyzing higher-order datasets by filtering interactions by their size. We apply this framework to several empirical datasets from three domains to demonstrate that data practitioners can gain valuable information from this approach.
+                </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.06910v1' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr><tr>
+          <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-05-11</p>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                Spectral Clustering on Large Datasets: When Does it Work? Theory from Continuous Clustering and Density Cheeger-Buser
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.541</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.24</span></div>
+                <p class="pt-2">
+                  Spectral clustering is one of the most popular clustering algorithms that has stood the test of time. It is simple to describe, can be implemented using standard linear algebra, and often finds better clusters than traditional clustering algorithms like $k$-means and $k$-centers. The foundational algorithm for two-way spectral clustering, by Shi and Malik, creates a geometric graph from data and finds a spectral cut of the graph.   In modern machine learning, many data sets are modeled as a large number of points drawn from a probability density function. Little is known about when spectral clustering works in this setting -- and when it doesn't. Past researchers justified spectral clustering by appealing to the graph Cheeger inequality (which states that the spectral cut of a graph approximates the ``Normalized Cut''), but this justification is known to break down on large data sets.   We provide theoretically-informed intuition about spectral clustering on large data sets drawn from probability densities, by proving when a continuous form of spectral clustering considered by past researchers (the unweighted spectral cut of a probability density) finds good clusters of the underlying density itself. Our work suggests that Shi-Malik spectral clustering works well on data drawn from mixtures of Laplace distributions, and works poorly on data drawn from certain other densities, such as a density we call the `square-root trough'.   Our core theorem proves that weighted spectral cuts have low weighted isoperimetry for all probability densities. Our key tool is a new Cheeger-Buser inequality for all probability densities, including discontinuous ones.
+                </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.06541v1' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr><tr>
           <td class="inline-block">
             <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-05-09</p>
           </td>
@@ -144,28 +188,6 @@ datasets in the mix too.
         </td>
       </tr><tr>
           <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-05-02</p>
-          </td>
-          <td>
-            <div x-data="{open: false}">
-              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Topic Shift Detection in Chinese Dialogues: Corpus and Benchmark
-              </span>
-              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.657</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.53</span></div>
-                <p class="pt-2">
-                  Dialogue topic shift detection is to detect whether an ongoing topic has shifted or should shift in a dialogue, which can be divided into two categories, i.e., response-known task and response-unknown task. Currently, only a few investigated the latter, because it is still a challenge to predict the topic shift without the response information. In this paper, we first annotate a Chinese Natural Topic Dialogue (CNTD) corpus consisting of 1308 dialogues to fill the gap in the Chinese natural conversation topic corpus. And then we focus on the response-unknown task and propose a teacher-student framework based on hierarchical contrastive learning to predict the topic shift without the response. Specifically, the response at high-level teacher-student is introduced to build the contrastive learning between the response and the context, while the label contrastive learning is constructed at low-level student. The experimental results on our Chinese CNTD and English TIAGE show the effectiveness of our proposed model.
-                </p>
-              <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.01195v1' target="_blank">
-                  link
-                </a>
-              </p>
-            </div>
-          </div>
-        </td>
-      </tr><tr>
-          <td class="inline-block">
             <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-05-01</p>
           </td>
           <td>
@@ -180,50 +202,6 @@ datasets in the mix too.
                 </p>
               <p class="pb-2 pt-2 text-center">
                 <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.00767v1' target="_blank">
-                  link
-                </a>
-              </p>
-            </div>
-          </div>
-        </td>
-      </tr><tr>
-          <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-04-20</p>
-          </td>
-          <td>
-            <div x-data="{open: false}">
-              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                A Study on Reproducibility and Replicability of Table Structure Recognition Methods
-              </span>
-              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.836</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.1</span></div>
-                <p class="pt-2">
-                  Concerns about reproducibility in artificial intelligence (AI) have emerged, as researchers have reported unsuccessful attempts to directly reproduce published findings in the field. Replicability, the ability to affirm a finding using the same procedures on new data, has not been well studied. In this paper, we examine both reproducibility and replicability of a corpus of 16 papers on table structure recognition (TSR), an AI task aimed at identifying cell locations of tables in digital documents. We attempt to reproduce published results using codes and datasets provided by the original authors. We then examine replicability using a dataset similar to the original as well as a new dataset, GenTSR, consisting of 386 annotated tables extracted from scientific papers. Out of 16 papers studied, we reproduce results consistent with the original in only four. Two of the four papers are identified as replicable using the similar dataset under certain IoU values. No paper is identified as replicable using the new dataset. We offer observations on the causes of irreproducibility and irreplicability. All code and data are available on Codeocean at https://codeocean.com/capsule/6680116/tree.
-                </p>
-              <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2304.10439v1' target="_blank">
-                  link
-                </a>
-              </p>
-            </div>
-          </div>
-        </td>
-      </tr><tr>
-          <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-04-19</p>
-          </td>
-          <td>
-            <div x-data="{open: false}">
-              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                3 Dimensional Dense Reconstruction: A Review of Algorithms and Dataset
-              </span>
-              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.503</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.18</span></div>
-                <p class="pt-2">
-                  3D dense reconstruction refers to the process of obtaining the complete shape and texture features of 3D objects from 2D planar images. 3D reconstruction is an important and extensively studied problem, but it is far from being solved. This work systematically introduces classical methods of 3D dense reconstruction based on geometric and optical models, as well as methods based on deep learning. It also introduces datasets for deep learning and the performance and advantages and disadvantages demonstrated by deep learning methods on these datasets.
-                </p>
-              <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2304.09371v1' target="_blank">
                   link
                 </a>
               </p>
@@ -276,20 +254,42 @@ datasets in the mix too.
         </td>
       </tr><tr>
           <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-04-11</p>
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-04-04</p>
           </td>
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                WEAR: A Multimodal Dataset for Wearable and Egocentric Video Activity Recognition
+                SportsPose -- A Dynamic 3D sports pose dataset
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.796</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.2</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.701</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.0</span></div>
                 <p class="pt-2">
-                  Though research has shown the complementarity of camera- and inertial-based data, datasets which offer both modalities remain scarce. In this paper we introduce WEAR, a multimodal benchmark dataset for both vision- and wearable-based Human Activity Recognition (HAR). The dataset comprises data from 18 participants performing a total of 18 different workout activities with untrimmed inertial (acceleration) and camera (egocentric video) data recorded at 10 different outside locations. WEAR features a diverse set of activities which are low in inter-class similarity and, unlike previous egocentric datasets, not defined by human-object-interactions nor originate from inherently distinct activity categories. Provided benchmark results reveal that single-modality architectures have different strengths and weaknesses in their prediction performance. Further, in light of the recent success of transformer-based video action detection models, we demonstrate their versatility by applying them in a plain fashion using vision, inertial and combined (vision + inertial) features as input. Results show that vision transformers are not only able to produce competitive results using only inertial data, but also can function as an architecture to fuse both modalities by means of simple concatenation, with the multimodal approach being able to produce the highest average mAP, precision and close-to-best F1-scores. Up until now, vision-based transformers have neither been explored in inertial nor in multimodal human activity recognition, making our approach the first to do so. The dataset and code to reproduce experiments is publicly available via: mariusbock.github.io/wear
+                  Accurate 3D human pose estimation is essential for sports analytics, coaching, and injury prevention. However, existing datasets for monocular pose estimation do not adequately capture the challenging and dynamic nature of sports movements. In response, we introduce SportsPose, a large-scale 3D human pose dataset consisting of highly dynamic sports movements. With more than 176,000 3D poses from 24 different subjects performing 5 different sports activities, SportsPose provides a diverse and comprehensive set of 3D poses that reflect the complex and dynamic nature of sports movements. Contrary to other markerless datasets we have quantitatively evaluated the precision of SportsPose by comparing our poses with a commercial marker-based system and achieve a mean error of 34.5 mm across all evaluation sequences. This is comparable to the error reported on the commonly used 3DPW dataset. We further introduce a new metric, local movement, which describes the movement of the wrist and ankle joints in relation to the body. With this, we show that SportsPose contains more movement than the Human3.6M and 3DPW datasets in these extremum joints, indicating that our movements are more dynamic. The dataset with accompanying code can be downloaded from our website. We hope that SportsPose will allow researchers and practitioners to develop and evaluate more effective models for the analysis of sports performance and injury prevention. With its realistic and diverse dataset, SportsPose provides a valuable resource for advancing the state-of-the-art in pose estimation in sports.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2304.05088v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2304.01865v1' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr><tr>
+          <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-04-04</p>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                EDeR: A Dataset for Exploring Dependency Relations Between Events
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.557</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.3</span></div>
+                <p class="pt-2">
+                  Relation extraction is a central task in natural language processing (NLP) and information retrieval (IR) research. We argue that an important type of relation not explored in NLP or IR research to date is that of an event being an argument - required or optional - of another event. We introduce the human-annotated Event Dependency Relation dataset (EDeR) which provides this dependency relation. The annotation is done on a sample of documents from the OntoNotes dataset, which has the added benefit that it integrates with existing, orthogonal, annotations of this dataset. We investigate baseline approaches for predicting the event dependency relation, the best of which achieves an accuracy of 82.61 for binary argument/non-argument classification. We show that recognizing this relation leads to more accurate event extraction (semantic role labelling) and can improve downstream tasks that depend on this, such as co-reference resolution. Furthermore, we demonstrate that predicting the three-way classification into the required argument, optional argument or non-argument is a more challenging task.
+                </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2304.01612v1' target="_blank">
                   link
                 </a>
               </p>
@@ -329,15 +329,37 @@ datasets in the mix too.
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Can we Trust Chatbots for now? Accuracy, reproducibility, traceability; a Case Study on Leonardo da Vinci's Contribution to Astronomy
+                Segment Anything in 3D with NeRFs
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.1</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.551</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.118</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.513</span></div>
                 <p class="pt-2">
-                  Large Language Models (LLM) are studied. Applications to chatbots and education are considered. A case study on Leonardo's contribution to astronomy is presented. Major problems with accuracy, reproducibility and traceability of answers are reported for ChatGPT, GPT-4, BLOOM and Google Bard. Possible reasons for problems are discussed and some solutions are proposed.
+                  The Segment Anything Model (SAM) has demonstrated its effectiveness in segmenting any object/part in various 2D images, yet its ability for 3D has not been fully explored. The real world is composed of numerous 3D scenes and objects. Due to the scarcity of accessible 3D data and high cost of its acquisition and annotation, lifting SAM to 3D is a challenging but valuable research avenue. With this in mind, we propose a novel framework to Segment Anything in 3D, named SA3D. Given a neural radiance field (NeRF) model, SA3D allows users to obtain the 3D segmentation result of any target object via only one-shot manual prompting in a single rendered view. With input prompts, SAM cuts out the target object from the according view. The obtained 2D segmentation mask is projected onto 3D mask grids via density-guided inverse rendering. 2D masks from other views are then rendered, which are mostly uncompleted but used as cross-view self-prompts to be fed into SAM again. Complete masks can be obtained and projected onto mask grids. This procedure is executed via an iterative manner while accurate 3D masks can be finally learned. SA3D can adapt to various radiance fields effectively without any additional redesigning. The entire segmentation process can be completed in approximately two minutes without any engineering optimization. Our experiments demonstrate the effectiveness of SA3D in different scenes, highlighting the potential of SAM in 3D scene perception. The project page is at https://jumpat.github.io/SA3D/.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2304.11852v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2304.12308v1' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr><tr>
+          <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-04-19</p>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                GeneGPT: Teaching Large Language Models to Use NCBI Web APIs
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.10</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.519</span></div>
+                <p class="pt-2">
+                  In this paper, we present GeneGPT, a novel method for teaching large language models (LLMs) to use the Web Application Programming Interfaces (APIs) of the National Center for Biotechnology Information (NCBI) and answer genomics questions. Specifically, we prompt Codex (code-davinci-002) to solve the GeneTuring tests with few-shot URL requests of NCBI API calls as demonstrations for in-context learning. During inference, we stop the decoding once a call request is detected and make the API call with the generated URL. We then append the raw execution results returned by NCBI APIs to the generated texts and continue the generation until the answer is found or another API call is detected. Our preliminary results show that GeneGPT achieves state-of-the-art results on three out of four one-shot tasks and four out of five zero-shot tasks in the GeneTuring dataset. Overall, GeneGPT achieves a macro-average score of 0.76, which is much higher than retrieval-augmented LLMs such as the New Bing (0.44), biomedical LLMs such as BioMedLM (0.08) and BioGPT (0.04), as well as other LLMs such as GPT-3 (0.16) and ChatGPT (0.12).
+                </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2304.09667v1' target="_blank">
                   link
                 </a>
               </p>
@@ -434,28 +456,6 @@ datasets in the mix too.
         </td>
       </tr><tr>
           <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-03-16</p>
-          </td>
-          <td>
-            <div x-data="{open: false}">
-              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Patch-Token Aligned Bayesian Prompt Learning for Vision-Language Models
-              </span>
-              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.1</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.979</span></div>
-                <p class="pt-2">
-                  For downstream applications of vision-language pre-trained models, there has been significant interest in constructing effective prompts. Existing works on prompt engineering, which either require laborious manual designs or optimize the prompt tuning as a point estimation problem, may fail to describe diverse characteristics of categories and limit their applications. We introduce a Bayesian probabilistic resolution to prompt learning, where the label-specific stochastic prompts are generated hierarchically by first sampling a latent vector from an underlying distribution and then employing a lightweight generative model. Importantly, we semantically regularize prompt learning with the visual knowledge and view images and the corresponding prompts as patch and token sets under optimal transport, which pushes the prompt tokens to faithfully capture the label-specific visual concepts, instead of overfitting the training categories. Moreover, the proposed model can also be straightforwardly extended to the conditional case where the instance-conditional prompts are generated to improve the generalizability. Extensive experiments on 15 datasets show promising transferability and generalization performance of our proposed model.
-                </p>
-              <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2303.09100v1' target="_blank">
-                  link
-                </a>
-              </p>
-            </div>
-          </div>
-        </td>
-      </tr><tr>
-          <td class="inline-block">
             <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-03-13</p>
           </td>
           <td>
@@ -478,20 +478,20 @@ datasets in the mix too.
         </td>
       </tr><tr>
           <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-01-10</p>
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2022-12-19</p>
           </td>
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                API Entity and Relation Joint Extraction from Text via Dynamic Prompt-tuned Language Model
+                Explanation Regeneration via Information Bottleneck
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.43</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.949</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.26</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.799</span></div>
                 <p class="pt-2">
-                  Extraction of Application Programming Interfaces (APIs) and their semantic relations from unstructured text (e.g., Stack Overflow) is a fundamental work for software engineering tasks (e.g., API recommendation). However, existing approaches are rule-based and sequence-labeling based. They must manually enumerate the rules or label data for a wide range of sentence patterns, which involves a significant amount of labor overhead and is exacerbated by morphological and common-word ambiguity. In contrast to matching or labeling API entities and relations, this paper formulates heterogeneous API extraction and API relation extraction task as a sequence-to-sequence generation task, and proposes AERJE, an API entity-relation joint extraction model based on the large pre-trained language model. After training on a small number of ambiguous but correctly labeled data, AERJE builds a multi-task architecture that extracts API entities and relations from unstructured text using dynamic prompts. We systematically evaluate AERJE on a set of long and ambiguous sentences from Stack Overflow. The experimental results show that AERJE achieves high accuracy and discrimination ability in API entity-relation joint extraction, even with zero or few-shot fine-tuning.
+                  Explaining the black-box predictions of NLP models naturally and accurately is an important open problem in natural language generation. These free-text explanations are expected to contain sufficient and carefully-selected evidence to form supportive arguments for predictions. Due to the superior generative capacity of large pretrained language models, recent work built on prompt engineering enables explanation generation without specific training. However, explanation generated through single-pass prompting often lacks sufficiency and conciseness. To address this problem, we develop an information bottleneck method EIB to produce refined explanations that are sufficient and concise. Our approach regenerates the free-text explanation by polishing the single-pass output from the pretrained language model but retaining the information that supports the contents being explained. Experiments on two out-of-domain tasks verify the effectiveness of EIB through automatic evaluation and thoroughly-conducted human evaluation.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2301.03987v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2212.09603v1' target="_blank">
                   link
                 </a>
               </p>
@@ -500,20 +500,20 @@ datasets in the mix too.
         </td>
       </tr><tr>
           <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-01-01</p>
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2022-12-09</p>
           </td>
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Modeling Label Semantics Improves Activity Recognition
+                Fill in the Blank: Context-aware Automated Text Input Generation for Mobile GUI Testing
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.7</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.987</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.61</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.511</span></div>
                 <p class="pt-2">
-                  Human activity recognition (HAR) aims to classify sensory time series into different activities, with wide applications in activity tracking, healthcare, human computer interaction, etc. Existing HAR works improve recognition performance by designing more complicated feature extraction methods, but they neglect the label semantics by simply treating labels as integer IDs. We find that many activities in the current HAR datasets have shared label names, e.g., "open door" and "open fridge", "walk upstairs" and "walk downstairs". Through some exploratory analysis, we find that such shared structure in activity names also maps to similarity in the input features. To this end, we design a sequence-to-sequence framework to decode the label name semantics rather than classifying labels as integer IDs. Our proposed method decomposes learning activities into learning shared tokens ("open", "walk"), which is easier than learning the joint distribution ("open fridge", "walk upstairs") and helps transfer learning to activities with insufficient data samples. For datasets originally without shared tokens in label names, we also offer an automated method, using OpenAI's ChatGPT, to generate shared actions and objects. Extensive experiments on seven HAR benchmark datasets demonstrate the state-of-the-art performance of our method. We also show better performance in the long-tail activity distribution settings and few-shot settings.
+                  Automated GUI testing is widely used to help ensure the quality of mobile apps. However, many GUIs require appropriate text inputs to proceed to the next page which remains a prominent obstacle for testing coverage. Considering the diversity and semantic requirement of valid inputs (e.g., flight departure, movie name), it is challenging to automate the text input generation. Inspired by the fact that the pre-trained Large Language Model (LLM) has made outstanding progress in text generation, we propose an approach named QTypist based on LLM for intelligently generating semantic input text according to the GUI context. To boost the performance of LLM in the mobile testing scenario, we develop a prompt-based data construction and tuning method which automatically extracts the prompts and answers for model tuning. We evaluate QTypist on 106 apps from Google Play and the result shows that the passing rate of QTypist is 87%, which is 93% higher than the best baseline. We also integrate QTypist with the automated GUI testing tools and it can cover 42% more app activities, 52% more pages, and subsequently help reveal 122% more bugs compared with the raw tool.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2301.03462v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2212.04732v1' target="_blank">
                   link
                 </a>
               </p>
@@ -522,42 +522,20 @@ datasets in the mix too.
         </td>
       </tr><tr>
           <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2022-12-29</p>
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2022-12-01</p>
           </td>
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                GPT Takes the Bar Exam
+                Multi-messenger model for the prompt emission from GRB 221009A
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.1</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.991</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.23</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.855</span></div>
                 <p class="pt-2">
-                  Nearly all jurisdictions in the United States require a professional license exam, commonly referred to as "the Bar Exam," as a precondition for law practice. To even sit for the exam, most jurisdictions require that an applicant completes at least seven years of post-secondary education, including three years at an accredited law school. In addition, most test-takers also undergo weeks to months of further, exam-specific preparation. Despite this significant investment of time and capital, approximately one in five test-takers still score under the rate required to pass the exam on their first try. In the face of a complex task that requires such depth of knowledge, what, then, should we expect of the state of the art in "AI?" In this research, we document our experimental evaluation of the performance of OpenAI's `text-davinci-003` model, often-referred to as GPT-3.5, on the multistate multiple choice (MBE) section of the exam. While we find no benefit in fine-tuning over GPT-3.5's zero-shot performance at the scale of our training data, we do find that hyperparameter optimization and prompt engineering positively impacted GPT-3.5's zero-shot performance. For best prompt and parameters, GPT-3.5 achieves a headline correct rate of 50.3% on a complete NCBE MBE practice exam, significantly in excess of the 25% baseline guessing rate, and performs at a passing rate for both Evidence and Torts. GPT-3.5's ranking of responses is also highly-correlated with correctness; its top two and top three choices are correct 71% and 88% of the time, respectively, indicating very strong non-entailment performance. While our ability to interpret these results is limited by nascent scientific understanding of LLMs and the proprietary nature of GPT, we believe that these results strongly suggest that an LLM will pass the MBE component of the Bar Exam in the near future.
+                  We present a multi-messenger model for the prompt emission from GRB 221009A within the internal shock scenario. We consider the time-dependent evolution of the outflow with its impact on the observed light curve from multiple collisions, and the self-consistent generation of the electromagnetic spectrum in synchrotron and inverse Compton-dominated scenarios. Our leptohadronic model includes UHE protons potentially accelerated in the outflow, and their feedback on spectral energy distribution and on the neutrino emission. We find that we can roughly reproduce the observed light curves with an engine with varying ejection velocity of ultra-relativistic material, which has an intermediate quiescent period of about 200 seconds and a variability timescale of $\sim1$~s. We consider baryonic loadings of 3 and 30 that are compatible with the hypothesis that the highest-energetic LHAASO photons might come from UHECR interactions with the extragalactic background light, and the paradigm that energetic GRBs may power the UHECR flux. For these values and the high dissipation radii considered we find consistency with the non-observation of neutrinos and no significant signatures on the electromagnetic spectrum. Inverse Compton-dominated scenarios from the prompt emission are demonstrated to lead to about an order of magnitude higher fluxes in the HE-range; this enhancement is testable by its spectral impact in the Fermi-GBM and LAT ranges.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2212.14402v1' target="_blank">
-                  link
-                </a>
-              </p>
-            </div>
-          </div>
-        </td>
-      </tr><tr>
-          <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2022-12-21</p>
-          </td>
-          <td>
-            <div x-data="{open: false}">
-              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Connecting the early afterglow to the prompt GRB and the central engine in the striped jet model
-              </span>
-              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.28</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.959</span></div>
-                <p class="pt-2">
-                  Despite a generally accepted framework for describing the Gamma-Ray Burst (GRB) afterglows, the nature of the compact object at the central engine and the mechanism behind the prompt emission remain debated. The striped jet model is a promising venue to connect the various GRB stages since it gives a robust prediction for the relation of jet bulk acceleration, magnetization and dissipation profile as a function of distance. Here, we use the constraints of the magnetization and bulk Lorentz of the jet flow at the large scales where the jet starts interacting with the ambient gas in a large sample of bursts to (i) test the striped jet model for the GRB flow and (ii) study its predictions for the prompt emission and the constraints on the nature of the central engine. We find that the peak of the photospheric component of the emission predicted by the model is in agreement with the observed prompt emission spectra in the majority of the bursts in our sample, with a radiative efficiency of about 10 per cent. Furthermore, we adopt two different approaches to correlate the peak energies of the bursts with the type of central engine to find that more bursts are compatible with a neutron star central engine compared to a black hole one. Lastly, we conclude that the model favors broader distribution of stripe length-scales which results in a more gradual dissipation profile in comparison to the case where the jet stripes are characterized by a single length-scale.
-                </p>
-              <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2212.11406v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2212.00766v1' target="_blank">
                   link
                 </a>
               </p>
