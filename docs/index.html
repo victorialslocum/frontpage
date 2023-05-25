@@ -19,7 +19,7 @@
           <td>
             <h1 class="text-6xl pt-4 font-bold"><span class="underline">Your</span> FrontPage</h1>
             <br>
-            <p>Generated on 2023-05-24.</p>
+            <p>Generated on 2023-05-25.</p>
             <p class="text-sm text-gray-500 pt-2">This frontpage is made by scraping arxiv and by runnig a spaCy model that detects 
 if the abstract describes a paper about a new specific topic. Right now we try to
 find interesting articles about new dataset or about prompt engineering. Many datasets 
@@ -34,20 +34,42 @@ datasets in the mix too.
             <h2 class="text-4xl pt-4 font-bold">Datasets on Arxiv</h2><span class='px-2 mx-1 bg-yellow-200 text-xs'>tag:arxiv</span><span class='px-2 mx-1 bg-yellow-200 text-xs'>tag:dataset</span><span class='px-2 mx-1 bg-blue-200 text-xs'>cls:dataset</span></td>
         </tr><tr>
           <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-05-23</p>
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-05-24</p>
           </td>
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                CREATOR: Disentangling Abstract and Concrete Reasonings of Large Language Models through Tool Creation
+                ToMChallenges: A Principle-Guided Dataset and Diverse Evaluation Tasks for Exploring Theory of Mind
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.577</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.69</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.597</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.57</span></div>
                 <p class="pt-2">
-                  Large Language Models (LLMs) have demonstrated significant progress in utilizing external APIs as tools for various tasks. However, their tool-using ability is limited by the availability of suitable APIs and the instability of implicit reasoning, particularly when simultaneously engaging in reasoning about plans and actual calculations. To address these limitations, we propose CREATOR, a novel framework that empowers LLMs to create their own tools through documentation and code realization. CREATOR disentangles the LLM's ability into two distinct phases: abstract tool creation and concrete decision execution, which results in improved LLM performance. We evaluate CREATOR on two established benchmarks: MATH, which consists of challenging math competition problems, and TabMWP, which includes diverse tabular contents for problem-solving. Remarkably, CREATOR significantly outperforms existing chain-of-thought (CoT), program-of-thought (PoT), and tool-using baselines on these two benchmarks. Additionally, we present a new dataset, Creation Challenge, comprising 2K diverse questions, to highlight the necessity and benefits of LLMs' tool creation ability in effectively addressing these problems. Furthermore, our research reveals that leveraging LLMs as tool creators facilitates knowledge transfer, and LLMs exhibit varying levels of tool creation abilities, enabling them to flexibly tackle diverse situations. Our study represents a promising avenue for maximizing the potential of LLMs and advancing toward truly intelligent and adaptable AI systems.
+                  Theory of Mind (ToM), the capacity to comprehend the mental states of distinct individuals, is essential for numerous practical applications. With the development of large language models, there is a heated debate about whether they are able to perform ToM tasks. Previous studies have used different tasks and prompts to test the ToM on large language models and the results are inconsistent: some studies asserted these models are capable of exhibiting ToM, while others suggest the opposite. In this study, We present ToMChallenges, a dataset for comprehensively evaluating Theory of Mind based on Sally-Anne and Smarties tests. We created 30 variations of each test (e.g., changing the person's name, location, and items). For each variation, we test the model's understanding of different aspects: reality, belief, 1st order belief, and 2nd order belief. We adapt our data for various tasks by creating unique prompts tailored for each task category: Fill-in-the-Blank, Multiple Choice, True/False, Chain-of-Thought True/False, Question Answering, and Text Completion. If the model has a robust ToM, it should be able to achieve good performance for different prompts across different tests. We evaluated two GPT-3.5 models, text-davinci-003 and gpt-3.5-turbo-0301, with our datasets. Our results indicate that consistent performance in ToM tasks remains a challenge.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.14318v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.15068v1' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr><tr>
+          <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-05-24</p>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                Polarimetric Imaging for Perception
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.692</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.0</span></div>
+                <p class="pt-2">
+                  Autonomous driving and advanced driver-assistance systems rely on a set of sensors and algorithms to perform the appropriate actions and provide alerts as a function of the driving scene. Typically, the sensors include color cameras, radar, lidar and ultrasonic sensors. Strikingly however, although light polarization is a fundamental property of light, it is seldom harnessed for perception tasks. In this work we analyze the potential for improvement in perception tasks when using an RGB-polarimetric camera, as compared to an RGB camera. We examine monocular depth estimation and free space detection during the middle of the day, when polarization is independent of subject heading, and show that a quantifiable improvement can be achieved for both of them using state-of-the-art deep neural networks, with a minimum of architectural changes. We also present a new dataset composed of RGB-polarimetric images, lidar scans, GNSS / IMU readings and free space segmentations that further supports developing perception algorithms that take advantage of light polarization.
+                </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.14787v1' target="_blank">
                   link
                 </a>
               </p>
@@ -61,15 +83,15 @@ datasets in the mix too.
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Producing a Standard Dataset of Speed Climbing Training Videos Using Deep Learning Techniques
+                The Context Model: A Graph Database Model
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.557</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.4</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.806</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.27</span></div>
                 <p class="pt-2">
-                  This dissertation presents a methodology for recording speed climbing training sessions with multiple cameras and annotating the videos with relevant data, including body position, hand and foot placement, and timing. The annotated data is then analyzed using deep learning techniques to create a standard dataset of speed climbing training videos. The results demonstrate the potential of the new dataset for improving speed climbing training and research, including identifying areas for improvement, creating personalized training plans, and analyzing the effects of different training methods.The findings will also be applied to the training process of the Jiangxi climbing team through further empirical research to test the findings and further explore the feasibility of this study.
+                  In the relational model a relation over a set of attributes is defined to be a (finite) subset of the Cartesian product of the attribute domains, separately from the functional dependencies that the relation must satisfy in order to be consistent. In this paper we propose to include the functional dependencies in the definition of a relation by introducing a data model based on a graph in which the nodes are attributes, or Cartesian products of attributes, and the edges are the functional dependencies.   Such a graph actually represents the datasets of an application and their relationships, so we call it an application context or simply context. We define a database over a context $\mathcal C$ to be a function $\delta$ that associates each node $X$ of $\mathcal C$ with a finite set of values $\delta(X)$ from the domain of $X$ and each edge $e: X \to Y$ with a total function $\delta(e): \delta(X) \to \delta(Y)$. We combine the nodes and edges of a context using a functional algebra in order to define queries; and the set of all well-formed expressions of this algebra is the query language of the context. A relation over attributes $A_1, \ldots, A_n$ is then defined as a query whose paths form a tree with leaves $A_1, \ldots, A_n$ and whose root is the key.   The main contributions of this paper are as follows: (a) we introduce a novel graph database model, called the context model, (b) we show that a consistent relational database can be embedded in the context model as a view over the context induced by its functional dependencies, (c) we define analytic queries in the query language of a context in a seamless manner - in contrast to the relational model where analytic queries are defined outside the relational algebra, and (d) we show that the context model can be used as a user-friendly interface to a relational database for data analysis purposes.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.13858v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.13895v1' target="_blank">
                   link
                 </a>
               </p>
@@ -83,15 +105,15 @@ datasets in the mix too.
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                An Open Dataset and Model for Language Identification
+                TeCS: A Dataset and Benchmark for Tense Consistency of Machine Translation
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.625</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.276</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.683</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.39</span></div>
                 <p class="pt-2">
-                  Language identification (LID) is a fundamental step in many natural language processing pipelines. However, current LID systems are far from perfect, particularly on lower-resource languages. We present a LID model which achieves a macro-average F1 score of 0.93 and a false positive rate of 0.033 across 201 languages, outperforming previous work. We achieve this by training on a curated dataset of monolingual data, the reliability of which we ensure by auditing a sample from each source and each language manually. We make both the model and the dataset available to the research community. Finally, we carry out detailed analysis into our model's performance, both in comparison to existing open models and by language class.
+                  Tense inconsistency frequently occurs in machine translation. However, there are few criteria to assess the model's mastery of tense prediction from a linguistic perspective. In this paper, we present a parallel tense test set, containing French-English 552 utterances. We also introduce a corresponding benchmark, tense prediction accuracy. With the tense test set and the benchmark, researchers are able to measure the tense consistency performance of machine translation systems for the first time.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.13820v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.13740v1' target="_blank">
                   link
                 </a>
               </p>
@@ -105,15 +127,15 @@ datasets in the mix too.
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                CALLS: Japanese Empathetic Dialogue Speech Corpus of Complaint Handling and Attentive Listening in Customer Center
+                MemeCap: A Dataset for Captioning and Interpreting Memes
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.559</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.109</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.541</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.22</span></div>
                 <p class="pt-2">
-                  We present CALLS, a Japanese speech corpus that considers phone calls in a customer center as a new domain of empathetic spoken dialogue. The existing STUDIES corpus covers only empathetic dialogue between a teacher and student in a school. To extend the application range of empathetic dialogue speech synthesis (EDSS), we designed our corpus to include the same female speaker as the STUDIES teacher, acting as an operator in simulated phone calls. We describe a corpus construction methodology and analyze the recorded speech. We also conduct EDSS experiments using the CALLS and STUDIES corpora to investigate the effect of domain differences. The results show that mixing the two corpora during training causes biased improvements in the quality of synthetic speech due to the different degrees of expressiveness. Our project page of the corpus is http://sython.org/Corpus/STUDIES-2.
+                  Memes are a widely popular tool for web users to express their thoughts using visual metaphors. Understanding memes requires recognizing and interpreting visual metaphors with respect to the text inside or around the meme, often while employing background knowledge and reasoning abilities. We present the task of meme captioning and release a new dataset, MemeCap. Our dataset contains 6.3K memes along with the title of the post containing the meme, the meme captions, the literal image caption, and the visual metaphors. Despite the recent success of vision and language (VL) models on tasks such as image captioning and visual question answering, our extensive experiments using state-of-the-art VL models show that they still struggle with visual metaphors, and perform substantially worse than humans.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.13713v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.13703v1' target="_blank">
                   link
                 </a>
               </p>
@@ -127,15 +149,15 @@ datasets in the mix too.
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Detection of Cross-Dataset Fake Audio Based on Prosodic and Pronunciation Features
+                Polyglot or Not? Measuring Multilingual Encyclopedic Knowledge Retrieval from Foundation Language Models
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.661</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.114</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.531</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.17</span></div>
                 <p class="pt-2">
-                  Existing fake audio detection systems perform well in in-domain testing, but still face many challenges in out-of-domain testing. This is due to the mismatch between the training and test data, as well as the poor generalizability of features extracted from limited views. To address this, we propose multi-view features for fake audio detection, which aim to capture more generalized features from prosodic, pronunciation, and wav2vec dimensions. Specifically, the phoneme duration features are extracted from a pre-trained model based on a large amount of speech data. For the pronunciation features, a Conformer-based phoneme recognition model is first trained, keeping the acoustic encoder part as a deeply embedded feature extractor. Furthermore, the prosodic and pronunciation features are fused with wav2vec features based on an attention mechanism to improve the generalization of fake audio detection models. Results show that the proposed approach achieves significant performance gains in several cross-dataset experiments.
+                  In this work, we evaluate the capacity for foundation models to retrieve encyclopedic knowledge across a wide range of languages, topics, and contexts. To support this effort, we 1) produce a new dataset containing 303k factual associations in 20 different languages, 2) formulate a new counterfactual knowledge assessment, Polyglot or Not, and 3) benchmark 5 foundation models in a multilingual setting and a diverse set of 20 models in an English-only setting. We observed significant accuracy differences in models of interest, with Meta's LLaMA topping both the multilingual and English-only assessments. Error analysis reveals a significant deficiency in LLaMA's ability to retrieve facts in languages written in the Cyrillic script and gaps in its understanding of facts based on the location and gender of entailed subjects. Ultimately, we argue that the promise of utilizing foundation language models as bonafide polyglots is greatly diminished when they are tasked with retrieving information in languages other than English. Supporting code (https://github.com/daniel-furman/Polyglot-or-Not) and dataset (https://huggingface.co/datasets/Polyglot-or-Not/Fact-Completion) are openly released.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.13700v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.13675v1' target="_blank">
                   link
                 </a>
               </p>
@@ -144,20 +166,42 @@ datasets in the mix too.
         </td>
       </tr><tr>
           <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-05-23</p>
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-05-17</p>
           </td>
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                VDD: Varied Drone Dataset for Semantic Segmentation
+                Restoring Images Captured in Arbitrary Hybrid Adverse Weather Conditions in One Go
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.531</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.119</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.755</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.0</span></div>
                 <p class="pt-2">
-                  Semantic segmentation of drone images is critical to many aerial vision tasks as it provides essential semantic details that can compensate for the lack of depth information from monocular cameras. However, maintaining high accuracy of semantic segmentation models for drones requires diverse, large-scale, and high-resolution datasets, which are rare in the field of aerial image processing. Existing datasets are typically small and focus primarily on urban scenes, neglecting rural and industrial areas. Models trained on such datasets are not sufficiently equipped to handle the variety of inputs seen in drone imagery. In the VDD-Varied Drone Dataset, we offer a large-scale and densely labeled dataset comprising 400 high-resolution images that feature carefully chosen scenes, camera angles, and varied light and weather conditions. Furthermore, we have adapted existing drone datasets to conform to our annotation standards and integrated them with VDD to create a dataset 1.5 times the size of fine annotation of Cityscapes. We have developed a novel DeepLabT model, which combines CNN and Transformer backbones, to provide a reliable baseline for semantic segmentation in drone imagery. Our experiments indicate that DeepLabT performs admirably on VDD and other drone datasets. We expect that our dataset will generate considerable interest in drone image segmentation and serve as a foundation for other drone vision tasks. VDD is freely available on our website at https://vddvdd.com .
+                  Adverse conditions typically suffer from stochastic hybrid weather degradations (e.g., rainy and hazy night), while existing image restoration algorithms envisage that weather degradations occur independently, thus may fail to handle real-world complicated scenarios. Besides, supervised training is not feasible due to the lack of comprehensive paired dataset to characterize hybrid conditions. To this end, we have advanced the forementioned limitations with two tactics: framework and data. On the one hand, we present a novel unified framework, dubbed RAHC, to Restore Arbitrary Hybrid adverse weather Conditions in one go, which can comfortably cope with hybrid scenarios with insufficient remaining background constituents and restore arbitrary hybrid conditions with a single trained model flexibly. On the other hand, we establish a new dataset, termed HAC, for learning and benchmarking arbitrary Hybrid Adverse Conditions restoration. HAC contains 31 scenarios composed of an arbitrary combination of five common weather, with a total of ~316K adverse-weather/clean pairs. As for fabrication, the training set is automatically generated by a dedicated AdverseGAN with no-frills labor, while the test set is manually modulated by experts for authoritative evaluation. Extensive experiments yield superior results and in particular establish new state-of-the-art results on both HAC and conventional datasets.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.13608v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.09996v1' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr><tr>
+          <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-05-16</p>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                Diffusion Dataset Generation: Towards Closing the Sim2Real Gap for Pedestrian Detection
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.869</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.12</span></div>
+                <p class="pt-2">
+                  We propose a method that augments a simulated dataset using diffusion models to improve the performance of pedestrian detection in real-world data. The high cost of collecting and annotating data in the real-world has motivated the use of simulation platforms to create training datasets. While simulated data is inexpensive to collect and annotate, it unfortunately does not always closely match the distribution of real-world data, which is known as the sim2real gap. In this paper we propose a novel method of synthetic data creation meant to close the sim2real gap for the challenging pedestrian detection task. Our method uses a diffusion-based architecture to learn a real-world distribution which, once trained, is used to generate datasets. We mix this generated data with simulated data as a form of augmentation and show that training on a combination of generated and simulated data increases average precision by as much as 27.3% for pedestrian detection models in real-world data, compared against training on purely simulated data.
+                </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.09401v1' target="_blank">
                   link
                 </a>
               </p>
@@ -171,37 +215,15 @@ datasets in the mix too.
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                CompSuite: A Dataset of Java Library Upgrade Incompatibility Issues
+                Validity Constraints for Data Analysis Workflows
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.936</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.0</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.504</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.4</span></div>
                 <p class="pt-2">
-                  Modern software systems heavily rely on external libraries developed by third-parties to ensure efficient development. However, frequent library upgrades can lead to compatibility issues between the libraries and their client systems. In this paper, we introduce CompSuite, a dataset that includes 123 real-world Java client-library pairs where upgrading the library causes an incompatibility issue in the corresponding client. Each incompatibility issue in CompSuite is associated with a test case authored by the developers, which can be used to reproduce the issue. The dataset also provides a command-line interface that simplifies the execution and validation of each issue. With this infrastructure, users can perform an inspection of any incompatibility issue with the push of a button, or reproduce an issue step-by-step for a more detailed investigation. We make CompSuite publicly available to promote open science. We believe that various software analysis techniques, such as compatibility checking, debugging, and regression test selection, can benefit from CompSuite.
+                  Porting a scientific data analysis workflow (DAW) to a cluster infrastructure, a new software stack, or even only a new dataset with some notably different properties is often challenging. Despite the structured definition of the steps (tasks) and their interdependencies during a complex data analysis in the DAW specification, relevant assumptions may remain unspecified and implicit. Such hidden assumptions often lead to crashing tasks without a reasonable error message, poor performance in general, non-terminating executions, or silent wrong results of the DAW, to name only a few possible consequences. Searching for the causes of such errors and drawbacks in a distributed compute cluster managed by a complex infrastructure stack, where DAWs for large datasets typically are executed, can be tedious and time-consuming.   We propose validity constraints (VCs) as a new concept for DAW languages to alleviate this situation. A VC is a constraint specifying some logical conditions that must be fulfilled at certain times for DAW executions to be valid. When defined together with a DAW, VCs help to improve the portability, adaptability, and reusability of DAWs by making implicit assumptions explicit. Once specified, VC can be controlled automatically by the DAW infrastructure, and violations can lead to meaningful error messages and graceful behaviour (e.g., termination or invocation of repair mechanisms). We provide a broad list of possible VCs, classify them along multiple dimensions, and compare them to similar concepts one can find in related fields. We also provide a first sketch for VCs' implementation into existing DAW infrastructures.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.08671v1' target="_blank">
-                  link
-                </a>
-              </p>
-            </div>
-          </div>
-        </td>
-      </tr><tr>
-          <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-05-15</p>
-          </td>
-          <td>
-            <div x-data="{open: false}">
-              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                PolarDB-IMCI: A Cloud-Native HTAP Database System at Alibaba
-              </span>
-              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.610</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.38</span></div>
-                <p class="pt-2">
-                  Cloud-native databases have become the de-facto choice for mission-critical applications on the cloud due to the need for high availability, resource elasticity, and cost efficiency. Meanwhile, driven by the increasing connectivity between data generation and analysis, users prefer a single database to efficiently process both OLTP and OLAP workloads, which enhances data freshness and reduces the complexity of data synchronization and the overall business cost.   In this paper, we summarize five crucial design goals for a cloud-native HTAP database based on our experience and customers' feedback, i.e., transparency, competitive OLAP performance, minimal perturbation on OLTP workloads, high data freshness, and excellent resource elasticity. As our solution to realize these goals, we present PolarDB-IMCI, a cloud-native HTAP database system designed and deployed at Alibaba Cloud. Our evaluation results show that PolarDB-IMCI is able to handle HTAP efficiently on both experimental and production workloads; notably, it speeds up analytical queries up to $\times149$ on TPC-H (100 $GB$). PolarDB-IMCI introduces low visibility delay and little performance perturbation on OLTP workloads (< 5%), and resource elasticity can be achieved by scaling out in tens of seconds.
-                </p>
-              <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.08468v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.08409v1' target="_blank">
                   link
                 </a>
               </p>
@@ -215,15 +237,15 @@ datasets in the mix too.
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                FactKG: Fact Verification via Reasoning on Knowledge Graphs
+                Filtering higher-order datasets
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.822</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.11</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.852</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.8</span></div>
                 <p class="pt-2">
-                  In real world applications, knowledge graphs (KG) are widely used in various domains (e.g. medical applications and dialogue agents). However, for fact verification, KGs have not been adequately utilized as a knowledge source. KGs can be a valuable knowledge source in fact verification due to their reliability and broad applicability. A KG consists of nodes and edges which makes it clear how concepts are linked together, allowing machines to reason over chains of topics. However, there are many challenges in understanding how these machine-readable concepts map to information in text. To enable the community to better use KGs, we introduce a new dataset, FactKG: Fact Verification via Reasoning on Knowledge Graphs. It consists of 108k natural language claims with five types of reasoning: One-hop, Conjunction, Existence, Multi-hop, and Negation. Furthermore, FactKG contains various linguistic patterns, including colloquial style claims as well as written style claims to increase practicality. Lastly, we develop a baseline approach and analyze FactKG over these reasoning types. We believe FactKG can advance both reliability and practicality in KG-based fact verification.
+                  Many complex systems often contain interactions between more than two nodes, known as higher-order interactions, which can change the structure of these systems in significant ways. Researchers often assume that all interactions paint a consistent picture of a higher-order dataset's structure. In contrast, the connection patterns of individuals or entities in empirical systems are often stratified by interaction size. Ignoring this fact can aggregate connection patterns that exist only at certain scales of interaction. To isolate these scale-dependent patterns, we present an approach for analyzing higher-order datasets by filtering interactions by their size. We apply this framework to several empirical datasets from three domains to demonstrate that data practitioners can gain valuable information from this approach.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.06590v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.06910v1' target="_blank">
                   link
                 </a>
               </p>
@@ -232,42 +254,20 @@ datasets in the mix too.
         </td>
       </tr><tr>
           <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-05-10</p>
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-05-11</p>
           </td>
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                WikiSQE: A Large-Scale Dataset for Sentence Quality Estimation in Wikipedia
+                Spectral Clustering on Large Datasets: When Does it Work? Theory from Continuous Clustering and Density Cheeger-Buser
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.964</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.4</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.541</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.24</span></div>
                 <p class="pt-2">
-                  Wikipedia can be edited by anyone and thus contains various quality sentences. Therefore, Wikipedia includes some poor-quality edits, which are often marked up by other editors. While editors' reviews enhance the credibility of Wikipedia, it is hard to check all edited text. Assisting in this process is very important, but a large and comprehensive dataset for studying it does not currently exist. Here, we propose WikiSQE, the first large-scale dataset for sentence quality estimation in Wikipedia. Each sentence is extracted from the entire revision history of Wikipedia, and the target quality labels were carefully investigated and selected. WikiSQE has about 3.4 M sentences with 153 quality labels. In the experiment with automatic classification using competitive machine learning models, sentences that had problems with citation, syntax/semantics, or propositions were found to be more difficult to detect. In addition, we conducted automated essay scoring experiments to evaluate the generalizability of the dataset. We show that the models trained on WikiSQE perform better than the vanilla model, indicating its potential usefulness in other domains. WikiSQE is expected to be a valuable resource for other tasks in NLP.
+                  Spectral clustering is one of the most popular clustering algorithms that has stood the test of time. It is simple to describe, can be implemented using standard linear algebra, and often finds better clusters than traditional clustering algorithms like $k$-means and $k$-centers. The foundational algorithm for two-way spectral clustering, by Shi and Malik, creates a geometric graph from data and finds a spectral cut of the graph.   In modern machine learning, many data sets are modeled as a large number of points drawn from a probability density function. Little is known about when spectral clustering works in this setting -- and when it doesn't. Past researchers justified spectral clustering by appealing to the graph Cheeger inequality (which states that the spectral cut of a graph approximates the ``Normalized Cut''), but this justification is known to break down on large data sets.   We provide theoretically-informed intuition about spectral clustering on large data sets drawn from probability densities, by proving when a continuous form of spectral clustering considered by past researchers (the unweighted spectral cut of a probability density) finds good clusters of the underlying density itself. Our work suggests that Shi-Malik spectral clustering works well on data drawn from mixtures of Laplace distributions, and works poorly on data drawn from certain other densities, such as a density we call the `square-root trough'.   Our core theorem proves that weighted spectral cuts have low weighted isoperimetry for all probability densities. Our key tool is a new Cheeger-Buser inequality for all probability densities, including discontinuous ones.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.05928v1' target="_blank">
-                  link
-                </a>
-              </p>
-            </div>
-          </div>
-        </td>
-      </tr><tr>
-          <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-05-09</p>
-          </td>
-          <td>
-            <div x-data="{open: false}">
-              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Eiffel Tower: A Deep-Sea Underwater Dataset for Long-Term Visual Localization
-              </span>
-              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.694</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.205</span></div>
-                <p class="pt-2">
-                  Visual localization plays an important role in the positioning and navigation of robotics systems within previously visited environments. When visits occur over long periods of time, changes in the environment related to seasons or day-night cycles present a major challenge. Under water, the sources of variability are due to other factors such as water conditions or growth of marine organisms. Yet it remains a major obstacle and a much less studied one, partly due to the lack of data. This paper presents a new deep-sea dataset to benchmark underwater long-term visual localization. The dataset is composed of images from four visits to the same hydrothermal vent edifice over the course of five years. Camera poses and a common geometry of the scene were estimated using navigation data and Structure-from-Motion. This serves as a reference when evaluating visual localization techniques. An analysis of the data provides insights about the major changes observed throughout the years. Furthermore, several well-established visual localization methods are evaluated on the dataset, showing there is still room for improvement in underwater long-term visual localization. The data is made publicly available at https://www.seanoe.org/data/00810/92226/.
-                </p>
-              <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.05301v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.06541v1' target="_blank">
                   link
                 </a>
               </p>
@@ -281,15 +281,15 @@ datasets in the mix too.
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Dataset of a parameterized U-bend flow for Deep Learning Applications
+                VCSUM: A Versatile Chinese Meeting Summarization Dataset
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.733</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.42</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.710</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.5</span></div>
                 <p class="pt-2">
-                  This dataset contains 10,000 fluid flow and heat transfer simulations in U-bend shapes. Each of them is described by 28 design parameters, which are processed with the help of Computational Fluid Dynamics methods. The dataset provides a comprehensive benchmark for investigating various problems and methods from the field of design optimization. For these investigations supervised, semi-supervised and unsupervised deep learning approaches can be employed. One unique feature of this dataset is that each shape can be represented by three distinct data types including design parameter and objective combinations, five different resolutions of 2D images from the geometry and the solution variables of the numerical simulation, as well as a representation using the cell values of the numerical mesh. This third representation enables considering the specific data structure of numerical simulations for deep learning approaches. The source code and the container used to generate the data are published as part of this work.
+                  Compared to news and chat summarization, the development of meeting summarization is hugely decelerated by the limited data. To this end, we introduce a versatile Chinese meeting summarization dataset, dubbed VCSum, consisting of 239 real-life meetings, with a total duration of over 230 hours. We claim our dataset is versatile because we provide the annotations of topic segmentation, headlines, segmentation summaries, overall meeting summaries, and salient sentences for each meeting transcript. As such, the dataset can adapt to various summarization tasks or methods, including segmentation-based summarization, multi-granularity summarization and retrieval-then-generate summarization. Our analysis confirms the effectiveness and robustness of VCSum. We also provide a set of benchmark models regarding different downstream summarization tasks on VCSum to facilitate further research. The dataset and code will be released at \url{https://github.com/hahahawu/VCSum}.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.05216v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.05280v1' target="_blank">
                   link
                 </a>
               </p>
@@ -302,20 +302,20 @@ datasets in the mix too.
             <h2 class="text-4xl pt-4 font-bold">Prompt Engineering on Arxiv</h2><span class='px-2 mx-1 bg-yellow-200 text-xs'>tag:arxiv</span><span class='px-2 mx-1 bg-yellow-200 text-xs'>tag:prompteng</span><span class='px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng</span></td>
         </tr><tr>
           <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-05-23</p>
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-05-24</p>
           </td>
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                LLM-empowered Chatbots for Psychiatrist and Patient Simulation: Application and Evaluation
+                SummIt: Iterative Text Summarization via ChatGPT
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.131</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.509</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.115</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.515</span></div>
                 <p class="pt-2">
-                  Empowering chatbots in the field of mental health is receiving increasing amount of attention, while there still lacks exploration in developing and evaluating chatbots in psychiatric outpatient scenarios. In this work, we focus on exploring the potential of ChatGPT in powering chatbots for psychiatrist and patient simulation. We collaborate with psychiatrists to identify objectives and iteratively develop the dialogue system to closely align with real-world scenarios. In the evaluation experiments, we recruit real psychiatrists and patients to engage in diagnostic conversations with the chatbots, collecting their ratings for assessment. Our findings demonstrate the feasibility of using ChatGPT-powered chatbots in psychiatric scenarios and explore the impact of prompt designs on chatbot behavior and user experience.
+                  Existing text summarization systems have made significant progress in recent years but typically generates summaries in a single step. The one-shot summarization setting is sometimes inadequate, however, as the generated summary may contain hallucinations or overlook important details related to the reader's interests. In this paper, we address this limitation by proposing SummIt, an iterative text summarization framework based on large language models like ChatGPT. Our framework enables the model to refine the generated summary iteratively through self-evaluation and feedback, closely resembling the iterative process humans undertake when drafting and revising summaries. We also explore using in-context learning to guide the rationale generation and summary refinement. Furthermore, we explore the potential benefits of integrating knowledge and topic extractors into the framework to enhance summary faithfulness and controllability. We evaluate the performance of our framework on three benchmark summarization datasets through empirical and qualitative analyses. We also conduct a human evaluation to validate the effectiveness of the model's refinements and find a potential issue of over-correction. Our code is available at \url{https://github.com/hpzhang94/summ_it}.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.13614v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.14835v1' target="_blank">
                   link
                 </a>
               </p>
@@ -346,20 +346,20 @@ datasets in the mix too.
         </td>
       </tr><tr>
           <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-05-15</p>
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-05-09</p>
           </td>
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Exploring In-Context Learning Capabilities of Foundation Models for Generating Knowledge Graphs from Text
+                Generating Phishing Attacks using ChatGPT
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.33</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.718</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.4</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.509</span></div>
                 <p class="pt-2">
-                  Knowledge graphs can represent information about the real-world using entities and their relations in a structured and semantically rich manner and they enable a variety of downstream applications such as question-answering, recommendation systems, semantic search, and advanced analytics. However, at the moment, building a knowledge graph involves a lot of manual effort and thus hinders their application in some situations and the automation of this process might benefit especially for small organizations. Automatically generating structured knowledge graphs from a large volume of natural language is still a challenging task and the research on sub-tasks such as named entity extraction, relation extraction, entity and relation linking, and knowledge graph construction aims to improve the state of the art of automatic construction and completion of knowledge graphs from text. The recent advancement of foundation models with billions of parameters trained in a self-supervised manner with large volumes of training data that can be adapted to a variety of downstream tasks has helped to demonstrate high performance on a large range of Natural Language Processing (NLP) tasks. In this context, one emerging paradigm is in-context learning where a language model is used as it is with a prompt that provides instructions and some examples to perform a task without changing the parameters of the model using traditional approaches such as fine-tuning. This way, no computing resources are needed for re-training/fine-tuning the models and the engineering effort is minimal. Thus, it would be beneficial to utilize such capabilities for generating knowledge graphs from text.
+                  The ability of ChatGPT to generate human-like responses and understand context has made it a popular tool for conversational agents, content creation, data analysis, and research and innovation. However, its effectiveness and ease of accessibility makes it a prime target for generating malicious content, such as phishing attacks, that can put users at risk. In this work, we identify several malicious prompts that can be provided to ChatGPT to generate functional phishing websites. Through an iterative approach, we find that these phishing websites can be made to imitate popular brands and emulate several evasive tactics that have been known to avoid detection by anti-phishing entities. These attacks can be generated using vanilla ChatGPT without the need of any prior adversarial exploits (jailbreaking).
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.08804v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.05133v1' target="_blank">
                   link
                 </a>
               </p>
@@ -368,20 +368,20 @@ datasets in the mix too.
         </td>
       </tr><tr>
           <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-05-11</p>
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-04-26</p>
           </td>
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Chain-of-Dictionary Prompting Elicits Translation in Large Language Models
+                A Case-Based Reasoning Framework for Adaptive Prompting in Cross-Domain Text-to-SQL
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.30</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.619</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.62</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.507</span></div>
                 <p class="pt-2">
-                  Large language models (LLMs) have shown surprisingly good performance in multilingual neural machine translation (MNMT) even when trained without parallel data. Yet, despite the fact that the amount of training data is gigantic, they still struggle with translating rare words, particularly for low-resource languages. Even worse, it is usually unrealistic to retrieve relevant demonstrations for in-context learning with low-resource languages on LLMs, which restricts the practical use of LLMs for translation -- how should we mitigate this problem? To this end, we present a novel method, CoD, which augments LLMs with prior knowledge with the chains of multilingual dictionaries for a subset of input words to elicit translation abilities for LLMs. Extensive experiments indicate that augmenting ChatGPT with CoD elicits large gains by up to 13x ChrF++ points for MNMT (3.08 to 42.63 for English to Serbian written in Cyrillic script) on FLORES-200 full devtest set. We further demonstrate the importance of chaining the multilingual dictionaries, as well as the superiority of CoD to few-shot demonstration for low-resource languages.
+                  Recent advancements in Large Language Models (LLMs), such as Codex, ChatGPT and GPT-4 have significantly impacted the AI community, including Text-to-SQL tasks. Some evaluations and analyses on LLMs show their potential to generate SQL queries but they point out poorly designed prompts (e.g. simplistic construction or random sampling) limit LLMs' performance and may cause unnecessary or irrelevant outputs. To address these issues, we propose CBR-ApSQL, a Case-Based Reasoning (CBR)-based framework combined with GPT-3.5 for precise control over case-relevant and case-irrelevant knowledge in Text-to-SQL tasks. We design adaptive prompts for flexibly adjusting inputs for GPT-3.5, which involves (1) adaptively retrieving cases according to the question intention by de-semantizing the input question, and (2) an adaptive fallback mechanism to ensure the informativeness of the prompt, as well as the relevance between cases and the prompt. In the de-semanticization phase, we designed Semantic Domain Relevance Evaluator(SDRE), combined with Poincar\'e detector(mining implicit semantics in hyperbolic space), TextAlign(discovering explicit matches), and Positector (part-of-speech detector). SDRE semantically and syntactically generates in-context exemplar annotations for the new case. On the three cross-domain datasets, our framework outperforms the state-of-the-art(SOTA) model in execution accuracy by 3.7\%, 2.5\%, and 8.2\%, respectively.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.06575v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2304.13301v1' target="_blank">
                   link
                 </a>
               </p>
@@ -395,15 +395,15 @@ datasets in the mix too.
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Segment Anything in 3D with NeRFs
+                Can we Trust Chatbots for now? Accuracy, reproducibility, traceability; a Case Study on Leonardo da Vinci's Contribution to Astronomy
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.118</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.513</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.1</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.551</span></div>
                 <p class="pt-2">
-                  The Segment Anything Model (SAM) has demonstrated its effectiveness in segmenting any object/part in various 2D images, yet its ability for 3D has not been fully explored. The real world is composed of numerous 3D scenes and objects. Due to the scarcity of accessible 3D data and high cost of its acquisition and annotation, lifting SAM to 3D is a challenging but valuable research avenue. With this in mind, we propose a novel framework to Segment Anything in 3D, named SA3D. Given a neural radiance field (NeRF) model, SA3D allows users to obtain the 3D segmentation result of any target object via only one-shot manual prompting in a single rendered view. With input prompts, SAM cuts out the target object from the according view. The obtained 2D segmentation mask is projected onto 3D mask grids via density-guided inverse rendering. 2D masks from other views are then rendered, which are mostly uncompleted but used as cross-view self-prompts to be fed into SAM again. Complete masks can be obtained and projected onto mask grids. This procedure is executed via an iterative manner while accurate 3D masks can be finally learned. SA3D can adapt to various radiance fields effectively without any additional redesigning. The entire segmentation process can be completed in approximately two minutes without any engineering optimization. Our experiments demonstrate the effectiveness of SA3D in different scenes, highlighting the potential of SAM in 3D scene perception. The project page is at https://jumpat.github.io/SA3D/.
+                  Large Language Models (LLM) are studied. Applications to chatbots and education are considered. A case study on Leonardo's contribution to astronomy is presented. Major problems with accuracy, reproducibility and traceability of answers are reported for ChatGPT, GPT-4, BLOOM and Google Bard. Possible reasons for problems are discussed and some solutions are proposed.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2304.12308v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2304.11852v1' target="_blank">
                   link
                 </a>
               </p>
@@ -412,20 +412,20 @@ datasets in the mix too.
         </td>
       </tr><tr>
           <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-04-19</p>
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-04-13</p>
           </td>
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                GeneGPT: Teaching Large Language Models to Use NCBI Web APIs
+                Prompt: Probability-Conserved Cross Section Biasing Monte Carlo Particle Transport System
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.10</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.519</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.51</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.500</span></div>
                 <p class="pt-2">
-                  In this paper, we present GeneGPT, a novel method for teaching large language models (LLMs) to use the Web Application Programming Interfaces (APIs) of the National Center for Biotechnology Information (NCBI) and answer genomics questions. Specifically, we prompt Codex (code-davinci-002) to solve the GeneTuring tests with few-shot URL requests of NCBI API calls as demonstrations for in-context learning. During inference, we stop the decoding once a call request is detected and make the API call with the generated URL. We then append the raw execution results returned by NCBI APIs to the generated texts and continue the generation until the answer is found or another API call is detected. Our preliminary results show that GeneGPT achieves state-of-the-art results on three out of four one-shot tasks and four out of five zero-shot tasks in the GeneTuring dataset. Overall, GeneGPT achieves a macro-average score of 0.76, which is much higher than retrieval-augmented LLMs such as the New Bing (0.44), biomedical LLMs such as BioMedLM (0.08) and BioGPT (0.04), as well as other LLMs such as GPT-3 (0.16) and ChatGPT (0.12).
+                  An open source software package for simulating thermal neutron propagation in geometry is presented. In this system, neutron propagation can be treated by either the particle transport method or the ray-tracing method. Supported by an accurate backend scattering physics engine, this system is capable of reproducing neutron scattering experiments in complex geometries and is expected to be used in the areas of instrument characterisation, optimisation and data analysis.   In this paper, the relevant theories are briefly introduced. The simulation flow and the user input syntax to control it are provided in detail. Five benchmarking simulations, focusing on different aspects of simulation and scattering techniques, are given to demonstrate the applications of this simulation system. They include an idealised total scattering instrument, a monochromatic powder diffractometer, a neutron guide, a chopper and an imaging setup for complex geometries. Simulated results are benchmarked against experimental data or well-established software packages when appropriate. Good agreements are observed.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2304.09667v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2304.06226v1' target="_blank">
                   link
                 </a>
               </p>
@@ -434,20 +434,20 @@ datasets in the mix too.
         </td>
       </tr><tr>
           <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-04-05</p>
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-03-29</p>
           </td>
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Explainable Automated Debugging via Large Language Model-driven Scientific Debugging
+                ProtFIM: Fill-in-Middle Protein Sequence Design via Protein Language Models
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.10</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.560</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.11</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.668</span></div>
                 <p class="pt-2">
-                  Automated debugging techniques have the potential to reduce developer effort in debugging, and have matured enough to be adopted by industry. However, one critical issue with existing techniques is that, while developers want rationales for the provided automatic debugging results, existing techniques are ill-suited to provide them, as their deduction process differs significantly from that of human developers. Inspired by the way developers interact with code when debugging, we propose Automated Scientific Debugging (AutoSD), a technique that given buggy code and a bug-revealing test, prompts large language models to automatically generate hypotheses, uses debuggers to actively interact with buggy code, and thus automatically reach conclusions prior to patch generation. By aligning the reasoning of automated debugging more closely with that of human developers, we aim to produce intelligible explanations of how a specific patch has been generated, with the hope that the explanation will lead to more efficient and accurate developer decisions. Our empirical analysis on three program repair benchmarks shows that AutoSD performs competitively with other program repair baselines, and that it can indicate when it is confident in its results. Furthermore, we perform a human study with 20 participants, including six professional developers, to evaluate the utility of explanations from AutoSD. Participants with access to explanations could judge patch correctness in roughly the same time as those without, but their accuracy improved for five out of six real-world bugs studied: 70% of participants answered that they wanted explanations when using repair tools, while 55% answered that they were satisfied with the Scientific Debugging presentation.
+                  Protein language models (pLMs), pre-trained via causal language modeling on protein sequences, have been a promising tool for protein sequence design. In real-world protein engineering, there are many cases where the amino acids in the middle of a protein sequence are optimized while maintaining other residues. Unfortunately, because of the left-to-right nature of pLMs, existing pLMs modify suffix residues by prompting prefix residues, which are insufficient for the infilling task that considers the whole surrounding context. To find the more effective pLMs for protein engineering, we design a new benchmark, Secondary structureE InFilling rEcoveRy, SEIFER, which approximates infilling sequence design scenarios. With the evaluation of existing models on the benchmark, we reveal the weakness of existing language models and show that language models trained via fill-in-middle transformation, called ProtFIM, are more appropriate for protein engineering. Also, we prove that ProtFIM generates protein sequences with decent protein representations through exhaustive experiments and visualizations.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2304.02195v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2303.16452v1' target="_blank">
                   link
                 </a>
               </p>
@@ -456,20 +456,20 @@ datasets in the mix too.
         </td>
       </tr><tr>
           <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-04-04</p>
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-03-16</p>
           </td>
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                LLM-Adapters: An Adapter Family for Parameter-Efficient Fine-Tuning of Large Language Models
+                Patch-Token Aligned Bayesian Prompt Learning for Vision-Language Models
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.6</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.520</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.1</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.979</span></div>
                 <p class="pt-2">
-                  The success of large language models (LLMs), like GPT-3 and ChatGPT, has led to the development of numerous cost-effective and accessible alternatives that are created by fine-tuning open-access LLMs with task-specific data (e.g., ChatDoctor) or instruction data (e.g., Alpaca). Among the various fine-tuning methods, adapter-based parameter-efficient fine-tuning (PEFT) is undoubtedly one of the most attractive topics, as it only requires fine-tuning a few external parameters instead of the entire LLMs while achieving comparable or even better performance. To enable further research on PEFT methods of LLMs, this paper presents LLM-Adapters, an easy-to-use framework that integrates various adapters into LLMs and can execute these adapter-based PEFT methods of LLMs for different tasks. The framework includes state-of-the-art open-access LLMs such as LLaMA, BLOOM, OPT, and GPT-J, as well as widely used adapters such as Series adapter, Parallel adapter, and LoRA. The framework is designed to be research-friendly, efficient, modular, and extendable, allowing the integration of new adapters and the evaluation of them with new and larger-scale LLMs. Furthermore, to evaluate the effectiveness of adapters in LLMs-Adapters, we conduct experiments on six math reasoning datasets. The results demonstrate that using adapter-based PEFT in smaller-scale LLMs (7B) with few extra trainable parameters yields comparable, and in some cases superior, performance to that of powerful LLMs (175B) in zero-shot inference on simple math reasoning datasets. Overall, we provide a promising framework for fine-tuning large LLMs on downstream tasks. We believe the proposed LLMs-Adapters will advance adapter-based PEFT research, facilitate the deployment of research pipelines, and enable practical applications to real-world systems.
+                  For downstream applications of vision-language pre-trained models, there has been significant interest in constructing effective prompts. Existing works on prompt engineering, which either require laborious manual designs or optimize the prompt tuning as a point estimation problem, may fail to describe diverse characteristics of categories and limit their applications. We introduce a Bayesian probabilistic resolution to prompt learning, where the label-specific stochastic prompts are generated hierarchically by first sampling a latent vector from an underlying distribution and then employing a lightweight generative model. Importantly, we semantically regularize prompt learning with the visual knowledge and view images and the corresponding prompts as patch and token sets under optimal transport, which pushes the prompt tokens to faithfully capture the label-specific visual concepts, instead of overfitting the training categories. Moreover, the proposed model can also be straightforwardly extended to the conditional case where the instance-conditional prompts are generated to improve the generalizability. Extensive experiments on 15 datasets show promising transferability and generalization performance of our proposed model.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2304.01933v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2303.09100v1' target="_blank">
                   link
                 </a>
               </p>
@@ -478,20 +478,20 @@ datasets in the mix too.
         </td>
       </tr><tr>
           <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-03-21</p>
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-02-15</p>
           </td>
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Artificial muses: Generative Artificial Intelligence Chatbots Have Risen to Human-Level Creativity
+                Conversational AI-Powered Design: ChatGPT as Designer, User, and Product
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.21</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.995</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.22</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.967</span></div>
                 <p class="pt-2">
-                  A widespread view is that Artificial Intelligence cannot be creative. We tested this assumption by comparing human-generated ideas with those generated by six Generative Artificial Intelligence (GAI) chatbots: alpa.ai, Copy.ai, ChatGPT (versions 3 and 4), Studio.ai, and YouChat. Humans and a specifically trained AI independently assessed the quality and quantity of ideas. We found no qualitative difference between AI and human-generated creativity, although there are differences in how ideas are generated. Interestingly, 9.4 percent of humans were more creative than the most creative GAI, GPT-4. Our findings suggest that GAIs are valuable assistants in the creative process. Continued research and development of GAI in creative tasks is crucial to fully understand this technology's potential benefits and drawbacks in shaping the future of creativity. Finally, we discuss the question of whether GAIs are capable of being truly creative.
+                  The recent advancements in Large Language Models (LLMs), particularly conversational LLMs like ChatGPT, have prompted changes in a range of fields, including design. This study aims to examine the capabilities of ChatGPT in a human-centered design process. To this end, a hypothetical design project was conducted, where ChatGPT was utilized to generate personas, simulate interviews with fictional users, create new design ideas, simulate usage scenarios and conversations between an imaginary prototype and fictional users, and lastly evaluate user experience. The results show that ChatGPT effectively performed the tasks assigned to it as a designer, user, or product, providing mostly appropriate responses. The study does, however, highlight some drawbacks such as forgotten information, partial responses, and a lack of output diversity. The paper explains the potential benefits and limitations of using conversational LLMs in design, discusses its implications, and suggests directions for future research in this rapidly evolving area.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2303.12003v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2302.07406v1' target="_blank">
                   link
                 </a>
               </p>
@@ -500,20 +500,20 @@ datasets in the mix too.
         </td>
       </tr><tr>
           <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-03-13</p>
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-02-15</p>
           </td>
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Large Language Models in the Workplace: A Case Study on Prompt Engineering for Job Type Classification
+                Log Parsing with Prompt-based Few-shot Learning
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.10</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.977</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.2</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.983</span></div>
                 <p class="pt-2">
-                  This case study investigates the task of job classification in a real-world setting, where the goal is to determine whether an English-language job posting is appropriate for a graduate or entry-level position. We explore multiple approaches to text classification, including supervised approaches such as traditional models like Support Vector Machines (SVMs) and state-of-the-art deep learning methods such as DeBERTa. We compare them with Large Language Models (LLMs) used in both few-shot and zero-shot classification settings. To accomplish this task, we employ prompt engineering, a technique that involves designing prompts to guide the LLMs towards the desired output. Specifically, we evaluate the performance of two commercially available state-of-the-art GPT-3.5-based language models, text-davinci-003 and gpt-3.5-turbo. We also conduct a detailed analysis of the impact of different aspects of prompt engineering on the model's performance. Our results show that, with a well-designed prompt, a zero-shot gpt-3.5-turbo classifier outperforms all other models, achieving a 6% increase in Precision@95% Recall compared to the best supervised approach. Furthermore, we observe that the wording of the prompt is a critical factor in eliciting the appropriate "reasoning" in the model, and that seemingly minor aspects of the prompt significantly affect the model's performance.
+                  Logs generated by large-scale software systems provide crucial information for engineers to understand the system status and diagnose problems of the systems. Log parsing, which converts raw log messages into structured data, is the first step to enabling automated log analytics. Existing log parsers extract the common part as log templates using statistical features. However, these log parsers often fail to identify the correct templates and parameters because: 1) they often overlook the semantic meaning of log messages, and 2) they require domain-specific knowledge for different log datasets. To address the limitations of existing methods, in this paper, we propose LogPPT to capture the patterns of templates using prompt-based few-shot learning. LogPPT utilises a novel prompt tuning method to recognise keywords and parameters based on a few labelled log data. In addition, an adaptive random sampling algorithm is designed to select a small yet diverse training set. We have conducted extensive experiments on 16 public log datasets. The experimental results show that LogPPT is effective and efficient for log parsing.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2303.07142v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2302.07435v1' target="_blank">
                   link
                 </a>
               </p>
@@ -522,20 +522,20 @@ datasets in the mix too.
         </td>
       </tr><tr>
           <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2022-12-19</p>
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-01-10</p>
           </td>
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Explanation Regeneration via Information Bottleneck
+                API Entity and Relation Joint Extraction from Text via Dynamic Prompt-tuned Language Model
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.26</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.799</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.43</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.949</span></div>
                 <p class="pt-2">
-                  Explaining the black-box predictions of NLP models naturally and accurately is an important open problem in natural language generation. These free-text explanations are expected to contain sufficient and carefully-selected evidence to form supportive arguments for predictions. Due to the superior generative capacity of large pretrained language models, recent work built on prompt engineering enables explanation generation without specific training. However, explanation generated through single-pass prompting often lacks sufficiency and conciseness. To address this problem, we develop an information bottleneck method EIB to produce refined explanations that are sufficient and concise. Our approach regenerates the free-text explanation by polishing the single-pass output from the pretrained language model but retaining the information that supports the contents being explained. Experiments on two out-of-domain tasks verify the effectiveness of EIB through automatic evaluation and thoroughly-conducted human evaluation.
+                  Extraction of Application Programming Interfaces (APIs) and their semantic relations from unstructured text (e.g., Stack Overflow) is a fundamental work for software engineering tasks (e.g., API recommendation). However, existing approaches are rule-based and sequence-labeling based. They must manually enumerate the rules or label data for a wide range of sentence patterns, which involves a significant amount of labor overhead and is exacerbated by morphological and common-word ambiguity. In contrast to matching or labeling API entities and relations, this paper formulates heterogeneous API extraction and API relation extraction task as a sequence-to-sequence generation task, and proposes AERJE, an API entity-relation joint extraction model based on the large pre-trained language model. After training on a small number of ambiguous but correctly labeled data, AERJE builds a multi-task architecture that extracts API entities and relations from unstructured text using dynamic prompts. We systematically evaluate AERJE on a set of long and ambiguous sentences from Stack Overflow. The experimental results show that AERJE achieves high accuracy and discrimination ability in API entity-relation joint extraction, even with zero or few-shot fine-tuning.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2212.09603v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2301.03987v1' target="_blank">
                   link
                 </a>
               </p>
@@ -544,20 +544,20 @@ datasets in the mix too.
         </td>
       </tr><tr>
           <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2022-12-09</p>
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-01-01</p>
           </td>
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Fill in the Blank: Context-aware Automated Text Input Generation for Mobile GUI Testing
+                Modeling Label Semantics Improves Activity Recognition
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.61</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.511</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.7</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.987</span></div>
                 <p class="pt-2">
-                  Automated GUI testing is widely used to help ensure the quality of mobile apps. However, many GUIs require appropriate text inputs to proceed to the next page which remains a prominent obstacle for testing coverage. Considering the diversity and semantic requirement of valid inputs (e.g., flight departure, movie name), it is challenging to automate the text input generation. Inspired by the fact that the pre-trained Large Language Model (LLM) has made outstanding progress in text generation, we propose an approach named QTypist based on LLM for intelligently generating semantic input text according to the GUI context. To boost the performance of LLM in the mobile testing scenario, we develop a prompt-based data construction and tuning method which automatically extracts the prompts and answers for model tuning. We evaluate QTypist on 106 apps from Google Play and the result shows that the passing rate of QTypist is 87%, which is 93% higher than the best baseline. We also integrate QTypist with the automated GUI testing tools and it can cover 42% more app activities, 52% more pages, and subsequently help reveal 122% more bugs compared with the raw tool.
+                  Human activity recognition (HAR) aims to classify sensory time series into different activities, with wide applications in activity tracking, healthcare, human computer interaction, etc. Existing HAR works improve recognition performance by designing more complicated feature extraction methods, but they neglect the label semantics by simply treating labels as integer IDs. We find that many activities in the current HAR datasets have shared label names, e.g., "open door" and "open fridge", "walk upstairs" and "walk downstairs". Through some exploratory analysis, we find that such shared structure in activity names also maps to similarity in the input features. To this end, we design a sequence-to-sequence framework to decode the label name semantics rather than classifying labels as integer IDs. Our proposed method decomposes learning activities into learning shared tokens ("open", "walk"), which is easier than learning the joint distribution ("open fridge", "walk upstairs") and helps transfer learning to activities with insufficient data samples. For datasets originally without shared tokens in label names, we also offer an automated method, using OpenAI's ChatGPT, to generate shared actions and objects. Extensive experiments on seven HAR benchmark datasets demonstrate the state-of-the-art performance of our method. We also show better performance in the long-tail activity distribution settings and few-shot settings.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2212.04732v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2301.03462v1' target="_blank">
                   link
                 </a>
               </p>
