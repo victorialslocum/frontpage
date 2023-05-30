@@ -19,7 +19,7 @@
           <td>
             <h1 class="text-6xl pt-4 font-bold"><span class="underline">Your</span> FrontPage</h1>
             <br>
-            <p>Generated on 2023-05-29.</p>
+            <p>Generated on 2023-05-30.</p>
             <p class="text-sm text-gray-500 pt-2">This frontpage is made by scraping arxiv and by runnig a spaCy model that detects 
 if the abstract describes a paper about a new specific topic. Right now we try to
 find interesting articles about new dataset or about prompt engineering. Many datasets 
@@ -33,6 +33,28 @@ datasets in the mix too.
           <td>
             <h2 class="text-4xl pt-4 font-bold">Datasets on Arxiv</h2><span class='px-2 mx-1 bg-yellow-200 text-xs'>tag:arxiv</span><span class='px-2 mx-1 bg-yellow-200 text-xs'>tag:dataset</span><span class='px-2 mx-1 bg-blue-200 text-xs'>cls:dataset</span></td>
         </tr><tr>
+          <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-05-29</p>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                TotalDefMeme: A Multi-Attribute Meme dataset on Total Defence in Singapore
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.643</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.1</span></div>
+                <p class="pt-2">
+                  Total Defence is a defence policy combining and extending the concept of military defence and civil defence. While several countries have adopted total defence as their defence policy, very few studies have investigated its effectiveness. With the rapid proliferation of social media and digitalisation, many social studies have been focused on investigating policy effectiveness through specially curated surveys and questionnaires either through digital media or traditional forms. However, such references may not truly reflect the underlying sentiments about the target policies or initiatives of interest. People are more likely to express their sentiment using communication mediums such as starting topic thread on forums or sharing memes on social media. Using Singapore as a case reference, this study aims to address this research gap by proposing TotalDefMeme, a large-scale multi-modal and multi-attribute meme dataset that captures public sentiments toward Singapore's Total Defence policy. Besides supporting social informatics and public policy analysis of the Total Defence policy, TotalDefMeme can also support many downstream multi-modal machine learning tasks, such as aspect-based stance classification and multi-modal meme clustering. We perform baseline machine learning experiments on TotalDefMeme and evaluate its technical validity, and present possible future interdisciplinary research directions and application scenarios using the dataset as a baseline.
+                </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.17911v1' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr><tr>
           <td class="inline-block">
             <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-05-25</p>
           </td>
@@ -268,28 +290,6 @@ datasets in the mix too.
                 </p>
               <p class="pb-2 pt-2 text-center">
                 <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.08409v1' target="_blank">
-                  link
-                </a>
-              </p>
-            </div>
-          </div>
-        </td>
-      </tr><tr>
-          <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-05-11</p>
-          </td>
-          <td>
-            <div x-data="{open: false}">
-              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Filtering higher-order datasets
-              </span>
-              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.852</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.8</span></div>
-                <p class="pt-2">
-                  Many complex systems often contain interactions between more than two nodes, known as higher-order interactions, which can change the structure of these systems in significant ways. Researchers often assume that all interactions paint a consistent picture of a higher-order dataset's structure. In contrast, the connection patterns of individuals or entities in empirical systems are often stratified by interaction size. Ignoring this fact can aggregate connection patterns that exist only at certain scales of interaction. To isolate these scale-dependent patterns, we present an approach for analyzing higher-order datasets by filtering interactions by their size. We apply this framework to several empirical datasets from three domains to demonstrate that data practitioners can gain valuable information from this approach.
-                </p>
-              <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.06910v1' target="_blank">
                   link
                 </a>
               </p>
