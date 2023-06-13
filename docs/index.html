@@ -19,7 +19,7 @@
           <td>
             <h1 class="text-6xl pt-4 font-bold"><span class="underline">Your</span> FrontPage</h1>
             <br>
-            <p>Generated on 2023-06-12.</p>
+            <p>Generated on 2023-06-13.</p>
             <p class="text-sm text-gray-500 pt-2">This frontpage is made by scraping arxiv and by runnig a spaCy model that detects 
 if the abstract describes a paper about a new specific topic. Right now we try to
 find interesting articles about new dataset or about prompt engineering. Many datasets 
@@ -33,6 +33,28 @@ datasets in the mix too.
           <td>
             <h2 class="text-4xl pt-4 font-bold">Datasets on Arxiv</h2><span class='px-2 mx-1 bg-yellow-200 text-xs'>tag:arxiv</span><span class='px-2 mx-1 bg-yellow-200 text-xs'>tag:dataset</span><span class='px-2 mx-1 bg-blue-200 text-xs'>cls:dataset</span></td>
         </tr><tr>
+          <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-06-12</p>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                Discovering Ferroelectric Plastic (Ionic) Crystals in the Cambridge Structural Database: Database Mining and Computational Assessment
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.600</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.22</span></div>
+                <p class="pt-2">
+                  Hybrid or organic plastic crystals have the potential as lead-free alternatives to conventional inorganic ferroelectrics. These materials are gaining attention for their multiaxial ferroelectricity, above-room-temperature Curie temperatures, and low-temperature synthesis. Here, we report a screening study of the Cambridge Structural Database (CSD) resulting in 55 new candidate plastic and plastic ionic ferroelectric molecular crystals, along with 16 previously reported ferroelectrics. With over 1.2 million entries in the CSD, the screening procedure involved many steps, including considerations of molecular geometry and size, space group, and hydrogen bonding pattern. The spontaneous polarization and electronic band gaps were predicted using density functional theory. 21 of the candidate ferroelectrics have a polarization greater than 10 {\mu}C/cm2, out of which nine are reported at room temperature.
+                </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2306.07138v1' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr><tr>
           <td class="inline-block">
             <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-06-08</p>
           </td>
@@ -268,28 +290,6 @@ datasets in the mix too.
                 </p>
               <p class="pb-2 pt-2 text-center">
                 <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.15068v1' target="_blank">
-                  link
-                </a>
-              </p>
-            </div>
-          </div>
-        </td>
-      </tr><tr>
-          <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-05-24</p>
-          </td>
-          <td>
-            <div x-data="{open: false}">
-              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Polarimetric Imaging for Perception
-              </span>
-              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.692</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.0</span></div>
-                <p class="pt-2">
-                  Autonomous driving and advanced driver-assistance systems rely on a set of sensors and algorithms to perform the appropriate actions and provide alerts as a function of the driving scene. Typically, the sensors include color cameras, radar, lidar and ultrasonic sensors. Strikingly however, although light polarization is a fundamental property of light, it is seldom harnessed for perception tasks. In this work we analyze the potential for improvement in perception tasks when using an RGB-polarimetric camera, as compared to an RGB camera. We examine monocular depth estimation and free space detection during the middle of the day, when polarization is independent of subject heading, and show that a quantifiable improvement can be achieved for both of them using state-of-the-art deep neural networks, with a minimum of architectural changes. We also present a new dataset composed of RGB-polarimetric images, lidar scans, GNSS / IMU readings and free space segmentations that further supports developing perception algorithms that take advantage of light polarization.
-                </p>
-              <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.14787v1' target="_blank">
                   link
                 </a>
               </p>
