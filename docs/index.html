@@ -19,7 +19,7 @@
           <td>
             <h1 class="text-6xl pt-4 font-bold"><span class="underline">Your</span> FrontPage</h1>
             <br>
-            <p>Generated on 2023-07-31.</p>
+            <p>Generated on 2023-08-01.</p>
             <p class="text-sm text-gray-500 pt-2">This frontpage is made by scraping arxiv and by runnig a spaCy model that detects 
 if the abstract describes a paper about a new specific topic. Right now we try to
 find interesting articles about new dataset or about prompt engineering. Many datasets 
@@ -33,6 +33,28 @@ datasets in the mix too.
           <td>
             <h2 class="text-4xl pt-4 font-bold">Datasets on Arxiv</h2><span class='px-2 mx-1 bg-yellow-200 text-xs'>tag:arxiv</span><span class='px-2 mx-1 bg-yellow-200 text-xs'>tag:dataset</span><span class='px-2 mx-1 bg-blue-200 text-xs'>cls:dataset</span></td>
         </tr><tr>
+          <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-07-31</p>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                HAGRID: A Human-LLM Collaborative Dataset for Generative Information-Seeking with Attribution
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.910</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.32</span></div>
+                <p class="pt-2">
+                  The rise of large language models (LLMs) had a transformative impact on search, ushering in a new era of search engines that are capable of generating search results in natural language text, imbued with citations for supporting sources. Building generative information-seeking models demands openly accessible datasets, which currently remain lacking. In this paper, we introduce a new dataset, HAGRID (Human-in-the-loop Attributable Generative Retrieval for Information-seeking Dataset) for building end-to-end generative information-seeking models that are capable of retrieving candidate quotes and generating attributed explanations. Unlike recent efforts that focus on human evaluation of black-box proprietary search engines, we built our dataset atop the English subset of MIRACL, a publicly available information retrieval dataset. HAGRID is constructed based on human and LLM collaboration. We first automatically collect attributed explanations that follow an in-context citation style using an LLM, i.e. GPT-3.5. Next, we ask human annotators to evaluate the LLM explanations based on two criteria: informativeness and attributability. HAGRID serves as a catalyst for the development of information-seeking models with better attribution capabilities.
+                </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2307.16883v1' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr><tr>
           <td class="inline-block">
             <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-07-27</p>
           </td>
@@ -268,28 +290,6 @@ datasets in the mix too.
                 </p>
               <p class="pb-2 pt-2 text-center">
                 <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2307.06118v1' target="_blank">
-                  link
-                </a>
-              </p>
-            </div>
-          </div>
-        </td>
-      </tr><tr>
-          <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-07-11</p>
-          </td>
-          <td>
-            <div x-data="{open: false}">
-              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                On the Need for a Language Describing Distribution Shifts: Illustrations on Tabular Datasets
-              </span>
-              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.651</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.42</span></div>
-                <p class="pt-2">
-                  Different distribution shifts require different algorithmic and operational interventions. Methodological research must be grounded by the specific shifts they address. Although nascent benchmarks provide a promising empirical foundation, they implicitly focus on covariate shifts, and the validity of empirical findings depends on the type of shift, e.g., previous observations on algorithmic performance can fail to be valid when the $Y|X$ distribution changes. We conduct a thorough investigation of natural shifts in 5 tabular datasets over 86,000 model configurations, and find that $Y|X$-shifts are most prevalent. To encourage researchers to develop a refined language for distribution shifts, we build WhyShift, an empirical testbed of curated real-world shifts where we characterize the type of shift we benchmark performance over. Since $Y|X$-shifts are prevalent in tabular settings, we identify covariate regions that suffer the biggest $Y|X$-shifts and discuss implications for algorithmic and data-based interventions. Our testbed highlights the importance of future research that builds an understanding of how distributions differ.
-                </p>
-              <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2307.05284v1' target="_blank">
                   link
                 </a>
               </p>
