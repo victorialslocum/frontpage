@@ -19,7 +19,7 @@
           <td>
             <h1 class="text-6xl pt-4 font-bold"><span class="underline">Your</span> FrontPage</h1>
             <br>
-            <p>Generated on 2023-08-21.</p>
+            <p>Generated on 2023-08-22.</p>
             <p class="text-sm text-gray-500 pt-2">This frontpage is made by scraping arxiv and by runnig a spaCy model that detects 
 if the abstract describes a paper about a new specific topic. Right now we try to
 find interesting articles about new dataset or about prompt engineering. Many datasets 
@@ -34,20 +34,20 @@ datasets in the mix too.
             <h2 class="text-4xl pt-4 font-bold">Datasets on Arxiv</h2><span class='px-2 mx-1 bg-yellow-200 text-xs'>tag:arxiv</span><span class='px-2 mx-1 bg-yellow-200 text-xs'>tag:dataset</span><span class='px-2 mx-1 bg-blue-200 text-xs'>cls:dataset</span></td>
         </tr><tr>
           <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-08-14</p>
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-08-21</p>
           </td>
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Planetary Entry Probe Dataset: Analysis and Rules of Thumb for Future Missions
+                SynDrone -- Multi-modal UAV Dataset for Urban Scenarios
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.809</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.5</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.716</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.3</span></div>
                 <p class="pt-2">
-                  Since the beginning of robotic interplanetary exploration nearly six decades ago, successful atmospheric entry has been accomplished at Venus, Earth, Mars, Jupiter, and Titan. More entry probe missions are planned to Venus, Titan, and Uranus in the next decade. Atmospheric entry subjects the vehicle to rapid deceleration and aerothermal loads which the vehicle must be designed for, to deliver the robotic instruments inside the atmosphere. The design of planetary probes and their mission architecture is complex, and involves various engineering constraints such as peak deceleration, heating rate, heating load, and communications which must be satisfied within the budget and schedule of cost constrained mission opportunities. Engineering design data from previous entry probe missions serve as a valuable reference for designing future missions. The present study compiles an augmented version of the blue book entry probe dataset, performs a comparative analysis of the entry conditions, and provides engineering rules of thumb for design of future missions. Using the dataset, the present study proposes a new empirical correlation which aims to more accurately predict the thermal protection system mass fraction for high heat load conditions during entry and aerocapture at Uranus and Neptune.
+                  The development of computer vision algorithms for Unmanned Aerial Vehicles (UAVs) imagery heavily relies on the availability of annotated high-resolution aerial data. However, the scarcity of large-scale real datasets with pixel-level annotations poses a significant challenge to researchers as the limited number of images in existing datasets hinders the effectiveness of deep learning models that require a large amount of training data. In this paper, we propose a multimodal synthetic dataset containing both images and 3D data taken at multiple flying heights to address these limitations. In addition to object-level annotations, the provided data also include pixel-level labeling in 28 classes, enabling exploration of the potential advantages in tasks like semantic segmentation. In total, our dataset contains 72k labeled samples that allow for effective training of deep architectures showing promising results in synthetic-to-real adaptation. The dataset will be made publicly available to support the development of novel computer vision methods targeting UAV applications.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2308.07005v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2308.10491v1' target="_blank">
                   link
                 </a>
               </p>
@@ -70,28 +70,6 @@ datasets in the mix too.
                 </p>
               <p class="pb-2 pt-2 text-center">
                 <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2308.04972v1' target="_blank">
-                  link
-                </a>
-              </p>
-            </div>
-          </div>
-        </td>
-      </tr><tr>
-          <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-08-02</p>
-          </td>
-          <td>
-            <div x-data="{open: false}">
-              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                MDT3D: Multi-Dataset Training for LiDAR 3D Object Detection Generalization
-              </span>
-              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.792</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.6</span></div>
-                <p class="pt-2">
-                  Supervised 3D Object Detection models have been displaying increasingly better performance in single-domain cases where the training data comes from the same environment and sensor as the testing data. However, in real-world scenarios data from the target domain may not be available for finetuning or for domain adaptation methods. Indeed, 3D object detection models trained on a source dataset with a specific point distribution have shown difficulties in generalizing to unseen datasets. Therefore, we decided to leverage the information available from several annotated source datasets with our Multi-Dataset Training for 3D Object Detection (MDT3D) method to increase the robustness of 3D object detection models when tested in a new environment with a different sensor configuration. To tackle the labelling gap between datasets, we used a new label mapping based on coarse labels. Furthermore, we show how we managed the mix of datasets during training and finally introduce a new cross-dataset augmentation method: cross-dataset object injection. We demonstrate that this training paradigm shows improvements for different types of 3D object detection models. The source code and additional results for this research project will be publicly available on GitHub for interested parties to access and utilize: https://github.com/LouisSF/MDT3D
-                </p>
-              <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2308.01000v1' target="_blank">
                   link
                 </a>
               </p>
@@ -127,15 +105,81 @@ datasets in the mix too.
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                BubbleML: A Multi-Physics Dataset and Benchmarks for Machine Learning
+                Multi-Source Domain Adaptation through Dataset Dictionary Learning in Wasserstein Space
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.936</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.2</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.830</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.4</span></div>
                 <p class="pt-2">
-                  In the field of phase change phenomena, the lack of accessible and diverse datasets suitable for machine learning (ML) training poses a significant challenge. Existing experimental datasets are often restricted, with limited availability and sparse ground truth data, impeding our understanding of this complex multi-physics phenomena. To bridge this gap, we present the BubbleML Dataset(https://github.com/HPCForge/BubbleML) which leverages physics-driven simulations to provide accurate ground truth information for various boiling scenarios, encompassing nucleate pool boiling, flow boiling, and sub-cooled boiling. This extensive dataset covers a wide range of parameters, including varying gravity conditions, flow rates, sub-cooling levels, and wall superheat, comprising 51 simulations. BubbleML is validated against experimental observations and trends, establishing it as an invaluable resource for ML research. Furthermore, we showcase its potential to facilitate exploration of diverse downstream tasks by introducing two benchmarks: (a) optical flow analysis to capture bubble dynamics, and (b) operator networks for learning temperature dynamics. The BubbleML dataset and its benchmarks serve as a catalyst for advancements in ML-driven research on multi-physics phase change phenomena, enabling the development and comparison of state-of-the-art techniques and models.
+                  This paper seeks to solve Multi-Source Domain Adaptation (MSDA), which aims to mitigate data distribution shifts when transferring knowledge from multiple labeled source domains to an unlabeled target domain. We propose a novel MSDA framework based on dictionary learning and optimal transport. We interpret each domain in MSDA as an empirical distribution. As such, we express each domain as a Wasserstein barycenter of dictionary atoms, which are empirical distributions. We propose a novel algorithm, DaDiL, for learning via mini-batches: (i) atom distributions; (ii) a matrix of barycentric coordinates. Based on our dictionary, we propose two novel methods for MSDA: DaDil-R, based on the reconstruction of labeled samples in the target domain, and DaDiL-E, based on the ensembling of classifiers learned on atom distributions. We evaluate our methods in 3 benchmarks: Caltech-Office, Office 31, and CRWU, where we improved previous state-of-the-art by 3.15%, 2.29%, and 7.71% in classification performance. Finally, we show that interpolations in the Wasserstein hull of learned atoms provide data that can generalize to the target domain.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2307.14623v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2307.14953v1' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr><tr>
+          <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-07-27</p>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                Emotion4MIDI: a Lyrics-based Emotion-Labeled Symbolic Music Dataset
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.801</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.5</span></div>
+                <p class="pt-2">
+                  We present a new large-scale emotion-labeled symbolic music dataset consisting of 12k MIDI songs. To create this dataset, we first trained emotion classification models on the GoEmotions dataset, achieving state-of-the-art results with a model half the size of the baseline. We then applied these models to lyrics from two large-scale MIDI datasets. Our dataset covers a wide range of fine-grained emotions, providing a valuable resource to explore the connection between music and emotions and, especially, to develop models that can generate music based on specific emotions. Our code for inference, trained models, and datasets are available online.
+                </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2307.14783v1' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr><tr>
+          <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-07-27</p>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                Mitigating Cross-Database Differences for Learning Unified HRTF Representation
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.562</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.1</span></div>
+                <p class="pt-2">
+                  Individualized head-related transfer functions (HRTFs) are crucial for accurate sound positioning in virtual auditory displays. As the acoustic measurement of HRTFs is resource-intensive, predicting individualized HRTFs using machine learning models is a promising approach at scale. Training such models require a unified HRTF representation across multiple databases to utilize their respectively limited samples. However, in addition to differences on the spatial sampling locations, recent studies have shown that, even for the common location, HRTFs across databases manifest consistent differences that make it trivial to tell which databases they come from. This poses a significant challenge for learning a unified HRTF representation across databases. In this work, we first identify the possible causes of these cross-database differences, attributing them to variations in the measurement setup. Then, we propose a novel approach to normalize the frequency responses of HRTFs across databases. We show that HRTFs from different databases cannot be classified by their database after normalization. We further show that these normalized HRTFs can be used to learn a more unified HRTF representation across databases than the prior art. We believe that this normalization approach paves the road to many data-intensive tasks on HRTF modeling.
+                </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2307.14547v1' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr><tr>
+          <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-07-24</p>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                A Dataset of Android Libraries
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.591</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.4</span></div>
+                <p class="pt-2">
+                  Android app developers extensively employ code reuse, integrating many third-party libraries into their apps. While such integration is practical for developers, it can be challenging for static analyzers to achieve scalability and precision when such libraries can account for a large part of the app code. As a direct consequence, when a static analysis is performed, it is common practice in the literature to only consider developer code --with the assumption that the sought issues are in developer code rather than in the libraries. However, analysts need to precisely distinguish between library code and developer code in Android apps to ensure the effectiveness of static analysis. Currently, many static analysis approaches rely on white lists of libraries. However, these white lists are unreliable, as they are inaccurate and largely non-comprehensive.   In this paper, we propose a new approach to address the lack of comprehensive and automated solutions for the production of accurate and "always up to date" sets of third-party libraries. First, we demonstrate the continued need for a white list of third-party libraries. Second, we propose an automated approach to produce an accurate and up-to-date set of third-party libraries in the form of a dataset called AndroLibZoo. Our dataset, which we make available to the research community, contains to date 20 162 libraries and is meant to evolve. Third, we illustrate the significance of using AndroLibZoo to filter libraries in recent apps. Fourth, we demonstrate that AndroLibZoo is more suitable than the current state-of-the-art list for improved static analysis. Finally, we show how the use of AndroLibZoo can enhance the performance of existing Android app static analyzers.
+                </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2307.12609v1' target="_blank">
                   link
                 </a>
               </p>
@@ -188,20 +232,42 @@ datasets in the mix too.
         </td>
       </tr><tr>
           <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-07-12</p>
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-07-13</p>
           </td>
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                TreeFormer: a Semi-Supervised Transformer-based Framework for Tree Counting from a Single High Resolution Image
+                Improving 2D Human Pose Estimation across Unseen Camera Views with Synthetic Data
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.628</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.0</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.759</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.19</span></div>
                 <p class="pt-2">
-                  Automatic tree density estimation and counting using single aerial and satellite images is a challenging task in photogrammetry and remote sensing, yet has an important role in forest management. In this paper, we propose the first semisupervised transformer-based framework for tree counting which reduces the expensive tree annotations for remote sensing images. Our method, termed as TreeFormer, first develops a pyramid tree representation module based on transformer blocks to extract multi-scale features during the encoding stage. Contextual attention-based feature fusion and tree density regressor modules are further designed to utilize the robust features from the encoder to estimate tree density maps in the decoder. Moreover, we propose a pyramid learning strategy that includes local tree density consistency and local tree count ranking losses to utilize unlabeled images into the training process. Finally, the tree counter token is introduced to regulate the network by computing the global tree counts for both labeled and unlabeled images. Our model was evaluated on two benchmark tree counting datasets, Jiangsu, and Yosemite, as well as a new dataset, KCL-London, created by ourselves. Our TreeFormer outperforms the state of the art semi-supervised methods under the same setting and exceeds the fully-supervised methods using the same number of labeled images. The codes and datasets are available at https://github.com/HAAClassic/TreeFormer.
+                  Human Pose Estimation is a thoroughly researched problem; however, most datasets focus on the side and front-view scenarios. We address the limitation by proposing a novel approach that tackles the challenges posed by extreme viewpoints and poses. We introduce a new method for synthetic data generation - RePoGen, RarE POses GENerator - with comprehensive control over pose and view to augment the COCO dataset. Experiments on a new dataset of real images show that adding RePoGen data to the COCO surpasses previous attempts to top-view pose estimation and significantly improves performance on the bottom-view dataset. Through an extensive ablation study on both the top and bottom view data, we elucidate the contributions of methodological choices and demonstrate improved performance. The code and the datasets are available on the project website.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2307.06118v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2307.06737v1' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr><tr>
+          <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-07-13</p>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                WaterScenes: A Multi-Task 4D Radar-Camera Fusion Dataset and Benchmark for Autonomous Driving on Water Surfaces
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.780</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.0</span></div>
+                <p class="pt-2">
+                  Autonomous driving on water surfaces plays an essential role in executing hazardous and time-consuming missions, such as maritime surveillance, survivors rescue, environmental monitoring, hydrography mapping and waste cleaning. This work presents WaterScenes, the first multi-task 4D radar-camera fusion dataset for autonomous driving on water surfaces. Equipped with a 4D radar and a monocular camera, our Unmanned Surface Vehicle (USV) proffers all-weather solutions for discerning object-related information, including color, shape, texture, range, velocity, azimuth, and elevation. Focusing on typical static and dynamic objects on water surfaces, we label the camera images and radar point clouds at pixel-level and point-level, respectively. In addition to basic perception tasks, such as object detection, instance segmentation and semantic segmentation, we also provide annotations for free-space segmentation and waterline segmentation. Leveraging the multi-task and multi-modal data, we conduct numerous experiments on the single modality of radar and camera, as well as the fused modalities. Results demonstrate that 4D radar-camera fusion can considerably enhance the robustness of perception on water surfaces, especially in adverse lighting and weather conditions. WaterScenes dataset is public on https://waterscenes.github.io.
+                </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2307.06505v1' target="_blank">
                   link
                 </a>
               </p>
@@ -215,81 +281,15 @@ datasets in the mix too.
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                PKU-GoodsAD: A Supermarket Goods Dataset for Unsupervised Anomaly Detection and Segmentation
+                On the Need for a Language Describing Distribution Shifts: Illustrations on Tabular Datasets
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.923</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.3</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.651</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.42</span></div>
                 <p class="pt-2">
-                  Visual anomaly detection is essential and commonly used for many tasks in the field of computer vision. Recent anomaly detection datasets mainly focus on industrial automated inspection, medical image analysis and video surveillance. In order to broaden the application and research of anomaly detection in unmanned supermarkets and smart manufacturing, we introduce the supermarket goods anomaly detection (GoodsAD) dataset. It contains 6124 high-resolution images of 484 different appearance goods divided into 6 categories. Each category contains several common different types of anomalies such as deformation, surface damage and opened. Anomalies contain both texture changes and structural changes. It follows the unsupervised setting and only normal (defect-free) images are used for training. Pixel-precise ground truth regions are provided for all anomalies. Moreover, we also conduct a thorough evaluation of current state-of-the-art unsupervised anomaly detection methods. This initial benchmark indicates that some methods which perform well on the industrial anomaly detection dataset (e.g., MVTec AD), show poor performance on our dataset. This is a comprehensive, multi-object dataset for supermarket goods anomaly detection that focuses on real-world applications.
+                  Different distribution shifts require different algorithmic and operational interventions. Methodological research must be grounded by the specific shifts they address. Although nascent benchmarks provide a promising empirical foundation, they implicitly focus on covariate shifts, and the validity of empirical findings depends on the type of shift, e.g., previous observations on algorithmic performance can fail to be valid when the $Y|X$ distribution changes. We conduct a thorough investigation of natural shifts in 5 tabular datasets over 86,000 model configurations, and find that $Y|X$-shifts are most prevalent. To encourage researchers to develop a refined language for distribution shifts, we build WhyShift, an empirical testbed of curated real-world shifts where we characterize the type of shift we benchmark performance over. Since $Y|X$-shifts are prevalent in tabular settings, we identify covariate regions that suffer the biggest $Y|X$-shifts and discuss implications for algorithmic and data-based interventions. Our testbed highlights the importance of future research that builds an understanding of how distributions differ.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2307.04956v1' target="_blank">
-                  link
-                </a>
-              </p>
-            </div>
-          </div>
-        </td>
-      </tr><tr>
-          <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-06-29</p>
-          </td>
-          <td>
-            <div x-data="{open: false}">
-              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                BEDLAM: A Synthetic Dataset of Bodies Exhibiting Detailed Lifelike Animated Motion
-              </span>
-              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.765</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.33</span></div>
-                <p class="pt-2">
-                  We show, for the first time, that neural networks trained only on synthetic data achieve state-of-the-art accuracy on the problem of 3D human pose and shape (HPS) estimation from real images. Previous synthetic datasets have been small, unrealistic, or lacked realistic clothing. Achieving sufficient realism is non-trivial and we show how to do this for full bodies in motion. Specifically, our BEDLAM dataset contains monocular RGB videos with ground-truth 3D bodies in SMPL-X format. It includes a diversity of body shapes, motions, skin tones, hair, and clothing. The clothing is realistically simulated on the moving bodies using commercial clothing physics simulation. We render varying numbers of people in realistic scenes with varied lighting and camera motions. We then train various HPS regressors using BEDLAM and achieve state-of-the-art accuracy on real-image benchmarks despite training with synthetic data. We use BEDLAM to gain insights into what model design choices are important for accuracy. With good synthetic training data, we find that a basic method like HMR approaches the accuracy of the current SOTA method (CLIFF). BEDLAM is useful for a variety of tasks and all images, ground truth bodies, 3D clothing, support code, and more are available for research purposes. Additionally, we provide detailed information about our synthetic data generation pipeline, enabling others to generate their own datasets. See the project page: https://bedlam.is.tue.mpg.de/.
-                </p>
-              <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2306.16940v1' target="_blank">
-                  link
-                </a>
-              </p>
-            </div>
-          </div>
-        </td>
-      </tr><tr>
-          <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-06-28</p>
-          </td>
-          <td>
-            <div x-data="{open: false}">
-              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Action-conditioned Deep Visual Prediction with RoAM, a new Indoor Human Motion Dataset for Autonomous Robots
-              </span>
-              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.713</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.1</span></div>
-                <p class="pt-2">
-                  With the increasing adoption of robots across industries, it is crucial to focus on developing advanced algorithms that enable robots to anticipate, comprehend, and plan their actions effectively in collaboration with humans. We introduce the Robot Autonomous Motion (RoAM) video dataset, which is collected with a custom-made turtlebot3 Burger robot in a variety of indoor environments recording various human motions from the robot's ego-vision. The dataset also includes synchronized records of the LiDAR scan and all control actions taken by the robot as it navigates around static and moving human agents. The unique dataset provides an opportunity to develop and benchmark new visual prediction frameworks that can predict future image frames based on the action taken by the recording agent in partially observable scenarios or cases where the imaging sensor is mounted on a moving platform. We have benchmarked the dataset on our novel deep visual prediction framework called ACPNet where the approximated future image frames are also conditioned on action taken by the robot and demonstrated its potential for incorporating robot dynamics into the video prediction paradigm for mobile robotics and autonomous navigation research.
-                </p>
-              <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2306.15852v1' target="_blank">
-                  link
-                </a>
-              </p>
-            </div>
-          </div>
-        </td>
-      </tr><tr>
-          <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-06-26</p>
-          </td>
-          <td>
-            <div x-data="{open: false}">
-              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Ontology Enrichment from Texts: A Biomedical Dataset for Concept Discovery and Placement
-              </span>
-              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.798</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.1</span></div>
-                <p class="pt-2">
-                  Mentions of new concepts appear regularly in texts and require automated approaches to harvest and place them into Knowledge Bases (KB), e.g., ontologies and taxonomies. Existing datasets suffer from three issues, (i) mostly assuming that a new concept is pre-discovered and cannot support out-of-KB mention discovery; (ii) only using the concept label as the input along with the KB and thus lacking the contexts of a concept label; and (iii) mostly focusing on concept placement w.r.t a taxonomy of atomic concepts, instead of complex concepts, i.e., with logical operators. To address these issues, we propose a new benchmark, adapting MedMentions dataset (PubMed abstracts) with SNOMED CT versions in 2014 and 2017 under the Diseases sub-category and the broader categories of Clinical finding, Procedure, and Pharmaceutical / biologic product. We provide usage on the evaluation with the dataset for out-of-KB mention discovery and concept placement, adapting recent Large Language Model based methods.
-                </p>
-              <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2306.14704v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2307.05284v1' target="_blank">
                   link
                 </a>
               </p>
@@ -324,20 +324,86 @@ datasets in the mix too.
         </td>
       </tr><tr>
           <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-06-06</p>
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-08-02</p>
           </td>
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Applying Standards to Advance Upstream & Downstream Ethics in Large Language Models
+                Leveraging Few-Shot Data Augmentation and Waterfall Prompting for Response Generation
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.2</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.748</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.23</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.665</span></div>
                 <p class="pt-2">
-                  This paper explores how AI-owners can develop safeguards for AI-generated content by drawing from established codes of conduct and ethical standards in other content-creation industries. It delves into the current state of ethical awareness on Large Language Models (LLMs). By dissecting the mechanism of content generation by LLMs, four key areas (upstream/downstream and at user prompt/answer), where safeguards could be effectively applied, are identified. A comparative analysis of these four areas follows and includes an evaluation of the existing ethical safeguards in terms of cost, effectiveness, and alignment with established industry practices. The paper's key argument is that existing IT-related ethical codes, while adequate for traditional IT engineering, are inadequate for the challenges posed by LLM-based content generation. Drawing from established practices within journalism, we propose potential standards for businesses involved in distributing and selling LLM-generated content. Finally, potential conflicts of interest between dataset curation at upstream and ethical benchmarking downstream are highlighted to underscore the need for a broader evaluation beyond mere output. This study prompts a nuanced conversation around ethical implications in this rapidly evolving field of content generation.
+                  This paper discusses our approaches for task-oriented conversational modelling using subjective knowledge, with a particular emphasis on response generation. Our methodology was shaped by an extensive data analysis that evaluated key factors such as response length, sentiment, and dialogue acts present in the provided dataset. We used few-shot learning to augment the data with newly generated subjective knowledge items and present three approaches for DSTC11: (1) task-specific model exploration, (2) incorporation of the most frequent question into all generated responses, and (3) a waterfall prompting technique using a combination of both GPT-3 and ChatGPT.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2306.03503v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2308.01080v1' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr><tr>
+          <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-07-18</p>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                Federated Large Language Model: A Position Paper
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.32</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.692</span></div>
+                <p class="pt-2">
+                  Large scale language models (LLM) have received significant attention and found diverse applications across various domains, but their development encounters challenges in real-world scenarios. These challenges arise due to the scarcity of public domain data availability and the need to maintain privacy with respect to private domain data. To address these issues, federated learning (FL) has emerged as a promising technology that enables collaborative training of shared models while preserving decentralized data. We propose the concept of federated LLM, which comprises three key components, i.e., federated LLM pre-training, federated LLM fine-tuning, and federated LLM prompt engineering. For each component, we discuss its advantage over traditional LLM training methods and propose specific engineering strategies for implementation. Furthermore, we explore the novel challenges introduced by the integration of FL and LLM. We analyze existing solutions and identify potential obstacles faced by these solutions within the context of federated LLM.
+                </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2307.08925v1' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr><tr>
+          <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-07-05</p>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                Flacuna: Unleashing the Problem Solving Power of Vicuna using FLAN Fine-Tuning
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.84</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.657</span></div>
+                <p class="pt-2">
+                  Recently, the release of INSTRUCTEVAL has provided valuable insights into the performance of large language models (LLMs) that utilize encoder-decoder or decoder-only architecture. Interestingly, despite being introduced four years ago, T5-based LLMs, such as FLAN-T5, continue to outperform the latest decoder-based LLMs, such as LLAMA and VICUNA, on tasks that require general problem-solving skills. This performance discrepancy can be attributed to three key factors: (1) Pre-training data, (2) Backbone architecture, and (3) Instruction dataset. In this technical report, our main focus is on investigating the impact of the third factor by leveraging VICUNA, a large language model based on LLAMA, which has undergone fine-tuning on ChatGPT conversations. To achieve this objective, we fine-tuned VICUNA using a customized instruction dataset collection called FLANMINI. This collection includes a subset of the large-scale instruction dataset known as FLAN, as well as various code-related datasets and conversational datasets derived from ChatGPT/GPT-4. This dataset comprises a large number of tasks that demand problem-solving skills. Our experimental findings strongly indicate that the enhanced problem-solving abilities of our model, FLACUNA, are obtained through fine-tuning VICUNA on the FLAN dataset, leading to significant improvements across numerous benchmark datasets in INSTRUCTEVAL. FLACUNA is publicly available at https://huggingface.co/declare-lab/flacuna-13b-v1.0.
+                </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2307.02053v1' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr><tr>
+          <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-06-26</p>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                ChatIDS: Explainable Cybersecurity Using Generative AI
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.8</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.558</span></div>
+                <p class="pt-2">
+                  Intrusion Detection Systems (IDS) are a proven approach to secure networks. However, in a privately used network, it is difficult for users without cybersecurity expertise to understand IDS alerts, and to respond in time with adequate measures. This puts the security of home networks, smart home installations, home-office workers, etc. at risk, even if an IDS is correctly installed and configured. In this work, we propose ChatIDS, our approach to explain IDS alerts to non-experts by using large language models. We evaluate the feasibility of ChatIDS by using ChatGPT, and we identify open research issues with the help of interdisciplinary experts in artificial intelligence. Our results show that ChatIDS has the potential to increase network security by proposing meaningful security measures in an intuitive language from IDS alerts. Nevertheless, some potential issues in areas such as trust, privacy, ethics, etc. need to be resolved, before ChatIDS might be put into practice.
+                </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2306.14504v1' target="_blank">
                   link
                 </a>
               </p>
@@ -368,20 +434,20 @@ datasets in the mix too.
         </td>
       </tr><tr>
           <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-05-25</p>
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-05-23</p>
           </td>
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Service Composition in the ChatGPT Era
+                LLM-empowered Chatbots for Psychiatrist and Patient Simulation: Application and Evaluation
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.10</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.697</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.131</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.509</span></div>
                 <p class="pt-2">
-                  The paper speculates about how ChatGPT-like systems can support the field of automated service composition and identifies new research areas to explore in order to take advantage of such tools in the field of service-oriented composition.
+                  Empowering chatbots in the field of mental health is receiving increasing amount of attention, while there still lacks exploration in developing and evaluating chatbots in psychiatric outpatient scenarios. In this work, we focus on exploring the potential of ChatGPT in powering chatbots for psychiatrist and patient simulation. We collaborate with psychiatrists to identify objectives and iteratively develop the dialogue system to closely align with real-world scenarios. In the evaluation experiments, we recruit real psychiatrists and patients to engage in diagnostic conversations with the chatbots, collecting their ratings for assessment. Our findings demonstrate the feasibility of using ChatGPT-powered chatbots in psychiatric scenarios and explore the impact of prompt designs on chatbot behavior and user experience.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.15788v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.13614v1' target="_blank">
                   link
                 </a>
               </p>
@@ -390,20 +456,42 @@ datasets in the mix too.
         </td>
       </tr><tr>
           <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-05-15</p>
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-05-18</p>
           </td>
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Exploring In-Context Learning Capabilities of Foundation Models for Generating Knowledge Graphs from Text
+                ZeroPrompt: Streaming Acoustic Encoders are Zero-Shot Masked LMs
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.33</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.718</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.108</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.609</span></div>
                 <p class="pt-2">
-                  Knowledge graphs can represent information about the real-world using entities and their relations in a structured and semantically rich manner and they enable a variety of downstream applications such as question-answering, recommendation systems, semantic search, and advanced analytics. However, at the moment, building a knowledge graph involves a lot of manual effort and thus hinders their application in some situations and the automation of this process might benefit especially for small organizations. Automatically generating structured knowledge graphs from a large volume of natural language is still a challenging task and the research on sub-tasks such as named entity extraction, relation extraction, entity and relation linking, and knowledge graph construction aims to improve the state of the art of automatic construction and completion of knowledge graphs from text. The recent advancement of foundation models with billions of parameters trained in a self-supervised manner with large volumes of training data that can be adapted to a variety of downstream tasks has helped to demonstrate high performance on a large range of Natural Language Processing (NLP) tasks. In this context, one emerging paradigm is in-context learning where a language model is used as it is with a prompt that provides instructions and some examples to perform a task without changing the parameters of the model using traditional approaches such as fine-tuning. This way, no computing resources are needed for re-training/fine-tuning the models and the engineering effort is minimal. Thus, it would be beneficial to utilize such capabilities for generating knowledge graphs from text.
+                  In this paper, we present ZeroPrompt (Figure 1-(a)) and the corresponding Prompt-and-Refine strategy (Figure 3), two simple but effective \textbf{training-free} methods to decrease the Token Display Time (TDT) of streaming ASR models \textbf{without any accuracy loss}. The core idea of ZeroPrompt is to append zeroed content to each chunk during inference, which acts like a prompt to encourage the model to predict future tokens even before they were spoken. We argue that streaming acoustic encoders naturally have the modeling ability of Masked Language Models and our experiments demonstrate that ZeroPrompt is engineering cheap and can be applied to streaming acoustic encoders on any dataset without any accuracy loss. Specifically, compared with our baseline models, we achieve 350 $\sim$ 700ms reduction on First Token Display Time (TDT-F) and 100 $\sim$ 400ms reduction on Last Token Display Time (TDT-L), with theoretically and experimentally equal WER on both Aishell-1 and Librispeech datasets.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.08804v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.10649v1' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr><tr>
+          <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-05-11</p>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                Chain-of-Dictionary Prompting Elicits Translation in Large Language Models
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.30</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.619</span></div>
+                <p class="pt-2">
+                  Large language models (LLMs) have shown surprisingly good performance in multilingual neural machine translation (MNMT) even when trained without parallel data. Yet, despite the fact that the amount of training data is gigantic, they still struggle with translating rare words, particularly for low-resource languages. Even worse, it is usually unrealistic to retrieve relevant demonstrations for in-context learning with low-resource languages on LLMs, which restricts the practical use of LLMs for translation -- how should we mitigate this problem? To this end, we present a novel method, CoD, which augments LLMs with prior knowledge with the chains of multilingual dictionaries for a subset of input words to elicit translation abilities for LLMs. Extensive experiments indicate that augmenting ChatGPT with CoD elicits large gains by up to 13x ChrF++ points for MNMT (3.08 to 42.63 for English to Serbian written in Cyrillic script) on FLORES-200 full devtest set. We further demonstrate the importance of chaining the multilingual dictionaries, as well as the superiority of CoD to few-shot demonstration for low-resource languages.
+                </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.06575v1' target="_blank">
                   link
                 </a>
               </p>
@@ -461,103 +549,15 @@ datasets in the mix too.
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Segment Anything in 3D with NeRFs
+                Can we Trust Chatbots for now? Accuracy, reproducibility, traceability; a Case Study on Leonardo da Vinci's Contribution to Astronomy
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.118</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.513</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.1</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.551</span></div>
                 <p class="pt-2">
-                  The Segment Anything Model (SAM) has demonstrated its effectiveness in segmenting any object/part in various 2D images, yet its ability for 3D has not been fully explored. The real world is composed of numerous 3D scenes and objects. Due to the scarcity of accessible 3D data and high cost of its acquisition and annotation, lifting SAM to 3D is a challenging but valuable research avenue. With this in mind, we propose a novel framework to Segment Anything in 3D, named SA3D. Given a neural radiance field (NeRF) model, SA3D allows users to obtain the 3D segmentation result of any target object via only one-shot manual prompting in a single rendered view. With input prompts, SAM cuts out the target object from the according view. The obtained 2D segmentation mask is projected onto 3D mask grids via density-guided inverse rendering. 2D masks from other views are then rendered, which are mostly uncompleted but used as cross-view self-prompts to be fed into SAM again. Complete masks can be obtained and projected onto mask grids. This procedure is executed via an iterative manner while accurate 3D masks can be finally learned. SA3D can adapt to various radiance fields effectively without any additional redesigning. The entire segmentation process can be completed in approximately two minutes without any engineering optimization. Our experiments demonstrate the effectiveness of SA3D in different scenes, highlighting the potential of SAM in 3D scene perception. The project page is at https://jumpat.github.io/SA3D/.
+                  Large Language Models (LLM) are studied. Applications to chatbots and education are considered. A case study on Leonardo's contribution to astronomy is presented. Major problems with accuracy, reproducibility and traceability of answers are reported for ChatGPT, GPT-4, BLOOM and Google Bard. Possible reasons for problems are discussed and some solutions are proposed.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2304.12308v1' target="_blank">
-                  link
-                </a>
-              </p>
-            </div>
-          </div>
-        </td>
-      </tr><tr>
-          <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-03-29</p>
-          </td>
-          <td>
-            <div x-data="{open: false}">
-              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                ProtFIM: Fill-in-Middle Protein Sequence Design via Protein Language Models
-              </span>
-              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.11</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.668</span></div>
-                <p class="pt-2">
-                  Protein language models (pLMs), pre-trained via causal language modeling on protein sequences, have been a promising tool for protein sequence design. In real-world protein engineering, there are many cases where the amino acids in the middle of a protein sequence are optimized while maintaining other residues. Unfortunately, because of the left-to-right nature of pLMs, existing pLMs modify suffix residues by prompting prefix residues, which are insufficient for the infilling task that considers the whole surrounding context. To find the more effective pLMs for protein engineering, we design a new benchmark, Secondary structureE InFilling rEcoveRy, SEIFER, which approximates infilling sequence design scenarios. With the evaluation of existing models on the benchmark, we reveal the weakness of existing language models and show that language models trained via fill-in-middle transformation, called ProtFIM, are more appropriate for protein engineering. Also, we prove that ProtFIM generates protein sequences with decent protein representations through exhaustive experiments and visualizations.
-                </p>
-              <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2303.16452v1' target="_blank">
-                  link
-                </a>
-              </p>
-            </div>
-          </div>
-        </td>
-      </tr><tr>
-          <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-03-13</p>
-          </td>
-          <td>
-            <div x-data="{open: false}">
-              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Large Language Models in the Workplace: A Case Study on Prompt Engineering for Job Type Classification
-              </span>
-              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.10</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.977</span></div>
-                <p class="pt-2">
-                  This case study investigates the task of job classification in a real-world setting, where the goal is to determine whether an English-language job posting is appropriate for a graduate or entry-level position. We explore multiple approaches to text classification, including supervised approaches such as traditional models like Support Vector Machines (SVMs) and state-of-the-art deep learning methods such as DeBERTa. We compare them with Large Language Models (LLMs) used in both few-shot and zero-shot classification settings. To accomplish this task, we employ prompt engineering, a technique that involves designing prompts to guide the LLMs towards the desired output. Specifically, we evaluate the performance of two commercially available state-of-the-art GPT-3.5-based language models, text-davinci-003 and gpt-3.5-turbo. We also conduct a detailed analysis of the impact of different aspects of prompt engineering on the model's performance. Our results show that, with a well-designed prompt, a zero-shot gpt-3.5-turbo classifier outperforms all other models, achieving a 6% increase in Precision@95% Recall compared to the best supervised approach. Furthermore, we observe that the wording of the prompt is a critical factor in eliciting the appropriate "reasoning" in the model, and that seemingly minor aspects of the prompt significantly affect the model's performance.
-                </p>
-              <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2303.07142v1' target="_blank">
-                  link
-                </a>
-              </p>
-            </div>
-          </div>
-        </td>
-      </tr><tr>
-          <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-01-10</p>
-          </td>
-          <td>
-            <div x-data="{open: false}">
-              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                API Entity and Relation Joint Extraction from Text via Dynamic Prompt-tuned Language Model
-              </span>
-              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.43</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.949</span></div>
-                <p class="pt-2">
-                  Extraction of Application Programming Interfaces (APIs) and their semantic relations from unstructured text (e.g., Stack Overflow) is a fundamental work for software engineering tasks (e.g., API recommendation). However, existing approaches are rule-based and sequence-labeling based. They must manually enumerate the rules or label data for a wide range of sentence patterns, which involves a significant amount of labor overhead and is exacerbated by morphological and common-word ambiguity. In contrast to matching or labeling API entities and relations, this paper formulates heterogeneous API extraction and API relation extraction task as a sequence-to-sequence generation task, and proposes AERJE, an API entity-relation joint extraction model based on the large pre-trained language model. After training on a small number of ambiguous but correctly labeled data, AERJE builds a multi-task architecture that extracts API entities and relations from unstructured text using dynamic prompts. We systematically evaluate AERJE on a set of long and ambiguous sentences from Stack Overflow. The experimental results show that AERJE achieves high accuracy and discrimination ability in API entity-relation joint extraction, even with zero or few-shot fine-tuning.
-                </p>
-              <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2301.03987v1' target="_blank">
-                  link
-                </a>
-              </p>
-            </div>
-          </div>
-        </td>
-      </tr><tr>
-          <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-01-01</p>
-          </td>
-          <td>
-            <div x-data="{open: false}">
-              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Modeling Label Semantics Improves Activity Recognition
-              </span>
-              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.7</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.987</span></div>
-                <p class="pt-2">
-                  Human activity recognition (HAR) aims to classify sensory time series into different activities, with wide applications in activity tracking, healthcare, human computer interaction, etc. Existing HAR works improve recognition performance by designing more complicated feature extraction methods, but they neglect the label semantics by simply treating labels as integer IDs. We find that many activities in the current HAR datasets have shared label names, e.g., "open door" and "open fridge", "walk upstairs" and "walk downstairs". Through some exploratory analysis, we find that such shared structure in activity names also maps to similarity in the input features. To this end, we design a sequence-to-sequence framework to decode the label name semantics rather than classifying labels as integer IDs. Our proposed method decomposes learning activities into learning shared tokens ("open", "walk"), which is easier than learning the joint distribution ("open fridge", "walk upstairs") and helps transfer learning to activities with insufficient data samples. For datasets originally without shared tokens in label names, we also offer an automated method, using OpenAI's ChatGPT, to generate shared actions and objects. Extensive experiments on seven HAR benchmark datasets demonstrate the state-of-the-art performance of our method. We also show better performance in the long-tail activity distribution settings and few-shot settings.
-                </p>
-              <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2301.03462v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2304.11852v1' target="_blank">
                   link
                 </a>
               </p>
