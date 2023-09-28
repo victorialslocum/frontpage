@@ -19,7 +19,7 @@
           <td>
             <h1 class="text-6xl pt-4 font-bold"><span class="underline">Your</span> FrontPage</h1>
             <br>
-            <p>Generated on 2023-09-27.</p>
+            <p>Generated on 2023-09-28.</p>
             <p class="text-sm text-gray-500 pt-2">This frontpage is made by scraping arxiv and by runnig a spaCy model that detects 
 if the abstract describes a paper about a new specific topic. Right now we try to
 find interesting articles about new dataset or about prompt engineering. Many datasets 
@@ -34,20 +34,174 @@ datasets in the mix too.
             <h2 class="text-4xl pt-4 font-bold">Datasets on Arxiv</h2><span class='px-2 mx-1 bg-yellow-200 text-xs'>tag:arxiv</span><span class='px-2 mx-1 bg-yellow-200 text-xs'>tag:dataset</span><span class='px-2 mx-1 bg-blue-200 text-xs'>cls:dataset</span></td>
         </tr><tr>
           <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-09-26</p>
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-09-27</p>
           </td>
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                HeLiPR: Heterogeneous LiDAR Dataset for inter-LiDAR Place Recognition under Spatial and Temporal Variations
+                SJTU-TMQA: A quality assessment database for static mesh with texture map
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.859</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.0</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.601</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.22</span></div>
                 <p class="pt-2">
-                  Place recognition is crucial for robotic localization and loop closure in simultaneous localization and mapping (SLAM). Recently, LiDARs have gained popularity due to their robust sensing capability and measurement consistency, even in the illumination-variant environment, offering an advantage over traditional imaging sensors. Spinning LiDARs are widely accepted among many types, while non-repetitive scanning patterns have recently been utilized in robotic applications. Beyond the range measurements, some LiDARs offer additional measurements, such as reflectivity, Near Infrared (NIR), and velocity (e.g., FMCW LiDARs). Despite these advancements, a noticeable dearth of datasets comprehensively reflects the broad spectrum of LiDAR configurations optimized for place recognition. To tackle this issue, our paper proposes the HeLiPR dataset, curated especially for place recognition with heterogeneous LiDAR systems, embodying spatial-temporal variations. To the best of our knowledge, the HeLiPR dataset is the first heterogeneous LiDAR dataset designed to support inter-LiDAR place recognition with both non-repetitive and spinning LiDARs, accommodating different field of view (FOV) and varying numbers of rays. Encompassing the distinct LiDAR configurations, it captures varied environments ranging from urban cityscapes to high-dynamic freeways over a month, designed to enhance the adaptability and robustness of place recognition across diverse scenarios. Notably, the HeLiPR dataset also includes trajectories that parallel sequences from MulRan, underscoring its utility for research in heterogeneous LiDAR place recognition and long-term studies. The dataset is accessible at https: //sites.google.com/view/heliprdataset.
+                  In recent years, static meshes with texture maps have become one of the most prevalent digital representations of 3D shapes in various applications, such as animation, gaming, medical imaging, and cultural heritage applications. However, little research has been done on the quality assessment of textured meshes, which hinders the development of quality-oriented applications, such as mesh compression and enhancement. In this paper, we create a large-scale textured mesh quality assessment database, namely SJTU-TMQA, which includes 21 reference meshes and 945 distorted samples. The meshes are rendered into processed video sequences and then conduct subjective experiments to obtain mean opinion scores (MOS). The diversity of content and accuracy of MOS has been shown to validate its heterogeneity and reliability. The impact of various types of distortion on human perception is demonstrated. 13 state-of-the-art objective metrics are evaluated on SJTU-TMQA. The results report the highest correlation of around 0.6, indicating the need for more effective objective metrics. The SJTU-TMQA is available at https://ccccby.github.io
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2309.14590v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2309.15675v1' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr><tr>
+          <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-09-27</p>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                Multimodal Dataset for Localization, Mapping and Crop Monitoring in Citrus Tree Farms
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.709</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.6</span></div>
+                <p class="pt-2">
+                  In this work we introduce the CitrusFarm dataset, a comprehensive multimodal sensory dataset collected by a wheeled mobile robot operating in agricultural fields. The dataset offers stereo RGB images with depth information, as well as monochrome, near-infrared and thermal images, presenting diverse spectral responses crucial for agricultural research. Furthermore, it provides a range of navigational sensor data encompassing wheel odometry, LiDAR, inertial measurement unit (IMU), and GNSS with Real-Time Kinematic (RTK) as the centimeter-level positioning ground truth. The dataset comprises seven sequences collected in three fields of citrus trees, featuring various tree species at different growth stages, distinctive planting patterns, as well as varying daylight conditions. It spans a total operation time of 1.7 hours, covers a distance of 7.5 km, and constitutes 1.3 TB of data. We anticipate that this dataset can facilitate the development of autonomous robot systems operating in agricultural tree environments, especially for localization, mapping and crop monitoring tasks. Moreover, the rich sensing modalities offered in this dataset can also support research in a range of robotics and computer vision tasks, such as place recognition, scene understanding, object detection and segmentation, and multimodal learning. The dataset, in conjunction with related tools and resources, is made publicly available at https://github.com/UCR-Robotics/Citrus-Farm-Dataset.
+                </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2309.15332v1' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr><tr>
+          <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-09-25</p>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                From OCEL to DOCEL -- Datasets and Automated Transformation
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.784</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.10</span></div>
+                <p class="pt-2">
+                  Object-centric event data represent processes from the point of view of all the involved object types. This perspective has gained interest in recent years as it supports the analysis of processes that previously could not be adequately captured, due to the lack of a clear case notion as well as an increasing amount of output data that needs to be stored. Although publicly available event logs are crucial artifacts for researchers to develop and evaluate novel process mining techniques, the currently available object-centric event logs have limitations in this regard. Specifically, they mainly focus on control-flow and rarely contain objects with attributes that change over time, even though this is not realistic, as the attribute values of objects can be altered during their lifecycle. This paper addresses this gap by providing two means of establishing object-centric datasets with dynamically evolving attributes. First, we provide event log generators, which allow researchers to generate customized, artificial logs with dynamic attributes in the recently proposed DOCEL format. Second, we propose and evaluate an algorithm to convert OCEL logs into DOCEL logs, which involves the detection of event attributes that capture evolving object information and the creation of dynamic attributes from these. Through these contributions, this paper supports the advancement of object-centric process analysis by providing researchers with new means to obtain relevant data to use during the development of new techniques.
+                </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2309.14092v1' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr><tr>
+          <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-09-21</p>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                OSN-MDAD: Machine Translation Dataset for Arabic Multi-Dialectal Conversations on Online Social Media
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.922</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.7</span></div>
+                <p class="pt-2">
+                  While resources for English language are fairly sufficient to understand content on social media, similar resources in Arabic are still immature. The main reason that the resources in Arabic are insufficient is that Arabic has many dialects in addition to the standard version (MSA). Arabs do not use MSA in their daily communications; rather, they use dialectal versions. Unfortunately, social users transfer this phenomenon into their use of social media platforms, which in turn has raised an urgent need for building suitable AI models for language-dependent applications. Existing machine translation (MT) systems designed for MSA fail to work well with Arabic dialects. In light of this, it is necessary to adapt to the informal nature of communication on social networks by developing MT systems that can effectively handle the various dialects of Arabic. Unlike for MSA that shows advanced progress in MT systems, little effort has been exerted to utilize Arabic dialects for MT systems. While few attempts have been made to build translation datasets for dialectal Arabic, they are domain dependent and are not OSN cultural-language friendly. In this work, we attempt to alleviate these limitations by proposing an online social network-based multidialect Arabic dataset that is crafted by contextually translating English tweets into four Arabic dialects: Gulf, Yemeni, Iraqi, and Levantine. To perform the translation, we followed our proposed guideline framework for content translation, which could be universally applicable for translation between foreign languages and local dialects. We validated the authenticity of our proposed dataset by developing neural MT models for four Arabic dialects. Our results have shown a superior performance of our NMT models trained using our dataset. We believe that our dataset can reliably serve as an Arabic multidialectal translation dataset for informal MT tasks.
+                </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2309.12137v1' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr><tr>
+          <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-09-21</p>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                NeuralLabeling: A versatile toolset for labeling vision datasets using Neural Radiance Fields
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.791</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.40</span></div>
+                <p class="pt-2">
+                  We present NeuralLabeling, a labeling approach and toolset for annotating a scene using either bounding boxes or meshes and generating segmentation masks, affordance maps, 2D bounding boxes, 3D bounding boxes, 6DOF object poses, depth maps and object meshes. NeuralLabeling uses Neural Radiance Fields (NeRF) as renderer, allowing labeling to be performed using 3D spatial tools while incorporating geometric clues such as occlusions, relying only on images captured from multiple viewpoints as input. To demonstrate the applicability of NeuralLabeling to a practical problem in robotics, we added ground truth depth maps to 30000 frames of transparent object RGB and noisy depth maps of glasses placed in a dishwasher captured using an RGBD sensor, yielding the Dishwasher30k dataset. We show that training a simple deep neural network with supervision using the annotated depth maps yields a higher reconstruction performance than training with the previously applied weakly supervised approach.
+                </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2309.11966v1' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr><tr>
+          <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-09-21</p>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                A Chinese Prompt Attack Dataset for LLMs with Evil Content
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.730</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.1</span></div>
+                <p class="pt-2">
+                  Large Language Models (LLMs) present significant priority in text understanding and generation. However, LLMs suffer from the risk of generating harmful contents especially while being employed to applications. There are several black-box attack methods, such as Prompt Attack, which can change the behaviour of LLMs and induce LLMs to generate unexpected answers with harmful contents. Researchers are interested in Prompt Attack and Defense with LLMs, while there is no publicly available dataset to evaluate the abilities of defending prompt attack. In this paper, we introduce a Chinese Prompt Attack Dataset for LLMs, called CPAD. Our prompts aim to induce LLMs to generate unexpected outputs with several carefully designed prompt attack approaches and widely concerned attacking contents. Different from previous datasets involving safety estimation, We construct the prompts considering three dimensions: contents, attacking methods and goals, thus the responses can be easily evaluated and analysed. We run several well-known Chinese LLMs on our dataset, and the results show that our prompts are significantly harmful to LLMs, with around 70% attack success rate. We will release CPAD to encourage further studies on prompt attack and defense.
+                </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2309.11830v1' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr><tr>
+          <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-09-19</p>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                A Configurable Library for Generating and Manipulating Maze Datasets
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.501</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.15</span></div>
+                <p class="pt-2">
+                  Understanding how machine learning models respond to distributional shifts is a key research challenge. Mazes serve as an excellent testbed due to varied generation algorithms offering a nuanced platform to simulate both subtle and pronounced distributional shifts. To enable systematic investigations of model behavior on out-of-distribution data, we present $\texttt{maze-dataset}$, a comprehensive library for generating, processing, and visualizing datasets consisting of maze-solving tasks. With this library, researchers can easily create datasets, having extensive control over the generation algorithm used, the parameters fed to the algorithm of choice, and the filters that generated mazes must satisfy. Furthermore, it supports multiple output formats, including rasterized and text-based, catering to convolutional neural networks and autoregressive transformer models. These formats, along with tools for visualizing and converting between them, ensure versatility and adaptability in research applications.
+                </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2309.10498v1' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr><tr>
+          <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-09-19</p>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                Natural Language Dataset Generation Framework for Visualizations Powered by Large Language Models
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.559</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.3</span></div>
+                <p class="pt-2">
+                  We introduce a Large Language Model (LLM) framework that generates rich and diverse NL datasets using only Vega-Lite specifications as input, thereby streamlining the development of Natural Language Interfaces (NLIs) for data visualization. We propose two techniques to synthesize relevant chart semantics accurately and enhance syntactic diversity in each NL dataset, respectively: 1) a guided discovery incorporated into prompting so that LLMs can steer themselves to create varying NL datasets in a self-directed manner; 2) a score-based paraphrasing to augment NL syntax along with four well-defined language axes. We also present a new chart collection of 1,981 real-world Vega-Lite specifications that have increased diversity and complexity compared to benchmarks, to demonstrate the generalizability of our framework. The experimental results show that our framework accurately extracts chart semantics and generates L1/L2 captions with 89.4% and 76.0% accuracy, respectively, while generating and paraphrasing utterances and questions with greater diversity than benchmarks. The codes and chart collection are available at https://github.com/hyungkwonko/chart-llm.
+                </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2309.10245v1' target="_blank">
                   link
                 </a>
               </p>
@@ -105,37 +259,15 @@ datasets in the mix too.
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Unified Human-Scene Interaction via Prompted Chain-of-Contacts
+                SIB-200: A Simple, Inclusive, and Big Evaluation Dataset for Topic Classification in 200+ Languages and Dialects
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.849</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.14</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.671</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.19</span></div>
                 <p class="pt-2">
-                  Human-Scene Interaction (HSI) is a vital component of fields like embodied AI and virtual reality. Despite advancements in motion quality and physical plausibility, two pivotal factors, versatile interaction control and the development of a user-friendly interface, require further exploration before the practical application of HSI. This paper presents a unified HSI framework, UniHSI, which supports unified control of diverse interactions through language commands. This framework is built upon the definition of interaction as Chain of Contacts (CoC): steps of human joint-object part pairs, which is inspired by the strong correlation between interaction types and human-object contact regions. Based on the definition, UniHSI constitutes a Large Language Model (LLM) Planner to translate language prompts into task plans in the form of CoC, and a Unified Controller that turns CoC into uniform task execution. To facilitate training and evaluation, we collect a new dataset named ScenePlan that encompasses thousands of task plans generated by LLMs based on diverse scenarios. Comprehensive experiments demonstrate the effectiveness of our framework in versatile task execution and generalizability to real scanned scenes. The project page is at https://github.com/OpenRobotLab/UniHSI .
+                  Despite the progress we have recorded in the last few years in multilingual natural language processing, evaluation is typically limited to a small set of languages with available datasets which excludes a large number of low-resource languages. In this paper, we created SIB-200 -- a large-scale open-sourced benchmark dataset for topic classification in 200 languages and dialects to address the lack of evaluation dataset for Natural Language Understanding (NLU). For many of the languages covered in SIB-200, this is the first publicly available evaluation dataset for NLU. The dataset is based on Flores-200 machine translation corpus. We annotated the English portion of the dataset and extended the sentence-level annotation to the remaining 203 languages covered in the corpus. Despite the simplicity of this task, our evaluation in full-supervised setting, cross-lingual transfer setting and prompting of large language model setting show that there is still a large gap between the performance of high-resource and low-resource languages when multilingual evaluation is scaled to numerous world languages. We found that languages unseen during the pre-training of multilingual language models, under-represented language families (like Nilotic and Altantic-Congo), and languages from the regions of Africa, Americas, Oceania and South East Asia, often have the lowest performance on our topic classification dataset. We hope our dataset will encourage a more inclusive evaluation of multilingual language models on a more diverse set of languages. https://github.com/dadelani/sib-200
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2309.07918v1' target="_blank">
-                  link
-                </a>
-              </p>
-            </div>
-          </div>
-        </td>
-      </tr><tr>
-          <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-09-14</p>
-          </td>
-          <td>
-            <div x-data="{open: false}">
-              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Physical Invisible Backdoor Based on Camera Imaging
-              </span>
-              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.719</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.3</span></div>
-                <p class="pt-2">
-                  Backdoor attack aims to compromise a model, which returns an adversary-wanted output when a specific trigger pattern appears yet behaves normally for clean inputs. Current backdoor attacks require changing pixels of clean images, which results in poor stealthiness of attacks and increases the difficulty of the physical implementation. This paper proposes a novel physical invisible backdoor based on camera imaging without changing nature image pixels. Specifically, a compromised model returns a target label for images taken by a particular camera, while it returns correct results for other images. To implement and evaluate the proposed backdoor, we take shots of different objects from multi-angles using multiple smartphones to build a new dataset of 21,500 images. Conventional backdoor attacks work ineffectively with some classical models, such as ResNet18, over the above-mentioned dataset. Therefore, we propose a three-step training strategy to mount the backdoor attack. First, we design and train a camera identification model with the phone IDs to extract the camera fingerprint feature. Subsequently, we elaborate a special network architecture, which is easily compromised by our backdoor attack, by leveraging the attributes of the CFA interpolation algorithm and combining it with the feature extraction block in the camera identification model. Finally, we transfer the backdoor from the elaborated special network architecture to the classical architecture model via teacher-student distillation learning. Since the trigger of our method is related to the specific phone, our attack works effectively in the physical world. Experiment results demonstrate the feasibility of our proposed approach and robustness against various backdoor defenses.
-                </p>
-              <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2309.07428v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2309.07445v1' target="_blank">
                   link
                 </a>
               </p>
@@ -165,179 +297,25 @@ datasets in the mix too.
           </div>
         </td>
       </tr><tr>
+          <td></td>
+          <td>
+            <h2 class="text-4xl pt-4 font-bold">Prompt Engineering on Arxiv</h2><span class='px-2 mx-1 bg-yellow-200 text-xs'>tag:arxiv</span><span class='px-2 mx-1 bg-yellow-200 text-xs'>tag:prompteng</span><span class='px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng</span></td>
+        </tr><tr>
           <td class="inline-block">
             <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-08-31</p>
           </td>
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Document Layout Analysis on BaDLAD Dataset: A Comprehensive MViTv2 Based Approach
+                Effective Test Generation Using Pre-trained Large Language Models and Mutation Testing
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.506</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.7</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.112</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.594</span></div>
                 <p class="pt-2">
-                  In the rapidly evolving digital era, the analysis of document layouts plays a pivotal role in automated information extraction and interpretation. In our work, we have trained MViTv2 transformer model architecture with cascaded mask R-CNN on BaDLAD dataset to extract text box, paragraphs, images and tables from a document. After training on 20365 document images for 36 epochs in a 3 phase cycle, we achieved a training loss of 0.2125 and a mask loss of 0.19. Our work extends beyond training, delving into the exploration of potential enhancement avenues. We investigate the impact of rotation and flip augmentation, the effectiveness of slicing input images pre-inference, the implications of varying the resolution of the transformer backbone, and the potential of employing a dual-pass inference to uncover missed text-boxes. Through these explorations, we observe a spectrum of outcomes, where some modifications result in tangible performance improvements, while others offer unique insights for future endeavors.
+                  One of the critical phases in software development is software testing. Testing helps with identifying potential bugs and reducing maintenance costs. The goal of automated test generation tools is to ease the development of tests by suggesting efficient bug-revealing tests. Recently, researchers have leveraged Large Language Models (LLMs) of code to generate unit tests. While the code coverage of generated tests was usually assessed, the literature has acknowledged that the coverage is weakly correlated with the efficiency of tests in bug detection. To improve over this limitation, in this paper, we introduce MuTAP for improving the effectiveness of test cases generated by LLMs in terms of revealing bugs by leveraging mutation testing. Our goal is achieved by augmenting prompts with surviving mutants, as those mutants highlight the limitations of test cases in detecting bugs. MuTAP is capable of generating effective test cases in the absence of natural language descriptions of the Program Under Test (PUTs). We employ different LLMs within MuTAP and evaluate their performance on different benchmarks. Our results show that our proposed method is able to detect up to 28% more faulty human-written code snippets. Among these, 17% remained undetected by both the current state-of-the-art fully automated test generation tool (i.e., Pynguin) and zero-shot/few-shot learning approaches on LLMs. Furthermore, MuTAP achieves a Mutation Score (MS) of 93.57% on synthetic buggy code, outperforming all other approaches in our evaluation. Our findings suggest that although LLMs can serve as a useful tool to generate test cases, they require specific post-processing steps to enhance the effectiveness of the generated test cases which may suffer from syntactic or functional errors and may be ineffective in detecting certain types of bugs and testing corner cases PUTs.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2308.16571v1' target="_blank">
-                  link
-                </a>
-              </p>
-            </div>
-          </div>
-        </td>
-      </tr><tr>
-          <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-08-30</p>
-          </td>
-          <td>
-            <div x-data="{open: false}">
-              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                SHARP Challenge 2023: Solving CAD History and pArameters Recovery from Point clouds and 3D scans. Overview, Datasets, Metrics, and Baselines
-              </span>
-              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.606</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.10</span></div>
-                <p class="pt-2">
-                  Recent breakthroughs in geometric Deep Learning (DL) and the availability of large Computer-Aided Design (CAD) datasets have advanced the research on learning CAD modeling processes and relating them to real objects. In this context, 3D reverse engineering of CAD models from 3D scans is considered to be one of the most sought-after goals for the CAD industry. However, recent efforts assume multiple simplifications limiting the applications in real-world settings. The SHARP Challenge 2023 aims at pushing the research a step closer to the real-world scenario of CAD reverse engineering through dedicated datasets and tracks. In this paper, we define the proposed SHARP 2023 tracks, describe the provided datasets, and propose a set of baseline methods along with suitable evaluation metrics to assess the performance of the track solutions. All proposed datasets along with useful routines and the evaluation metrics are publicly available.
-                </p>
-              <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2308.15966v1' target="_blank">
-                  link
-                </a>
-              </p>
-            </div>
-          </div>
-        </td>
-      </tr><tr>
-          <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-08-30</p>
-          </td>
-          <td>
-            <div x-data="{open: false}">
-              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                AGS: An Dataset and Taxonomy for Domestic Scene Sound Event Recognition
-              </span>
-              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.774</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.1</span></div>
-                <p class="pt-2">
-                  Environmental sound scene and sound event recognition is important for the recognition of suspicious events in indoor and outdoor environments (such as nurseries, smart homes, nursing homes, etc.) and is a fundamental task involved in many audio surveillance applications. In particular, there is no public common data set for the research field of sound event recognition for the data set of the indoor environmental sound scene. Therefore, this paper proposes a data set (called as AGS) for the home environment sound. This data set considers various types of overlapping audio in the scene, background noise. Moreover, based on the proposed data set, this paper compares and analyzes the advanced methods for sound event recognition, and then illustrates the reliability of the data set proposed in this paper, and studies the challenges raised by the new data set. Our proposed AGS and the source code of the corresponding baselines at https://github.com/taolunzu11/AGS .
-                </p>
-              <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2308.15726v1' target="_blank">
-                  link
-                </a>
-              </p>
-            </div>
-          </div>
-        </td>
-      </tr><tr>
-          <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-08-30</p>
-          </td>
-          <td>
-            <div x-data="{open: false}">
-              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Intriguing Properties of Diffusion Models: A Large-Scale Dataset for Evaluating Natural Attack Capability in Text-to-Image Generative Models
-              </span>
-              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.909</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.57</span></div>
-                <p class="pt-2">
-                  Denoising probabilistic diffusion models have shown breakthrough performance that can generate more photo-realistic images or human-level illustrations than the prior models such as GANs. This high image-generation capability has stimulated the creation of many downstream applications in various areas. However, we find that this technology is indeed a double-edged sword: We identify a new type of attack, called the Natural Denoising Diffusion (NDD) attack based on the finding that state-of-the-art deep neural network (DNN) models still hold their prediction even if we intentionally remove their robust features, which are essential to the human visual system (HVS), by text prompts. The NDD attack can generate low-cost, model-agnostic, and transferrable adversarial attacks by exploiting the natural attack capability in diffusion models. Motivated by the finding, we construct a large-scale dataset, Natural Denoising Diffusion Attack (NDDA) dataset, to systematically evaluate the risk of the natural attack capability of diffusion models with state-of-the-art text-to-image diffusion models. We evaluate the natural attack capability by answering 6 research questions. Through a user study to confirm the validity of the NDD attack, we find that the NDD attack can achieve an 88% detection rate while being stealthy to 93% of human subjects. We also find that the non-robust features embedded by diffusion models contribute to the natural attack capability. To confirm the model-agnostic and transferrable attack capability, we perform the NDD attack against an AD vehicle and find that 73% of the physically printed attacks can be detected as a stop sign. We hope that our study and dataset can help our community to be aware of the risk of diffusion models and facilitate further research toward robust DNN models.
-                </p>
-              <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2308.15692v1' target="_blank">
-                  link
-                </a>
-              </p>
-            </div>
-          </div>
-        </td>
-      </tr><tr>
-          <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-08-23</p>
-          </td>
-          <td>
-            <div x-data="{open: false}">
-              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                HarvestNet: A Dataset for Detecting Smallholder Farming Activity Using Harvest Piles and Remote Sensing
-              </span>
-              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.941</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.0</span></div>
-                <p class="pt-2">
-                  Small farms contribute to a large share of the productive land in developing countries. In regions such as sub-Saharan Africa, where 80% of farms are small (under 2 ha in size), the task of mapping smallholder cropland is an important part of tracking sustainability measures such as crop productivity. However, the visually diverse and nuanced appearance of small farms has limited the effectiveness of traditional approaches to cropland mapping. Here we introduce a new approach based on the detection of harvest piles characteristic of many smallholder systems throughout the world. We present HarvestNet, a dataset for mapping the presence of farms in the Ethiopian regions of Tigray and Amhara during 2020-2023, collected using expert knowledge and satellite images, totaling 7k hand-labeled images and 2k ground collected labels. We also benchmark a set of baselines including SOTA models in remote sensing with our best models having around 80% classification performance on hand labelled data and 90%, 98% accuracy on ground truth data for Tigray, Amhara respectively. We also perform a visual comparison with a widely used pre-existing coverage map and show that our model detects an extra 56,621 hectares of cropland in Tigray. We conclude that remote sensing of harvest piles can contribute to more timely and accurate cropland assessments in food insecure region.
-                </p>
-              <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2308.12061v1' target="_blank">
-                  link
-                </a>
-              </p>
-            </div>
-          </div>
-        </td>
-      </tr><tr>
-          <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-08-23</p>
-          </td>
-          <td>
-            <div x-data="{open: false}">
-              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Audio Generation with Multiple Conditional Diffusion Model
-              </span>
-              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.920</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.2</span></div>
-                <p class="pt-2">
-                  Text-based audio generation models have limitations as they cannot encompass all the information in audio, leading to restricted controllability when relying solely on text. To address this issue, we propose a novel model that enhances the controllability of existing pre-trained text-to-audio models by incorporating additional conditions including content (timestamp) and style (pitch contour and energy contour) as supplements to the text. This approach achieves fine-grained control over the temporal order, pitch, and energy of generated audio. To preserve the diversity of generation, we employ a trainable control condition encoder that is enhanced by a large language model and a trainable Fusion-Net to encode and fuse the additional conditions while keeping the weights of the pre-trained text-to-audio model frozen. Due to the lack of suitable datasets and evaluation metrics, we consolidate existing datasets into a new dataset comprising the audio and corresponding conditions and use a series of evaluation metrics to evaluate the controllability performance. Experimental results demonstrate that our model successfully achieves fine-grained control to accomplish controllable audio generation. Audio samples and our dataset are publicly available at https://conditionaudiogen.github.io/conditionaudiogen/
-                </p>
-              <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2308.11940v1' target="_blank">
-                  link
-                </a>
-              </p>
-            </div>
-          </div>
-        </td>
-      </tr><tr>
-          <td></td>
-          <td>
-            <h2 class="text-4xl pt-4 font-bold">Prompt Engineering on Arxiv</h2><span class='px-2 mx-1 bg-yellow-200 text-xs'>tag:arxiv</span><span class='px-2 mx-1 bg-yellow-200 text-xs'>tag:prompteng</span><span class='px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng</span></td>
-        </tr><tr>
-          <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-09-12</p>
-          </td>
-          <td>
-            <div x-data="{open: false}">
-              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Unveiling the potential of large language models in generating semantic and cross-language clones
-              </span>
-              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.1</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.608</span></div>
-                <p class="pt-2">
-                  Semantic and Cross-language code clone generation may be useful for code reuse, code comprehension, refactoring and benchmarking. OpenAI's GPT model has potential in such clone generation as GPT is used for text generation. When developers copy/paste codes from Stack Overflow (SO) or within a system, there might be inconsistent changes leading to unexpected behaviours. Similarly, if someone possesses a code snippet in a particular programming language but seeks equivalent functionality in a different language, a semantic cross-language code clone generation approach could provide valuable assistance.In this study, using SemanticCloneBench as a vehicle, we evaluated how well the GPT-3 model could help generate semantic and cross-language clone variants for a given fragment.We have comprised a diverse set of code fragments and assessed GPT-3s performance in generating code variants.Through extensive experimentation and analysis, where 9 judges spent 158 hours to validate, we investigate the model's ability to produce accurate and semantically correct variants. Our findings shed light on GPT-3's strengths in code generation, offering insights into the potential applications and challenges of using advanced language models in software development. Our quantitative analysis yields compelling results. In the realm of semantic clones, GPT-3 attains an impressive accuracy of 62.14% and 0.55 BLEU score, achieved through few-shot prompt engineering. Furthermore, the model shines in transcending linguistic confines, boasting an exceptional 91.25% accuracy in generating cross-language clones
-                </p>
-              <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2309.06424v1' target="_blank">
-                  link
-                </a>
-              </p>
-            </div>
-          </div>
-        </td>
-      </tr><tr>
-          <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-08-29</p>
-          </td>
-          <td>
-            <div x-data="{open: false}">
-              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Multi-party Goal Tracking with LLMs: Comparing Pre-training, Fine-tuning, and Prompt Engineering
-              </span>
-              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.134</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.763</span></div>
-                <p class="pt-2">
-                  This paper evaluates the extent to which current Large Language Models (LLMs) can capture task-oriented multi-party conversations (MPCs). We have recorded and transcribed 29 MPCs between patients, their companions, and a social robot in a hospital. We then annotated this corpus for multi-party goal-tracking and intent-slot recognition. People share goals, answer each other's goals, and provide other people's goals in MPCs - none of which occur in dyadic interactions. To understand user goals in MPCs, we compared three methods in zero-shot and few-shot settings: we fine-tuned T5, created pre-training tasks to train DialogLM using LED, and employed prompt engineering techniques with GPT-3.5-turbo, to determine which approach can complete this novel task with limited data. GPT-3.5-turbo significantly outperformed the others in a few-shot setting. The `reasoning' style prompt, when given 7% of the corpus as example annotated conversations, was the best performing method. It correctly annotated 62.32% of the goal tracking MPCs, and 69.57% of the intent-slot recognition MPCs. A `story' style prompt increased model hallucination, which could be detrimental if deployed in safety-critical settings. We conclude that multi-party conversations still challenge state-of-the-art LLMs.
-                </p>
-              <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2308.15231v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2308.16557v1' target="_blank">
                   link
                 </a>
               </p>
@@ -412,6 +390,28 @@ datasets in the mix too.
         </td>
       </tr><tr>
           <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-06-26</p>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                ChatIDS: Explainable Cybersecurity Using Generative AI
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.8</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.558</span></div>
+                <p class="pt-2">
+                  Intrusion Detection Systems (IDS) are a proven approach to secure networks. However, in a privately used network, it is difficult for users without cybersecurity expertise to understand IDS alerts, and to respond in time with adequate measures. This puts the security of home networks, smart home installations, home-office workers, etc. at risk, even if an IDS is correctly installed and configured. In this work, we propose ChatIDS, our approach to explain IDS alerts to non-experts by using large language models. We evaluate the feasibility of ChatIDS by using ChatGPT, and we identify open research issues with the help of interdisciplinary experts in artificial intelligence. Our results show that ChatIDS has the potential to increase network security by proposing meaningful security measures in an intuitive language from IDS alerts. Nevertheless, some potential issues in areas such as trust, privacy, ethics, etc. need to be resolved, before ChatIDS might be put into practice.
+                </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2306.14504v1' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr><tr>
+          <td class="inline-block">
             <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-06-13</p>
           </td>
           <td>
@@ -456,28 +456,6 @@ datasets in the mix too.
         </td>
       </tr><tr>
           <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-06-05</p>
-          </td>
-          <td>
-            <div x-data="{open: false}">
-              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                PokemonChat: Auditing ChatGPT for Pokémon Universe Knowledge
-              </span>
-              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.75</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.605</span></div>
-                <p class="pt-2">
-                  The recently released ChatGPT model demonstrates unprecedented capabilities in zero-shot question-answering. In this work, we probe ChatGPT for its conversational understanding and introduce a conversational framework (protocol) that can be adopted in future studies. The Pok\'emon universe serves as an ideal testing ground for auditing ChatGPT's reasoning capabilities due to its closed world assumption. After bringing ChatGPT's background knowledge (on the Pok\'emon universe) to light, we test its reasoning process when using these concepts in battle scenarios. We then evaluate its ability to acquire new knowledge and include it in its reasoning process. Our ultimate goal is to assess ChatGPT's ability to generalize, combine features, and to acquire and reason over newly introduced knowledge from human feedback. We find that ChatGPT has prior knowledge of the Pokemon universe, which can reason upon in battle scenarios to a great extent, even when new information is introduced. The model performs better with collaborative feedback and if there is an initial phase of information retrieval, but also hallucinates occasionally and is susceptible to adversarial attacks.
-                </p>
-              <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2306.03024v1' target="_blank">
-                  link
-                </a>
-              </p>
-            </div>
-          </div>
-        </td>
-      </tr><tr>
-          <td class="inline-block">
             <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-05-25</p>
           </td>
           <td>
@@ -500,20 +478,64 @@ datasets in the mix too.
         </td>
       </tr><tr>
           <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-05-18</p>
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-05-23</p>
           </td>
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                ZeroPrompt: Streaming Acoustic Encoders are Zero-Shot Masked LMs
+                LLM-empowered Chatbots for Psychiatrist and Patient Simulation: Application and Evaluation
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.108</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.609</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.131</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.509</span></div>
                 <p class="pt-2">
-                  In this paper, we present ZeroPrompt (Figure 1-(a)) and the corresponding Prompt-and-Refine strategy (Figure 3), two simple but effective \textbf{training-free} methods to decrease the Token Display Time (TDT) of streaming ASR models \textbf{without any accuracy loss}. The core idea of ZeroPrompt is to append zeroed content to each chunk during inference, which acts like a prompt to encourage the model to predict future tokens even before they were spoken. We argue that streaming acoustic encoders naturally have the modeling ability of Masked Language Models and our experiments demonstrate that ZeroPrompt is engineering cheap and can be applied to streaming acoustic encoders on any dataset without any accuracy loss. Specifically, compared with our baseline models, we achieve 350 $\sim$ 700ms reduction on First Token Display Time (TDT-F) and 100 $\sim$ 400ms reduction on Last Token Display Time (TDT-L), with theoretically and experimentally equal WER on both Aishell-1 and Librispeech datasets.
+                  Empowering chatbots in the field of mental health is receiving increasing amount of attention, while there still lacks exploration in developing and evaluating chatbots in psychiatric outpatient scenarios. In this work, we focus on exploring the potential of ChatGPT in powering chatbots for psychiatrist and patient simulation. We collaborate with psychiatrists to identify objectives and iteratively develop the dialogue system to closely align with real-world scenarios. In the evaluation experiments, we recruit real psychiatrists and patients to engage in diagnostic conversations with the chatbots, collecting their ratings for assessment. Our findings demonstrate the feasibility of using ChatGPT-powered chatbots in psychiatric scenarios and explore the impact of prompt designs on chatbot behavior and user experience.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.10649v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.13614v1' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr><tr>
+          <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-05-15</p>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                Exploring In-Context Learning Capabilities of Foundation Models for Generating Knowledge Graphs from Text
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.33</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.718</span></div>
+                <p class="pt-2">
+                  Knowledge graphs can represent information about the real-world using entities and their relations in a structured and semantically rich manner and they enable a variety of downstream applications such as question-answering, recommendation systems, semantic search, and advanced analytics. However, at the moment, building a knowledge graph involves a lot of manual effort and thus hinders their application in some situations and the automation of this process might benefit especially for small organizations. Automatically generating structured knowledge graphs from a large volume of natural language is still a challenging task and the research on sub-tasks such as named entity extraction, relation extraction, entity and relation linking, and knowledge graph construction aims to improve the state of the art of automatic construction and completion of knowledge graphs from text. The recent advancement of foundation models with billions of parameters trained in a self-supervised manner with large volumes of training data that can be adapted to a variety of downstream tasks has helped to demonstrate high performance on a large range of Natural Language Processing (NLP) tasks. In this context, one emerging paradigm is in-context learning where a language model is used as it is with a prompt that provides instructions and some examples to perform a task without changing the parameters of the model using traditional approaches such as fine-tuning. This way, no computing resources are needed for re-training/fine-tuning the models and the engineering effort is minimal. Thus, it would be beneficial to utilize such capabilities for generating knowledge graphs from text.
+                </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.08804v1' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr><tr>
+          <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-05-09</p>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                Generating Phishing Attacks using ChatGPT
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.4</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.509</span></div>
+                <p class="pt-2">
+                  The ability of ChatGPT to generate human-like responses and understand context has made it a popular tool for conversational agents, content creation, data analysis, and research and innovation. However, its effectiveness and ease of accessibility makes it a prime target for generating malicious content, such as phishing attacks, that can put users at risk. In this work, we identify several malicious prompts that can be provided to ChatGPT to generate functional phishing websites. Through an iterative approach, we find that these phishing websites can be made to imitate popular brands and emulate several evasive tactics that have been known to avoid detection by anti-phishing entities. These attacks can be generated using vanilla ChatGPT without the need of any prior adversarial exploits (jailbreaking).
+                </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.05133v1' target="_blank">
                   link
                 </a>
               </p>
@@ -536,28 +558,6 @@ datasets in the mix too.
                 </p>
               <p class="pb-2 pt-2 text-center">
                 <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2304.11852v1' target="_blank">
-                  link
-                </a>
-              </p>
-            </div>
-          </div>
-        </td>
-      </tr><tr>
-          <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-04-19</p>
-          </td>
-          <td>
-            <div x-data="{open: false}">
-              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                GeneGPT: Teaching Large Language Models to Use NCBI Web APIs
-              </span>
-              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.10</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.519</span></div>
-                <p class="pt-2">
-                  In this paper, we present GeneGPT, a novel method for teaching large language models (LLMs) to use the Web Application Programming Interfaces (APIs) of the National Center for Biotechnology Information (NCBI) and answer genomics questions. Specifically, we prompt Codex (code-davinci-002) to solve the GeneTuring tests with few-shot URL requests of NCBI API calls as demonstrations for in-context learning. During inference, we stop the decoding once a call request is detected and make the API call with the generated URL. We then append the raw execution results returned by NCBI APIs to the generated texts and continue the generation until the answer is found or another API call is detected. Our preliminary results show that GeneGPT achieves state-of-the-art results on three out of four one-shot tasks and four out of five zero-shot tasks in the GeneTuring dataset. Overall, GeneGPT achieves a macro-average score of 0.76, which is much higher than retrieval-augmented LLMs such as the New Bing (0.44), biomedical LLMs such as BioMedLM (0.08) and BioGPT (0.04), as well as other LLMs such as GPT-3 (0.16) and ChatGPT (0.12).
-                </p>
-              <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2304.09667v1' target="_blank">
                   link
                 </a>
               </p>
