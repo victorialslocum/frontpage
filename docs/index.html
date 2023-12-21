@@ -19,7 +19,7 @@
           <td>
             <h1 class="text-6xl pt-4 font-bold"><span class="underline">Your</span> FrontPage</h1>
             <br>
-            <p>Generated on 2023-12-20.</p>
+            <p>Generated on 2023-12-21.</p>
             <p class="text-sm text-gray-500 pt-2">This frontpage is made by scraping arxiv and by runnig a spaCy model that detects 
 if the abstract describes a paper about a new specific topic. Right now we try to
 find interesting articles about new dataset or about prompt engineering. Many datasets 
@@ -61,15 +61,15 @@ datasets in the mix too.
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Entity-Augmented Code Generation
+                CattleEyeView: A Multi-task Top-down View Cattle Dataset for Smarter Precision Livestock Farming
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.616</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.5</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.526</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.16</span></div>
                 <p class="pt-2">
-                  The current state-of-the-art large language models (LLMs) are effective in generating high-quality text and encapsulating a broad spectrum of world knowledge. However, these models often hallucinate during generation and are not designed to utilize external information sources. To enable requests to the external knowledge bases, also called knowledge grounding, retrieval-augmented LLMs were introduced. For now, their applications have largely involved Open Domain Question Answering, Abstractive Question Answering, and such. In this paper, we broaden the scope of retrieval-augmented LLMs by venturing into a new task - code generation using external entities. For this task, we collect and publish a new dataset for project-level code generation, where the model should reuse functions defined in the project during generation. As we show, existing retrieval-augmented LLMs fail to assign relevance scores between similar entity names, and to mitigate it, they expand entity names with description context and append it to the input. In practice, due to the limited context size they can not accommodate the indefinitely large context of the whole project. To solve this issue, we propose a novel end-to-end trainable architecture with an scalable entity retriever injected directly into the LLM decoder. We demonstrate that our model can outperform common baselines in several scenarios, including project-level code generation, as well as Bash and SQL scripting.
+                  Cattle farming is one of the important and profitable agricultural industries. Employing intelligent automated precision livestock farming systems that can count animals, track the animals and their poses will raise productivity and significantly reduce the heavy burden on its already limited labor pool. To achieve such intelligent systems, a large cattle video dataset is essential in developing and training such models. However, many current animal datasets are tailored to few tasks or other types of animals, which result in poorer model performance when applied to cattle. Moreover, they do not provide top-down views of cattle. To address such limitations, we introduce CattleEyeView dataset, the first top-down view multi-task cattle video dataset for a variety of inter-related tasks (i.e., counting, detection, pose estimation, tracking, instance segmentation) that are useful to count the number of cows and assess their growth and well-being. The dataset contains 753 distinct top-down cow instances in 30,703 frames (14 video sequences). We perform benchmark experiments to evaluate the model's performance for each task. The dataset and codes can be found at https://github.com/AnimalEyeQ/CattleEyeView.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2312.08976v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2312.08764v1' target="_blank">
                   link
                 </a>
               </p>
@@ -78,20 +78,20 @@ datasets in the mix too.
         </td>
       </tr><tr>
           <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-12-14</p>
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-12-13</p>
           </td>
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                PROPRES: Investigating the Projectivity of Presupposition with Various Triggers and Environments
+                Plant Disease Recognition Datasets in the Age of Deep Learning: Challenges and Opportunities
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.517</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.3</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.979</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.0</span></div>
                 <p class="pt-2">
-                  What makes a presupposition of an utterance -- information taken for granted by its speaker -- different from other pragmatic inferences such as an entailment is projectivity (e.g., the negative sentence the boy did not stop shedding tears presupposes the boy had shed tears before). The projectivity may vary depending on the combination of presupposition triggers and environments. However, prior natural language understanding studies fail to take it into account as they either use no human baseline or include only negation as an entailment-canceling environment to evaluate models' performance. The current study attempts to reconcile these issues. We introduce a new dataset, projectivity of presupposition (PROPRES, which includes 12k premise-hypothesis pairs crossing six triggers involving some lexical variety with five environments. Our human evaluation reveals that humans exhibit variable projectivity in some cases. However, the model evaluation shows that the best-performed model, DeBERTa, does not fully capture it. Our findings suggest that probing studies on pragmatic inferences should take extra care of the human judgment variability and the combination of linguistic items.
+                  Plant disease recognition has witnessed a significant improvement with deep learning in recent years. Although plant disease datasets are essential and many relevant datasets are public available, two fundamental questions exist. First, how to differentiate datasets and further choose suitable public datasets for specific applications? Second, what kinds of characteristics of datasets are desired to achieve promising performance in real-world applications? To address the questions, this study explicitly propose an informative taxonomy to describe potential plant disease datasets. We further provide several directions for future, such as creating challenge-oriented datasets and the ultimate objective deploying deep learning in real-world applications with satisfactory performance. In addition, existing related public RGB image datasets are summarized. We believe that this study will contributing making better datasets and that this study will contribute beyond plant disease recognition such as plant species recognition. To facilitate the community, our project is public https://github.com/xml94/PPDRD with the information of relevant public datasets.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2312.08755v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2312.07905v1' target="_blank">
                   link
                 </a>
               </p>
@@ -232,6 +232,28 @@ datasets in the mix too.
         </td>
       </tr><tr>
           <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-11-30</p>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                Dataset Distillation via the Wasserstein Metric
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.621</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.155</span></div>
+                <p class="pt-2">
+                  Dataset distillation (DD) offers a compelling approach in computer vision, with the goal of condensing extensive datasets into smaller synthetic versions without sacrificing much of the model performance. In this paper, we continue to study the methods for DD, by addressing its conceptually core objective: how to capture the essential representation of extensive datasets in smaller, synthetic forms.   We propose a novel approach utilizing the Wasserstein distance, a metric rooted in optimal transport theory, to enhance distribution matching in DD. Our method leverages the Wasserstein barycenter, offering a geometrically meaningful way to quantify distribution differences and effectively capture the centroid of a set of distributions. Our approach retains the computational benefits of distribution matching-based methods while achieving new state-of-the-art performance on several benchmarks.   To provide useful prior for learning the images, we embed the synthetic data into the feature space of pretrained classification models to conduct distribution matching. Extensive testing on various high-resolution datasets confirms the effectiveness and adaptability of our method, indicating the promising yet unexplored capabilities of Wasserstein metrics in dataset distillation.
+                </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2311.18531v1' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr><tr>
+          <td class="inline-block">
             <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-11-29</p>
           </td>
           <td>
@@ -275,28 +297,6 @@ datasets in the mix too.
           </div>
         </td>
       </tr><tr>
-          <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-11-20</p>
-          </td>
-          <td>
-            <div x-data="{open: false}">
-              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                FATURA: A Multi-Layout Invoice Image Dataset for Document Analysis and Understanding
-              </span>
-              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.790</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.4</span></div>
-                <p class="pt-2">
-                  Document analysis and understanding models often require extensive annotated data to be trained. However, various document-related tasks extend beyond mere text transcription, requiring both textual content and precise bounding-box annotations to identify different document elements. Collecting such data becomes particularly challenging, especially in the context of invoices, where privacy concerns add an additional layer of complexity. In this paper, we introduce FATURA, a pivotal resource for researchers in the field of document analysis and understanding. FATURA is a highly diverse dataset featuring multi-layout, annotated invoice document images. Comprising $10,000$ invoices with $50$ distinct layouts, it represents the largest openly accessible image dataset of invoice documents known to date. We also provide comprehensive benchmarks for various document analysis and understanding tasks and conduct experiments under diverse training and evaluation scenarios. The dataset is freely accessible at https://zenodo.org/record/8261508, empowering researchers to advance the field of document analysis and understanding.
-                </p>
-              <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2311.11856v1' target="_blank">
-                  link
-                </a>
-              </p>
-            </div>
-          </div>
-        </td>
-      </tr><tr>
           <td></td>
           <td>
             <h2 class="text-4xl pt-4 font-bold">Prompt Engineering on Arxiv</h2><span class='px-2 mx-1 bg-yellow-200 text-xs'>tag:arxiv</span><span class='px-2 mx-1 bg-yellow-200 text-xs'>tag:prompteng</span><span class='px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng</span></td>
@@ -307,37 +307,15 @@ datasets in the mix too.
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                More Samples or More Prompt Inputs? Exploring Effective In-Context Sampling for LLM Few-Shot Prompt Engineering
+                To be or not to be? an exploration of continuously controllable prompt engineering
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.65</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.678</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.24</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.614</span></div>
                 <p class="pt-2">
-                  While most existing works on LLM prompt-engineering focus only on how to select a better set of data samples inside one single prompt input (In-Context Learning or ICL), why can't we design and leverage multiple prompt inputs together to further improve the LLM performance? In this work, we propose In-Context Sampling (ICS), a low-resource LLM prompt-engineering technique to produce the most confident prediction results by optimizing the construction of multiple ICL prompt inputs. Extensive experiments with two SOTA LLMs (FlanT5-XL and Mistral-7B) on three NLI datasets (e-SNLI, Multi-NLI, and ANLI) illustrate that ICS can consistently enhance LLM's prediction performance and confidence. An ablation study suggests that a diversity-based ICS strategy may further improve LLM's performance, which sheds light on a new yet promising future research direction.
+                  As the use of large language models becomes more widespread, techniques like parameter-efficient fine-tuning and other methods for controlled generation are gaining traction for customizing models and managing their outputs. However, the challenge of precisely controlling how prompts influence these models is an area ripe for further investigation. In response, we introduce ControlPE (Continuously Controllable Prompt Engineering). ControlPE enables finer adjustments to prompt effects, complementing existing prompt engineering, and effectively controls continuous targets. This approach harnesses the power of LoRA (Low-Rank Adaptation) to create an effect akin to prompt weighting, enabling fine-tuned adjustments to the impact of prompts. Our methodology involves generating specialized datasets for prompt distillation, incorporating these prompts into the LoRA model, and carefully adjusting LoRA merging weight to regulate the influence of prompts. This provides a dynamic and adaptable tool for prompt control. Through our experiments, we have validated the practicality and efficacy of ControlPE. It proves to be a promising solution for control a variety of prompts, ranging from generating short responses prompts, refusal prompts to chain-of-thought prompts.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2311.09782v1' target="_blank">
-                  link
-                </a>
-              </p>
-            </div>
-          </div>
-        </td>
-      </tr><tr>
-          <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-11-16</p>
-          </td>
-          <td>
-            <div x-data="{open: false}">
-              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                FairytaleCQA: Integrating a Commonsense Knowledge Graph into Children's Storybook Narratives
-              </span>
-              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.4</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.677</span></div>
-                <p class="pt-2">
-                  AI models (including LLM) often rely on narrative question-answering (QA) datasets to provide customized QA functionalities to support downstream children education applications; however, existing datasets only include QA pairs that are grounded within the given storybook content, but children can learn more when teachers refer the storybook content to real-world knowledge (e.g., commonsense knowledge). We introduce the FairytaleCQA dataset, which is annotated by children education experts, to supplement 278 storybook narratives with educationally appropriate commonsense knowledge. The dataset has 5,868 QA pairs that not only originate from the storybook narrative but also contain the commonsense knowledge grounded by an external knowledge graph (i.e., ConceptNet). A follow-up experiment shows that a smaller model (T5-large) fine-tuned with FairytaleCQA reliably outperforms much larger prompt-engineered LLM (e.g., GPT-4) in this new QA-pair generation task (QAG). This result suggests that: 1) our dataset brings novel challenges to existing LLMs, and 2) human experts' data annotation are still critical as they have much nuanced knowledge that LLMs do not know in the children educational domain.
-                </p>
-              <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2311.09756v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2311.09773v1' target="_blank">
                   link
                 </a>
               </p>
@@ -478,42 +456,20 @@ datasets in the mix too.
         </td>
       </tr><tr>
           <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-08-29</p>
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-07-05</p>
           </td>
           <td>
             <div x-data="{open: false}">
               <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Multi-party Goal Tracking with LLMs: Comparing Pre-training, Fine-tuning, and Prompt Engineering
+                Flacuna: Unleashing the Problem Solving Power of Vicuna using FLAN Fine-Tuning
               </span>
               <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.134</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.763</span></div>
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.84</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.657</span></div>
                 <p class="pt-2">
-                  This paper evaluates the extent to which current Large Language Models (LLMs) can capture task-oriented multi-party conversations (MPCs). We have recorded and transcribed 29 MPCs between patients, their companions, and a social robot in a hospital. We then annotated this corpus for multi-party goal-tracking and intent-slot recognition. People share goals, answer each other's goals, and provide other people's goals in MPCs - none of which occur in dyadic interactions. To understand user goals in MPCs, we compared three methods in zero-shot and few-shot settings: we fine-tuned T5, created pre-training tasks to train DialogLM using LED, and employed prompt engineering techniques with GPT-3.5-turbo, to determine which approach can complete this novel task with limited data. GPT-3.5-turbo significantly outperformed the others in a few-shot setting. The `reasoning' style prompt, when given 7% of the corpus as example annotated conversations, was the best performing method. It correctly annotated 62.32% of the goal tracking MPCs, and 69.57% of the intent-slot recognition MPCs. A `story' style prompt increased model hallucination, which could be detrimental if deployed in safety-critical settings. We conclude that multi-party conversations still challenge state-of-the-art LLMs.
+                  Recently, the release of INSTRUCTEVAL has provided valuable insights into the performance of large language models (LLMs) that utilize encoder-decoder or decoder-only architecture. Interestingly, despite being introduced four years ago, T5-based LLMs, such as FLAN-T5, continue to outperform the latest decoder-based LLMs, such as LLAMA and VICUNA, on tasks that require general problem-solving skills. This performance discrepancy can be attributed to three key factors: (1) Pre-training data, (2) Backbone architecture, and (3) Instruction dataset. In this technical report, our main focus is on investigating the impact of the third factor by leveraging VICUNA, a large language model based on LLAMA, which has undergone fine-tuning on ChatGPT conversations. To achieve this objective, we fine-tuned VICUNA using a customized instruction dataset collection called FLANMINI. This collection includes a subset of the large-scale instruction dataset known as FLAN, as well as various code-related datasets and conversational datasets derived from ChatGPT/GPT-4. This dataset comprises a large number of tasks that demand problem-solving skills. Our experimental findings strongly indicate that the enhanced problem-solving abilities of our model, FLACUNA, are obtained through fine-tuning VICUNA on the FLAN dataset, leading to significant improvements across numerous benchmark datasets in INSTRUCTEVAL. FLACUNA is publicly available at https://huggingface.co/declare-lab/flacuna-13b-v1.0.
                 </p>
               <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2308.15231v1' target="_blank">
-                  link
-                </a>
-              </p>
-            </div>
-          </div>
-        </td>
-      </tr><tr>
-          <td class="inline-block">
-            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-08-09</p>
-          </td>
-          <td>
-            <div x-data="{open: false}">
-              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
-                Adaptive Intellect Unleashed: The Feasibility of Knowledge Transfer in Large Language Models
-              </span>
-              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
-                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.25</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.615</span></div>
-                <p class="pt-2">
-                  We conduct the first empirical study on using knowledge transfer to improve the generalization ability of large language models (LLMs) in software engineering tasks, which often require LLMs to generalize beyond their training data. Our proposed general knowledge transfer approach guides the LLM towards a similar and familiar API or code snippet it has encountered before, improving the model's generalization ability for unseen knowledge. We apply this approach to three software engineering tasks: API inference, code example generation, and FQN inference, and find transfer span, transfer strategy, and transfer architecture as key factors affecting the method. Our findings demonstrate the feasibility of knowledge transfer and its potential to enhance LLMs' performance in various software engineering tasks. The effectiveness of knowledge transfer varies depending on the target domain and task, with the hierarchical strategy being more effective than direct transfer, and AI-Chain outperforming CoT in prompt design. The implications of these findings extend beyond software engineering tasks and suggest that knowledge transfer can enhance LLMs' ability to handle unknowns in any natural language task.
-                </p>
-              <p class="pb-2 pt-2 text-center">
-                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2308.04788v1' target="_blank">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2307.02053v1' target="_blank">
                   link
                 </a>
               </p>
@@ -558,6 +514,50 @@ datasets in the mix too.
                 </p>
               <p class="pb-2 pt-2 text-center">
                 <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2306.03024v1' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr><tr>
+          <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-05-25</p>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                Service Composition in the ChatGPT Era
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.10</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.697</span></div>
+                <p class="pt-2">
+                  The paper speculates about how ChatGPT-like systems can support the field of automated service composition and identifies new research areas to explore in order to take advantage of such tools in the field of service-oriented composition.
+                </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.15788v1' target="_blank">
+                  link
+                </a>
+              </p>
+            </div>
+          </div>
+        </td>
+      </tr><tr>
+          <td class="inline-block">
+            <p class='font-bold text-black px-2 mx-1 text-xs w-24'>2023-05-11</p>
+          </td>
+          <td>
+            <div x-data="{open: false}">
+              <span @click="open = ! open" class="hover:underline cursor-pointer decoration-2 decoration-green-600 text-gray-800 text-sm">
+                Chain-of-Dictionary Prompting Elicits Translation in Large Language Models
+              </span>
+              <div x-show="open" x-collapse.duration.500ms class="text-sm text-gray-500 pt-2">
+                <div class="text-center pt-2"><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:dataset: 0.30</span><span class='text-black px-2 mx-1 bg-blue-200 text-xs'>cls:prompteng: 0.619</span></div>
+                <p class="pt-2">
+                  Large language models (LLMs) have shown surprisingly good performance in multilingual neural machine translation (MNMT) even when trained without parallel data. Yet, despite the fact that the amount of training data is gigantic, they still struggle with translating rare words, particularly for low-resource languages. Even worse, it is usually unrealistic to retrieve relevant demonstrations for in-context learning with low-resource languages on LLMs, which restricts the practical use of LLMs for translation -- how should we mitigate this problem? To this end, we present a novel method, CoD, which augments LLMs with prior knowledge with the chains of multilingual dictionaries for a subset of input words to elicit translation abilities for LLMs. Extensive experiments indicate that augmenting ChatGPT with CoD elicits large gains by up to 13x ChrF++ points for MNMT (3.08 to 42.63 for English to Serbian written in Cyrillic script) on FLORES-200 full devtest set. We further demonstrate the importance of chaining the multilingual dictionaries, as well as the superiority of CoD to few-shot demonstration for low-resource languages.
+                </p>
+              <p class="pb-2 pt-2 text-center">
+                <a class="underline decoration-2 text-green-600 text-md pt-2" href='http://arxiv.org/abs/2305.06575v1' target="_blank">
                   link
                 </a>
               </p>
